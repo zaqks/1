@@ -1,9 +1,6 @@
 # meloud_realEstate
 
 
-# project description 
-gestion des clients, biens, transactions
-
 # client actions:
 -see the availble properties and filter them
 -book an appointment to visit l 7ala (then buy/rent, the contracts will be created by an agent)
@@ -21,3 +18,4 @@ gestion des clients, biens, transactions
 -manage the contracts
 -manage the clients
 -dashboard
+
