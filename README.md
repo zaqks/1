@@ -9,6 +9,7 @@
 
 # agent actions:
 -activate properties for sale after checking them
+-add properties
 -making contracts after selling/renting properties
 -see his vistis schedule
 
