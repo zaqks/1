@@ -8,6 +8,7 @@ public class ElMeyloudReApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ElMeyloudReApplication.class, args);
+		
 	}
 
 }
