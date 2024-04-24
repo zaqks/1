@@ -9,11 +9,13 @@ public class Property {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private double x, y;
     private String addr;
-    private int floors, surf, rooms, grgs, pools;
-    
-    private int owner_id;
+    private float x, y;
+    private int surf, floors, rooms, grgs, pools;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
+    private Client owner;
 
     public int getId() {
         return id;
@@ -21,22 +23,6 @@ public class Property {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
     }
 
     public String getAddr() {
@@ -47,12 +33,20 @@ public class Property {
         this.addr = addr;
     }
 
-    public int getFloors() {
-        return floors;
+    public float getX() {
+        return x;
     }
 
-    public void setFloors(int floors) {
-        this.floors = floors;
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
     }
 
     public int getSurf() {
@@ -61,6 +55,14 @@ public class Property {
 
     public void setSurf(int surf) {
         this.surf = surf;
+    }
+
+    public int getFloors() {
+        return floors;
+    }
+
+    public void setFloors(int floors) {
+        this.floors = floors;
     }
 
     public int getRooms() {
@@ -87,5 +89,12 @@ public class Property {
         this.pools = pools;
     }
 
-    
+    public Client getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Client owner) {
+        this.owner = owner;
+    }
+
 }

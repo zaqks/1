@@ -15,7 +15,7 @@ public class Agent {
     private String phonenum, email;
     private String ccp, ccp_key, rip;
 
-    private double x, y;
+    private float x, y;
     
 
     // getters
@@ -51,11 +51,11 @@ public class Agent {
         return rip;
     }
 
-    public double getX() {
+    public float getX() {
         return x;
     }
 
-    public double getY() {
+    public float getY() {
         return y;
     }
 
@@ -94,11 +94,11 @@ public class Agent {
         this.rip = rip;
     }
 
-    public void setX(double x) {
+    public void setX(float x) {
         this.x = x;
     }
 
-    public void setY(double y) {
+    public void setY(float y) {
         this.y = y;
     }
 

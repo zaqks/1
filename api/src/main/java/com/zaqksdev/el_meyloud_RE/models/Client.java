@@ -15,7 +15,7 @@ public class Client {
     private String phonenum, email;
     private String ccp, ccp_key, rip;
 
-    private double x, y;
+    private float x, y;
     private boolean sells;
 
     // getters
@@ -51,11 +51,11 @@ public class Client {
         return rip;
     }
 
-    public double getX() {
+    public float getX() {
         return x;
     }
 
-    public double getY() {
+    public float getY() {
         return y;
     }
 
@@ -96,11 +96,11 @@ public class Client {
         this.rip = rip;
     }
 
-    public void setX(double x) {
+    public void setX(float x) {
         this.x = x;
     }
 
-    public void setY(double y) {
+    public void setY(float y) {
         this.y = y;
     }
 
