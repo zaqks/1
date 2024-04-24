@@ -3,9 +3,9 @@ package com.zaqksdev.el_meyloud_RE.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "clients")
+@Table(name = "agents")
 
-public class Client {
+public class Agent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class Client {
     private String ccp, ccp_key, rip;
 
     private double x, y;
-    private boolean sells;
+    
 
     // getters
     public String getName() {
@@ -59,9 +59,7 @@ public class Client {
         return y;
     }
 
-    public boolean getSells() {
-        return sells;
-    }
+   
 
     // setters
     public void setName(String name) {
@@ -104,7 +102,5 @@ public class Client {
         this.y = y;
     }
 
-    public void setSells(boolean sells) {
-        this.sells = sells;
-    }
+  
 }
