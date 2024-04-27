@@ -7,13 +7,11 @@
     <title>Sign Up</title>
 
 
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />    
+    <link th:href="@{/css/main.css}" rel="stylesheet" />    
+    <link th:href="@{/css/auth/auth.css}" rel="stylesheet" />    
 
+    
 </head>
 
 <body>
@@ -47,7 +45,10 @@
             <li th:each="err:${#fields.errors('email')}" th:text="${err}"></li>
         </ul>
 
-
+        <input type="text" th:field="*{password}" placeholder="password">
+        <ul>
+            <li th:each="err:${#fields.errors('password')}" th:text="${err}"></li>
+        </ul>
 
         <input type="text" th:field="*{ccp}" placeholder="ccp">
         <ul>

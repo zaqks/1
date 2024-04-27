@@ -17,6 +17,23 @@ public class Client {
     private String name, surname, nin;
     private String phonenum, email;
     private String ccp, ccp_key, rip;
+    private String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     private float x, y;
     private boolean sells;

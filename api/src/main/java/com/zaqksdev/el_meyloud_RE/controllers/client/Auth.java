@@ -15,7 +15,7 @@ public class Auth {
 
     @GetMapping("signin")
     public String showSignIn(Model model) {
-        // model.addAttribute("user", new User());
+        model.addAttribute("client", new Client());
         return "auth/client/signin";
     }
 
