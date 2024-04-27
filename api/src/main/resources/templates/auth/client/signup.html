@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <form method="post" th:object="${client}">
+        <input type="text" th:field="*{name}" placeholder="name">
+        <ul>
+            <li th:each="err:${#fields.errors('name')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{surname}" placeholder="surname">
+        <ul>
+            <li th:each="err:${#fields.errors('surname')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{nin}" placeholder="nin">
+        <ul>
+            <li th:each="err:${#fields.errors('nin')}" th:text="${err}"></li>
+        </ul>
+
+
+
+        <input type="text" th:field="*{phonenum}" placeholder="phonenum">
+        <ul>
+            <li th:each="err:${#fields.errors('phonenum')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{email}" placeholder="email">
+        <ul>
+            <li th:each="err:${#fields.errors('email')}" th:text="${err}"></li>
+        </ul>
+
+
+
+        <input type="text" th:field="*{ccp}" placeholder="ccp">
+        <ul>
+            <li th:each="err:${#fields.errors('ccp')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{ccp_key}" placeholder="ccp_key">
+        <ul>
+            <li th:each="err:${#fields.errors('ccp_key')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{rip}" placeholder="rip">
+        <ul>
+            <li th:each="err:${#fields.errors('rip')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{x}" placeholder="x">
+        <ul>
+            <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+        </ul>
+        <input type="text" th:field="*{y}" placeholder="y">
+        <ul>
+            <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+        </ul>
+
+
+        <label for="sells">Sells</label>
+        <input id="sells" type="checkbox" th:field="*{sells}">
+        <ul>
+            <li th:each="err:${#fields.errors('sells')}" th:text="${err}"></li>
+        </ul>
+
+        <button type="submit">Sign Up</button>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "clients")
@@ -11,6 +12,8 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotEmpty(message = "User's name cannot be empty")
+    @Size(min = 5, max = 250)
     private String name, surname, nin;
     private String phonenum, email;
     private String ccp, ccp_key, rip;
