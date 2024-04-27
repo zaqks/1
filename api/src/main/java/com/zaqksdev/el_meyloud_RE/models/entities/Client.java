@@ -1,22 +1,43 @@
-package com.zaqksdev.el_meyloud_RE.models;
+package com.zaqksdev.el_meyloud_RE.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
-@Table(name = "agents")
+@Table(name = "clients")
 
-public class Agent {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotEmpty(message = "User's name cannot be empty")
+    @Size(min = 5, max = 250)
     private String name, surname, nin;
     private String phonenum, email;
     private String ccp, ccp_key, rip;
+    
+    private String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     private float x, y;
-    
+    private boolean sells;
 
     // getters
     public String getName() {
@@ -59,7 +80,9 @@ public class Agent {
         return y;
     }
 
-   
+    public boolean getSells() {
+        return sells;
+    }
 
     // setters
     public void setName(String name) {
@@ -102,5 +125,7 @@ public class Agent {
         this.y = y;
     }
 
-  
+    public void setSells(boolean sells) {
+        this.sells = sells;
+    }
 }

@@ -1,4 +1,4 @@
-package com.zaqksdev.el_meyloud_RE.models;
+package com.zaqksdev.el_meyloud_RE.models.entities;
 
 import jakarta.persistence.*;
 
