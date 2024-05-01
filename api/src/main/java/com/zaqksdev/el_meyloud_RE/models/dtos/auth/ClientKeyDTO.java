@@ -4,7 +4,7 @@ package com.zaqksdev.el_meyloud_RE.models.dtos.auth;
 import jakarta.validation.constraints.Size;
 
 public class ClientKeyDTO {
-
+    
     @Size(min = 12, message = "Invalid email")
     private String email;
 

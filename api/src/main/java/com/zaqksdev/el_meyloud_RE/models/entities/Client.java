@@ -12,12 +12,27 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty(message = "User's name cannot be empty")
-    @Size(min = 5, max = 250)
-    private String name, surname, nin;
-    private String phonenum, email;
-    private String ccp, ccp_key, rip;
-    
+    @Size(min = 3, message = "invalid values")
+    private String name, surname;
+
+    @Size(min = 10, max = 10, message = "invalid value")
+    private String nin;
+
+    @Size(min = 10, max = 13, message = "invalid value")
+    private String phonenum;
+
+    @Size(min = 12, message = "invalid value")
+    private String email;
+
+    @Size(min = 8, max = 8, message = "invalid value")
+    private String ccp;
+
+    @Size(min = 2, max = 2, message = "invalid value")
+    private String ccp_key;
+
+    @Size(min = 15, max = 15, message = "invalid value")
+    private String rip;
+
     private String password;
 
     public int getId() {

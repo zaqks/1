@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
+
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -30,20 +30,18 @@ public class Auth {
         model.addAttribute("client", client);
 
         if (result.hasErrors()) {
-
             return "auth/client/signin";
         }
-
         // check existance
         Client check = repo.findByEmail(client.getEmail());
 
         if (check == null) {
-            result.rejectValue("email", "unexisting account");
+            result.rejectValue("email", null, "unexisting email");
             return "auth/client/signin";
         }
 
         if (check.getPassword() != client.getPassword()) {
-            result.rejectValue("password", "incorret password");
+            result.rejectValue("email", null, "incorrect password");
             return "auth/client/signin";
         }
 
