@@ -45,7 +45,7 @@
             <li th:each="err:${#fields.errors('email')}" th:text="${err}"></li>
         </ul>
 
-        <input type="text" th:field="*{password}" placeholder="password">
+        <input type="password" th:field="*{password}" placeholder="password">
         <ul>
             <li th:each="err:${#fields.errors('password')}" th:text="${err}"></li>
         </ul>

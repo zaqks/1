@@ -27,7 +27,7 @@ public class ClientKeyDTO {
     public Boolean checkAuth() {
         Client rslt = repo.findByEmail(email);
         if (rslt != null) {
-            return rslt.getPassword() == password;
+            return rslt.getPassword().equals(password);
         }
 
         return false;
