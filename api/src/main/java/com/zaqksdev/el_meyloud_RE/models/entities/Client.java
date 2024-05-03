@@ -38,6 +38,7 @@ public class Client {
 
     private float x, y;
     private boolean sells;
+    
     public int getId() {
         return id;
     }
