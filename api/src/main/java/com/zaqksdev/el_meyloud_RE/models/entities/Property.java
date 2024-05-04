@@ -1,6 +1,8 @@
 package com.zaqksdev.el_meyloud_RE.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "properties")
@@ -9,9 +11,16 @@ public class Property {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Size(min = 10, max = 64, message = "invalid value")
     private String addr;
+
     private float x, y;
-    private int surf, floors, rooms, grgs, pools;
+
+    @Min(value = 1, message = "invalid value")
+    private int surf;
+    private int floors, grgs, pools;
+    @Min(value = 1, message = "invalid value")
+    private int rooms;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
@@ -65,14 +74,6 @@ public class Property {
         this.floors = floors;
     }
 
-    public int getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(int rooms) {
-        this.rooms = rooms;
-    }
-
     public int getGrgs() {
         return grgs;
     }
@@ -87,6 +88,14 @@ public class Property {
 
     public void setPools(int pools) {
         this.pools = pools;
+    }
+
+    public int getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(int rooms) {
+        this.rooms = rooms;
     }
 
     public Client getOwner() {

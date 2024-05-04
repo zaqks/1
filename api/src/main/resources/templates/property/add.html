@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Property</title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />    
+    <link th:href="@{/css/main.css}" rel="stylesheet" />    
+    <link th:href="@{/css/property/add.css}" rel="stylesheet" />   
+
+
 </head>
+
 <body>
-    
+    <h1>Add Property</h1>
+
+
+    <form method="post" th:object="${property}" enctype="multipart/form-data">
+        <input type="text" th:field="*{addr}" placeholder="addr">
+        <ul>
+            <li th:each="err:${#fields.errors('addr')}" th:text="${err}"></li>
+        </ul>
+
+        <h3>select on the map</h3>
+        <input type="number" th:field="*{x}" placeholder="x">
+        <ul>
+            <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="number" th:field="*{y}" placeholder="y">
+        <ul>
+            <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="number" th:field="*{surf}" placeholder="surf">
+        <ul>
+            <li th:each="err:${#fields.errors('surf')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="number" th:field="*{floors}" placeholder="floors">
+        <ul>
+            <li th:each="err:${#fields.errors('floors')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="number" th:field="*{grgs}" placeholder="grgs">
+        <ul>
+            <li th:each="err:${#fields.errors('grgs')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="number" th:field="*{pools}" placeholder="pools">
+        <ul>
+            <li th:each="err:${#fields.errors('pools')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="number" th:field="*{rooms}" placeholder="rooms">
+        <ul>
+            <li th:each="err:${#fields.errors('rooms')}" th:text="${err}"></li>
+        </ul>
+
+
+
+        <input type="file" accept="image/*" multiple="multiple">
+
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+
+
+    <script th:src="@{/js/property/add/images.js}"></script>
+
 </body>
+
 </html>
