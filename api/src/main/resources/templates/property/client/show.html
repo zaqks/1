@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Properties</title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    
+    <link th:href="@{/css/templates/property/show/show.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/cards/property.css}" rel="stylesheet" />
+
 </head>
 <body>
+    <h1>My properties</h1>
     
+    <ul>
+        <li th:each="property: ${properties}">
+            <p th:text="${property.addr}" ></p>
+        </li>
+    </ul>
+
 </body>
 </html>

@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 @Controller
 @RequestMapping("client")
 public class ClientProperty {
@@ -40,7 +39,10 @@ public class ClientProperty {
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-        return "property/client/show";
+
+        model.addAttribute("properties", propertyRepo.findByOwner(clientRepo.findByEmail(email)));
+
+        return new Security(clientRepo, email, password).kickNonSeller("property/client/show");
     }
 
     @GetMapping("/property/add")
@@ -51,10 +53,10 @@ public class ClientProperty {
 
         model.addAttribute("property", new PropertyCreateDTO());
 
-        return new Security(clientRepo, email, password).kickNonSeller("property/add");
+        return new Security(clientRepo, email, password).kickNonSeller("property/client/add");
     }
 
-    @PostMapping("/property/client/add")
+    @PostMapping("/property/add")
     public String addProperty(@Valid @ModelAttribute("property") PropertyCreateDTO property, BindingResult result,
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
@@ -63,19 +65,19 @@ public class ClientProperty {
         if (!finger.equals(""))
             return finger;
 
+        // form validation
         if (result.hasErrors()) {
-            return "property/add";
+            return "property/client/add";
         }
-
         if (property.getImg1().isEmpty()) {
             result.rejectValue("img1", null, "1 image at least is required");
-            return "property/add";
+            return "property/client/add";
 
         }
 
         // existance
         if (existingProperty(result, property))
-            return "property/add";
+            return "property/client/add";
 
         Property newProp = property.convertToEntity();
         newProp.setOwner(clientRepo.findByEmail(email));

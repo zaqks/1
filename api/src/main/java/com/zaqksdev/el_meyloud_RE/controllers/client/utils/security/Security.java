@@ -11,6 +11,7 @@ public class Security {
     public Security(ClientRepo repo,  String email, String pwd) {
         this.email = email;
         this.pwd = pwd;
+        this.clientRepo = repo;
     }
 
     public Boolean loggedIn(String email, String password) {
