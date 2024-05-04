@@ -7,7 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zaqksdev.el_meyloud_RE.models.dtos.auth.ClientKeyDTO;
-import com.zaqksdev.el_meyloud_RE.models.entities.Property;
+import com.zaqksdev.el_meyloud_RE.models.dtos.property.PropertyCreateDTO;
 import com.zaqksdev.el_meyloud_RE.services.repos.ClientRepo;
 
 import jakarta.validation.Valid;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequestMapping("client")
-public class ClientProperty extends ClientKeyDTO {
+public class ClientProperty {
     @Autowired
     private ClientRepo repo;
 
@@ -35,7 +35,7 @@ public class ClientProperty extends ClientKeyDTO {
 
     }
 
-    @GetMapping("/add")
+    @GetMapping("/property/add")
     public String showAddProperty(
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
@@ -51,14 +51,24 @@ public class ClientProperty extends ClientKeyDTO {
             return "redirect:/client";
         }
 
-        model.addAttribute("property", new Property());
+        model.addAttribute("property", new PropertyCreateDTO());
 
         return "property/add";
     }
 
-    @PostMapping("/add")
-    public String addProperty(@Valid Property property, BindingResult result, Model model) {
+    @PostMapping("/property/add")
+    public String addProperty(@Valid PropertyCreateDTO property, BindingResult result, Model model) {
+
+        System.out.println(result);
+
+        model.addAttribute("property", property);
+
         if (result.hasErrors()) {
+            return "property/add";
+        }
+
+        if (property.getImg1().isEmpty()) {
+            result.rejectValue("img1", null, "1 image at least is required");
             return "property/add";
         }
 

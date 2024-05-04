@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Property</title>
 
-    <link th:href="@{/css/vars.css}" rel="stylesheet" />    
-    <link th:href="@{/css/main.css}" rel="stylesheet" />    
-    <link th:href="@{/css/property/add.css}" rel="stylesheet" />   
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/property/add/add.css}" rel="stylesheet" />
+    <link th:href="@{/css/property/add/images.css}" rel="stylesheet" />
 
 
 </head>
@@ -60,8 +62,23 @@
         </ul>
 
 
+        <label id="imgLabel" for="img#1">Add img</label>
+            
+        <ul>
+            <li th:each="err:${#fields.errors('img1')}" th:text="${err}"></li>
+        </ul>
 
-        <input type="file" accept="image/*" multiple="multiple">
+        <input type="file" accept="image/*" th:field="*{img1}" id="img#1" oninput="insertImgs(this)">
+        <input type="file" accept="image/*" th:field="*{img2}" id="img#2" oninput="insertImgs(this)">
+        <input type="file" accept="image/*" th:field="*{img3}" id="img#3" oninput="insertImgs(this)">
+        <input type="file" accept="image/*" th:field="*{img4}" id="img#4" oninput="insertImgs(this)">
+        <input type="file" accept="image/*" th:field="*{img5}" id="img#5" oninput="insertImgs(this)">
+
+        <div id="imgs">
+
+        </div>
+
+
 
 
         <button type="submit">Submit</button>

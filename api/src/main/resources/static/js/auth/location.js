@@ -1,11 +1,12 @@
 const FETCHES = 5;
 const xInpt = document.getElementById("x_coord")
 const yInpt = document.getElementById("y_coord")
+const btn = document.getElementById("submitBtn")
 
 var x = 0;
 var y = 0;
-
 var ready = false;
+
 
 function getLocation() {
     console.log('pass')
@@ -22,11 +23,12 @@ function getLocation() {
                 yInpt.value = `${y}`
 
                 ready = true;
-                return 
+                return
 
             },
             function (err) {
-
+                ready = true;
+                return
             }
         );
     }
