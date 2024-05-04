@@ -28,9 +28,7 @@ public class Property {
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Client owner;
 
-    private ArrayList imgs ;
-
-
+    private ArrayList<String> imgs;
 
     public int getId() {
         return id;
@@ -112,14 +110,12 @@ public class Property {
         this.owner = owner;
     }
 
-    public ArrayList getImgs() {
+    public ArrayList<String> getImgs() {
         return imgs;
     }
 
-    public void setImgs(ArrayList imgs) {
+    public void setImgs(ArrayList<String> imgs) {
         this.imgs = imgs;
     }
 
-         
-        
 }

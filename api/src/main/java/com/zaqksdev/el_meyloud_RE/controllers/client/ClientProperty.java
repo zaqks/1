@@ -5,8 +5,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.Date;
 
+import org.apache.el.lang.FunctionMapperImpl.Function;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,11 +42,7 @@ public class ClientProperty {
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        if (!new ClientKeyDTO(clientRepo, email, password).checkAuth()) {
-            return "redirect:/client/signin";
-        }
-
-        return "property/home";
+        return new Auth(email, password).kickNonLogged("property/home");
 
     }
 
@@ -54,19 +52,9 @@ public class ClientProperty {
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        // check auth
-        if (!new ClientKeyDTO(clientRepo, email, password).checkAuth()) {
-            return "redirect:/client/signin";
-        }
-
-        // check if the client can add
-        if (!clientRepo.findByEmail(email).isSells()) {
-            return "redirect:/client";
-        }
-
         model.addAttribute("property", new PropertyCreateDTO());
 
-        return "property/add";
+        return new Auth(email, password).kickNonSeller("property/add");
     }
 
     @PostMapping("/property/add")
@@ -74,17 +62,11 @@ public class ClientProperty {
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
+        String finger = new Auth(email, password).kickNonSeller("");
+        if (!finger.equals(""))
+            return finger;
 
-        // check auth
-        if (!new ClientKeyDTO(clientRepo, email, password).checkAuth()) {
-            return "redirect:/client/signin";
-        }
-
-        // check if the client can add
-        if (!clientRepo.findByEmail(email).isSells()) {
-            return "redirect:/client";
-        }
-
+            
         if (result.hasErrors()) {
             return "property/add";
         }
@@ -92,6 +74,7 @@ public class ClientProperty {
         if (property.getImg1().isEmpty()) {
             result.rejectValue("img1", null, "1 image at least is required");
             return "property/add";
+
         }
 
         // existance
@@ -101,23 +84,52 @@ public class ClientProperty {
         Property newProp = property.convertToEntity();
         newProp.setOwner(clientRepo.findByEmail(email));
 
+        ArrayList imgs = new ArrayList<MultipartFile>();
+        imgs.add(property.getImg1());
+        imgs.add(property.getImg2());
+        imgs.add(property.getImg3());
+        imgs.add(property.getImg4());
+        imgs.add(property.getImg5());
+
+        newProp.setImgs(new Storage().saveAllImages(imgs));
         propertyRepo.save(newProp);
 
-        return "property/add";
+        return new Auth(email, password).kickNonSeller("property/add");
         // return "redirect:/client";
     }
 
-    void saveImage(MultipartFile image) {
-        // Date createdAt = new Date();
-        String dst = "public/images/properties/" + new Date() + "_" + image.getOriginalFilename();
+    class Storage {
+        public String saveImage(MultipartFile image) {
+            // Date createdAt = new Date();
+            String dst = "public/images/properties/" + new Date() + "_" + image.getOriginalFilename();
 
-        try {
-            try (InputStream inputStream = image.getInputStream()) {
-                Files.copy(inputStream, Paths.get(dst), StandardCopyOption.REPLACE_EXISTING);
+            try {
+                try (InputStream inputStream = image.getInputStream()) {
+                    Files.copy(inputStream, Paths.get(dst), StandardCopyOption.REPLACE_EXISTING);
+                }
+
+            } catch (Exception e) {
             }
 
-        } catch (Exception e) {
+            return dst;
         }
+
+        public ArrayList<String> saveAllImages(ArrayList<MultipartFile> imgs) {
+            MultipartFile current;
+            ArrayList<String> rslt = new ArrayList<String>();
+
+            for (int i = 0; i < imgs.size(); i++) {
+                current = imgs.get(i);
+                if (current.isEmpty())
+                    break;
+
+                rslt.add(saveImage(current));
+
+            }
+
+            return rslt;
+        }
+
     }
 
     class Auth {
@@ -129,24 +141,24 @@ public class ClientProperty {
             this.pwd = pwd;
         }
 
-        Boolean loggedIn(String email, String password) {
+        public Boolean loggedIn(String email, String password) {
             return new ClientKeyDTO(clientRepo, email, password).checkAuth();
 
         }
 
-        Boolean canSell(
+        public Boolean canSell(
                 String email, String password) {
             return loggedIn(email, password) && clientRepo.findByEmail(email).isSells();
         }
 
-        String kickNonLogged(String src) {
+        public String kickNonLogged(String src) {
             if (!loggedIn(email, pwd)) {
                 return "redirect:/client/signin";
             }
             return src;
         }
 
-        String kickNonSeller(String src) {
+        public String kickNonSeller(String src) {
             if (!canSell(email, pwd)) {
                 return "redirect:/client";
             }
