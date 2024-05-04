@@ -2,13 +2,13 @@ package com.zaqksdev.el_meyloud_RE.controllers.client;
 
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import org.apache.el.lang.FunctionMapperImpl.Function;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,7 +66,6 @@ public class ClientProperty {
         if (!finger.equals(""))
             return finger;
 
-            
         if (result.hasErrors()) {
             return "property/add";
         }
@@ -78,13 +77,13 @@ public class ClientProperty {
         }
 
         // existance
-        // check the addr
-        // check the coords
+        if (existingProperty(result, property))
+            return "property/add";
 
         Property newProp = property.convertToEntity();
         newProp.setOwner(clientRepo.findByEmail(email));
 
-        ArrayList imgs = new ArrayList<MultipartFile>();
+        ArrayList<MultipartFile> imgs = new ArrayList<MultipartFile>();
         imgs.add(property.getImg1());
         imgs.add(property.getImg2());
         imgs.add(property.getImg3());
@@ -94,8 +93,41 @@ public class ClientProperty {
         newProp.setImgs(new Storage().saveAllImages(imgs));
         propertyRepo.save(newProp);
 
-        return new Auth(email, password).kickNonSeller("property/add");
-        // return "redirect:/client";
+        
+        return "redirect:/client/property";
+    }
+
+    Boolean existingProperty(BindingResult result, PropertyCreateDTO property) {
+        // check the addr
+        if (propertyRepo.findByAddr(property.getAddr()) != null) {
+            result.rejectValue("addr", null, "already existing");
+            return true;
+        }
+        // check the coords
+        float x = property.getX();
+        float y = property.getY();
+        int i;
+
+        List<Property> xlst = propertyRepo.findByX(x);
+        List<Property> ylst = propertyRepo.findByX(y);
+
+        for (i = 0; i < xlst.size(); i++) {
+            if (xlst.get(i).getY() == y) {
+                result.rejectValue("x", null, "already existing");
+                result.rejectValue("y", null, "already existing");
+                return true;
+            }
+        }
+
+        for (i = 0; i < ylst.size(); i++) {
+            if (ylst.get(i).getX() == x) {
+                result.rejectValue("x", null, "already existing");
+                result.rejectValue("y", null, "already existing");
+                return true;
+            }
+        }
+
+        return false;
     }
 
     class Storage {

@@ -24,7 +24,7 @@ public class Property {
     @Min(value = 1, message = "invalid value")
     private int rooms;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Client owner;
 
