@@ -11,6 +11,21 @@ public class PropertyCreateDTO extends Property {
     private MultipartFile img4;
     private MultipartFile img5;
 
+    public Property convertToEntity() {
+        Property rslt = new Property();
+
+        rslt.setAddr(this.getAddr());
+        rslt.setX(this.getX());
+        rslt.setY(this.getY());
+        rslt.setSurf(this.getSurf());
+        rslt.setFloors(this.getFloors());
+        rslt.setGrgs(this.getGrgs());
+        rslt.setPools(this.getPools());
+        rslt.setRooms(this.getRooms());
+        
+        return rslt;
+    }
+
     public MultipartFile getImg1() {
         return img1;
     }

@@ -1,5 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.models.entities;
 
+import java.util.ArrayList;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
@@ -25,6 +27,10 @@ public class Property {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Client owner;
+
+    private ArrayList imgs ;
+
+
 
     public int getId() {
         return id;
@@ -106,4 +112,14 @@ public class Property {
         this.owner = owner;
     }
 
+    public ArrayList getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(ArrayList imgs) {
+        this.imgs = imgs;
+    }
+
+         
+        
 }
