@@ -1,7 +1,6 @@
 package com.zaqksdev.el_meyloud_RE.models.dtos.property;
 
 import org.springframework.web.multipart.MultipartFile;
-
 import com.zaqksdev.el_meyloud_RE.models.entities.Property;
 
 public class PropertyCreateDTO extends Property {

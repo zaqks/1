@@ -1,13 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.controllers.client;
 
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.zaqksdev.el_meyloud_RE.models.dtos.auth.ClientKeyDTO;
+import com.zaqksdev.el_meyloud_RE.controllers.client.utils.security.Security;
+import com.zaqksdev.el_meyloud_RE.controllers.client.utils.storage.Storage;
 import com.zaqksdev.el_meyloud_RE.models.dtos.property.PropertyCreateDTO;
+
 import com.zaqksdev.el_meyloud_RE.models.entities.Property;
 import com.zaqksdev.el_meyloud_RE.services.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.services.repos.PropertyRepo;
@@ -29,6 +25,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 @Controller
 @RequestMapping("client")
 public class ClientProperty {
@@ -37,13 +34,13 @@ public class ClientProperty {
     @Autowired
     private PropertyRepo propertyRepo;
 
-    @GetMapping("")
-    public String showHome(Model model,
+    @GetMapping("/property")
+    public String showProperty(
+
+            Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-
-        return new Auth(email, password).kickNonLogged("property/home");
-
+        return "property/client/show";
     }
 
     @GetMapping("/property/add")
@@ -54,15 +51,15 @@ public class ClientProperty {
 
         model.addAttribute("property", new PropertyCreateDTO());
 
-        return new Auth(email, password).kickNonSeller("property/add");
+        return new Security(clientRepo, email, password).kickNonSeller("property/add");
     }
 
-    @PostMapping("/property/add")
+    @PostMapping("/property/client/add")
     public String addProperty(@Valid @ModelAttribute("property") PropertyCreateDTO property, BindingResult result,
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-        String finger = new Auth(email, password).kickNonSeller("");
+        String finger = new Security(clientRepo, email, password).kickNonSeller("");
         if (!finger.equals(""))
             return finger;
 
@@ -93,7 +90,6 @@ public class ClientProperty {
         newProp.setImgs(new Storage().saveAllImages(imgs));
         propertyRepo.save(newProp);
 
-        
         return "redirect:/client/property";
     }
 
@@ -128,77 +124,6 @@ public class ClientProperty {
         }
 
         return false;
-    }
-
-    class Storage {
-        public String saveImage(MultipartFile image) {
-            // Date createdAt = new Date();
-            String dst = "public/images/properties/" + new Date() + "_" + image.getOriginalFilename();
-
-            try {
-                try (InputStream inputStream = image.getInputStream()) {
-                    Files.copy(inputStream, Paths.get(dst), StandardCopyOption.REPLACE_EXISTING);
-                }
-
-            } catch (Exception e) {
-            }
-
-            return dst;
-        }
-
-        public ArrayList<String> saveAllImages(ArrayList<MultipartFile> imgs) {
-            MultipartFile current;
-            ArrayList<String> rslt = new ArrayList<String>();
-
-            for (int i = 0; i < imgs.size(); i++) {
-                current = imgs.get(i);
-                if (current.isEmpty())
-                    break;
-
-                rslt.add(saveImage(current));
-
-            }
-
-            return rslt;
-        }
-
-    }
-
-    class Auth {
-        private String email;
-        private String pwd;
-
-        public Auth(String email, String pwd) {
-            this.email = email;
-            this.pwd = pwd;
-        }
-
-        public Boolean loggedIn(String email, String password) {
-            return new ClientKeyDTO(clientRepo, email, password).checkAuth();
-
-        }
-
-        public Boolean canSell(
-                String email, String password) {
-            return loggedIn(email, password) && clientRepo.findByEmail(email).isSells();
-        }
-
-        public String kickNonLogged(String src) {
-            if (!loggedIn(email, pwd)) {
-                return "redirect:/client/signin";
-            }
-            return src;
-        }
-
-        public String kickNonSeller(String src) {
-            if (!canSell(email, pwd)) {
-                return "redirect:/client";
-            }
-
-            return src;
-
-        }
-
     }
 
 }
