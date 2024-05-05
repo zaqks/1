@@ -21,7 +21,8 @@ public class PropertyCreateDTO extends Property {
         rslt.setGrgs(this.getGrgs());
         rslt.setPools(this.getPools());
         rslt.setRooms(this.getRooms());
-        
+        rslt.setDescription(this.getDescription());
+
         return rslt;
     }
 

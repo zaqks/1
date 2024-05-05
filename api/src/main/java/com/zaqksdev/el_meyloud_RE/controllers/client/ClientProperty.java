@@ -74,7 +74,8 @@ public class ClientProperty {
     }
 
     @PostMapping("/property/add")
-    public String addProperty(@Valid @ModelAttribute("property") PropertyCreateDTO property, BindingResult result,
+    public String addProperty(
+            @Valid @ModelAttribute("property") PropertyCreateDTO property, BindingResult result,
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {

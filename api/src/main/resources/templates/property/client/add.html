@@ -61,6 +61,8 @@
             <li th:each="err:${#fields.errors('rooms')}" th:text="${err}"></li>
         </ul>
 
+        <textarea cols="30" rows="10" th:field="*{description}" ></textarea>
+
 
         <label id="imgLabel" for="img#1">Add img</label>
             
