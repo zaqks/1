@@ -18,14 +18,37 @@
     <h1>My properties</h1>
 
 
-    <div th:each="property: ${properties}">
+    <div id="properties" th:each="property: ${properties}">
         <div class="propertyCard">
-            <p id="addr" th:text="${property.addr}"></p>
+            <img th:src="${property.imgs[0]}" alt="">
 
+
+            <div id="info">
+                <p id="addr" th:text="@{'addr: ' +  ${property.addr}}"></p>
+
+
+                <div class="row" id="coords">
+                    <p id="addr" th:text="${property.x}"></p>
+                    <p id="addr" th:text="${property.y}"></p>
+                </div>
+
+
+                <p id="addr" th:text="@{${property.surf} + 'm²' }"></p>
+                <p id="addr" th:text="@{'rooms: ' + ${property.rooms}}"></p>
+
+
+                <p id="addr" th:text="@{'floors: ' + ${property.floors}}"></p>
+                <p id="addr" th:text="@{'cars: ' + ${property.grgs}}"></p>
+                <p id="addr" th:text="@{'pools: ' +  ${property.pools}}"></p>
+            </div>
+
+
+        </div>
+        <!--
             <div id="imgs" th:each="img :${property.imgs}">
                 <img th:src="@{'/' + ${img}}" alt="">
             </div>            
-        </div>
+            -->
     </div>
 
 

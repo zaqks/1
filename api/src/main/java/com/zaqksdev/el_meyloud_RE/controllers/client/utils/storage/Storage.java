@@ -15,11 +15,11 @@ import java.util.Date;
 public class Storage {
     public String saveImage(MultipartFile image) {
         // Date createdAt = new Date();
-        String dst = "images/properties/" + new Date() + "_" + image.getOriginalFilename();
+        String dst = "/images/properties/" + new Date() + "_" + image.getOriginalFilename();
 
         try {
             try (InputStream inputStream = image.getInputStream()) {
-                Files.copy(inputStream, Paths.get("public/" + dst), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(inputStream, Paths.get("public" + dst), StandardCopyOption.REPLACE_EXISTING);
             }
 
         } catch (Exception e) {

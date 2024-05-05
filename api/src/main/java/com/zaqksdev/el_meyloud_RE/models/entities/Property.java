@@ -20,10 +20,9 @@ public class Property {
     private float x, y;
 
     @Min(value = 1, message = "invalid value")
-    private int surf;
+    private int surf, rooms;
     private int floors, grgs, pools;
-    @Min(value = 1, message = "invalid value")
-    private int rooms;
+    
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
