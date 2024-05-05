@@ -42,7 +42,7 @@ public class ClientProperty {
 
         model.addAttribute("properties", propertyRepo.findByOwner(clientRepo.findByEmail(email)));
 
-        return new Security(clientRepo, email, password).kickNonSeller("property/client/show");
+        return new Security(clientRepo, email, password).kickNonSeller("property/client/showAll");
     }
 
     @GetMapping("/property/add")

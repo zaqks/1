@@ -19,7 +19,8 @@
 
 
     <div id="properties" th:each="property: ${properties}">
-        <div class="propertyCard">
+        <div class="propertyCard" th:prp_id="${property.id}"
+            th:onclick="window.location.href=`/client/property/${this.getAttribute('prp_id')}`">
             <img th:src="${property.imgs[0]}" alt="">
 
 
