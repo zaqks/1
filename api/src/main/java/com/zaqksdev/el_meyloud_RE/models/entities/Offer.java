@@ -11,11 +11,11 @@ public class Offer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Min(value = 500, message = "too small")
+    @Min(value = 10000, message = "too small")
     private int price;
     private boolean rent;
 
-    @Size(max = 256, message = "too long")
+    @Size(min = 16, max = 256, message = "invalid length")
     private String description;
 
     @OneToOne(cascade = CascadeType.ALL)

@@ -18,10 +18,17 @@
 
     <form method="post" th:object="${offer}">
         <input th:field="*{price}" type="number" placeholder="price">
-        
+        <ul>
+            <li th:each="err:${#fields.errors('price')}" th:text="${err}"></li>
+        </ul>
+
         <p>rent</p>
         <input th:value="*{rent}" type="checkbox" placeholder="rent">
+        
         <textarea th:value="*{description}" cols="30" rows="10"></textarea>
+        <ul>
+            <li th:each="err:${#fields.errors('description')}" th:text="${err}"></li>
+        </ul>
 
 
         <button type="submit">Create</button>

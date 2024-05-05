@@ -48,24 +48,26 @@ public class ClientOffer {
 
     @PostMapping("/add/{id}")
     public String addOffer(
-            @Valid @ModelAttribute("property") OfferCreateDTO property, BindingResult result,
             Model model,
+            @PathVariable(name = "id") int id,
+
+            @Valid @ModelAttribute("offer") OfferCreateDTO offer,
+            BindingResult result,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
         String finger = new Security(clientRepo, email, password).kickNonSeller("");
         if (!finger.equals(""))
             return finger;
 
+        model.addAttribute("id", id);
+        model.addAttribute("offer", offer);
+
         // form validation
-        
 
         // existance
-        
-        
 
-        return "redirect:/client/offer";
+
+        return "redirect:/client/offer/add/" + id;
     }
-
-     
 
 }
