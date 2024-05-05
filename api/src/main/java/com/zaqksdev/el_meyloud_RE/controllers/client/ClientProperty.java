@@ -89,7 +89,7 @@ public class ClientProperty {
         imgs.add(property.getImg4());
         imgs.add(property.getImg5());
 
-        newProp.setImgs(new Storage().saveAllImages(imgs));
+        new Storage().saveAllImages(newProp, imgs);
         propertyRepo.save(newProp);
 
         return "redirect:/client/property";

@@ -1,6 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.models.entities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -28,7 +29,10 @@ public class Property {
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Client owner;
 
-    private ArrayList<String> imgs;
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "imgs", joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "imgs", nullable = false)
+    private List<String> imgs = new ArrayList<String>();
 
     public int getId() {
         return id;
@@ -110,11 +114,11 @@ public class Property {
         this.owner = owner;
     }
 
-    public ArrayList<String> getImgs() {
+    public List<String> getImgs() {
         return imgs;
     }
 
-    public void setImgs(ArrayList<String> imgs) {
+    public void setImgs(List<String> imgs) {
         this.imgs = imgs;
     }
 
