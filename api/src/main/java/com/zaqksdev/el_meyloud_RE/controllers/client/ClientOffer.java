@@ -16,6 +16,7 @@ import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -33,28 +34,38 @@ public class ClientOffer {
         return new Security(clientRepo, email, password).kickNonSeller("offer/client/showAll");
     }
 
-    @GetMapping("/add")
+    @GetMapping("/add/{id}")
     public String showAddOffer(Model model,
+            @PathVariable(name = "id") int id,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        model.addAttribute("offer", new Offer());
+        model.addAttribute("id", id);
+        model.addAttribute("offer", new OfferCreateDTO());
 
         return new Security(clientRepo, email, password).kickNonSeller("offer/client/add");
     }
 
-    @PostMapping("/add")
-    public String addOffer(Model model,
-            @Valid @ModelAttribute("offer") OfferCreateDTO offer, BindingResult result,
+    @PostMapping("/add/{id}")
+    public String addOffer(
+            @Valid @ModelAttribute("property") OfferCreateDTO property, BindingResult result,
+            Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
         String finger = new Security(clientRepo, email, password).kickNonSeller("");
         if (!finger.equals(""))
             return finger;
 
-        model.addAttribute("offer", offer);
+        // form validation
+        
 
-        return new Security(clientRepo, email, password).kickNonSeller("offer/client/add");
+        // existance
+        
+        
+
+        return "redirect:/client/offer";
     }
+
+     
 
 }

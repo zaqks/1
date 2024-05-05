@@ -1,6 +1,8 @@
 package com.zaqksdev.el_meyloud_RE.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "offers")
@@ -8,9 +10,13 @@ public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
-    private int price, rent;
 
+    @Min(value = 500, message = "too small")
+    private int price;
+    private boolean rent;
+
+    @Size(max = 256, message = "too long")
+    private String description;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "src_client_id", referencedColumnName = "id")
@@ -40,14 +46,6 @@ public class Offer {
         this.price = price;
     }
 
-    public int getRent() {
-        return rent;
-    }
-
-    public void setRent(int rent) {
-        this.rent = rent;
-    }
-
     public Client getSrc() {
         return src;
     }
@@ -72,8 +70,20 @@ public class Offer {
         this.property = property;
     }
 
+    public boolean isRent() {
+        return rent;
+    }
 
+    public void setRent(boolean rent) {
+        this.rent = rent;
+    }
 
-    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
 }

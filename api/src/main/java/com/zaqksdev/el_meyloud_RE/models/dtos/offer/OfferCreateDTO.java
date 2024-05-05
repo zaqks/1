@@ -1,7 +1,8 @@
 package com.zaqksdev.el_meyloud_RE.models.dtos.offer;
 
 public class OfferCreateDTO {
-    private int price, rent;
+    private int price;
+    private boolean rent;
 
     public int getPrice() {
         return price;
