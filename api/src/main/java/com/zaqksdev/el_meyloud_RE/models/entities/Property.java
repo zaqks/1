@@ -23,6 +23,9 @@ public class Property {
     private int surf, rooms;
     private int floors, grgs, pools;
     
+    @Size(min=0, max = 256, message = "too long")
+    private String description;
+
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
@@ -32,6 +35,8 @@ public class Property {
     @CollectionTable(name = "imgs", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "imgs", nullable = false)
     private List<String> imgs = new ArrayList<String>();
+
+    
 
     public int getId() {
         return id;
@@ -120,5 +125,17 @@ public class Property {
     public void setImgs(List<String> imgs) {
         this.imgs = imgs;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
+    
 
 }

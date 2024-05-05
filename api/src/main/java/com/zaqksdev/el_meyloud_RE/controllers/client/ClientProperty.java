@@ -1,7 +1,6 @@
 package com.zaqksdev.el_meyloud_RE.controllers.client;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +22,7 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -34,7 +34,7 @@ public class ClientProperty {
     private PropertyRepo propertyRepo;
 
     @GetMapping("/property")
-    public String showProperty(
+    public String showAllProperty(
 
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
@@ -43,6 +43,23 @@ public class ClientProperty {
         model.addAttribute("properties", propertyRepo.findByOwner(clientRepo.findByEmail(email)));
 
         return new Security(clientRepo, email, password).kickNonSeller("property/client/showAll");
+    }
+
+    @GetMapping("/property/{id}")
+    public String showProperty(
+            @PathVariable(name = "id", required = true) int id,
+            Model model,
+            @CookieValue(name = "email", defaultValue = "") String email,
+            @CookieValue(name = "password", defaultValue = "") String password) {
+
+        Property rslt = propertyRepo.findById(id);
+        if (rslt != null) {
+            model.addAttribute("property", rslt);
+            return new Security(clientRepo, email, password).kickNonSeller("property/client/show");
+        } else {
+            return "redirect:/client/property";
+        }
+
     }
 
     @GetMapping("/property/add")
@@ -76,7 +93,7 @@ public class ClientProperty {
         }
 
         // existance
-        if (existingProperty(result, property))
+        if (new Storage().existingProperty(propertyRepo, result, property))
             return "property/client/add";
 
         Property newProp = property.convertToEntity();
@@ -93,39 +110,6 @@ public class ClientProperty {
         propertyRepo.save(newProp);
 
         return "redirect:/client/property";
-    }
-
-    Boolean existingProperty(BindingResult result, PropertyCreateDTO property) {
-        // check the addr
-        if (propertyRepo.findByAddr(property.getAddr()) != null) {
-            result.rejectValue("addr", null, "already existing");
-            return true;
-        }
-        // check the coords
-        float x = property.getX();
-        float y = property.getY();
-        int i;
-
-        List<Property> xlst = propertyRepo.findByX(x);
-        List<Property> ylst = propertyRepo.findByX(y);
-
-        for (i = 0; i < xlst.size(); i++) {
-            if (xlst.get(i).getY() == y) {
-                result.rejectValue("x", null, "already existing");
-                result.rejectValue("y", null, "already existing");
-                return true;
-            }
-        }
-
-        for (i = 0; i < ylst.size(); i++) {
-            if (ylst.get(i).getX() == x) {
-                result.rejectValue("x", null, "already existing");
-                result.rejectValue("y", null, "already existing");
-                return true;
-            }
-        }
-
-        return false;
     }
 
 }
