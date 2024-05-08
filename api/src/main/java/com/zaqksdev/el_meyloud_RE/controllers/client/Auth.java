@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zaqksdev.el_meyloud_RE.models.dtos.auth.ClientKeyDTO;
-import com.zaqksdev.el_meyloud_RE.models.entities.Client;
-import com.zaqksdev.el_meyloud_RE.services.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.dtos.auth.ClientKeyDTO;
+import com.zaqksdev.el_meyloud_RE.models.Client;
+import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;

@@ -7,10 +7,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zaqksdev.el_meyloud_RE.controllers.client.utils.security.Security;
-import com.zaqksdev.el_meyloud_RE.models.dtos.offer.OfferCreateDTO;
-import com.zaqksdev.el_meyloud_RE.models.entities.Offer;
-import com.zaqksdev.el_meyloud_RE.services.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.dtos.offer.OfferCreateDTO;
+import com.zaqksdev.el_meyloud_RE.models.Offer;
+import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
+import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
+import com.zaqksdev.el_meyloud_RE.services.SecurityService;
 
 import jakarta.validation.Valid;
 
@@ -25,13 +27,33 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ClientOffer {
     @Autowired
     private ClientRepo clientRepo;
+    @Autowired
+    private PropertyRepo propertyRepo;
+    @Autowired
+    private OfferRepo offerRepo;
+
+    @Autowired
+    private SecurityService authSevice;
 
     @GetMapping("")
     public String showAllOffer(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        return new Security(clientRepo, email, password).kickNonSeller("offer/client/showAll");
+        model.addAttribute("offers", offerRepo.findByOwner(clientRepo.findByEmail(email)));
+
+        return new SecurityService(email, password).new ClientAuth().kickNonSeller("offer/client/showAll");
+
+    }
+
+    @GetMapping("/{id}")
+    public String showOffer(Model model,
+            @CookieValue(name = "email", defaultValue = "") String email,
+            @CookieValue(name = "password", defaultValue = "") String password) {
+
+        model.addAttribute("offers", offerRepo.findByOwner(clientRepo.findByEmail(email)));
+
+        return new SecurityService(email, password).new ClientAuth().kickNonSeller("offer/client/show");
     }
 
     @GetMapping("/add/{id}")
@@ -43,31 +65,33 @@ public class ClientOffer {
         model.addAttribute("id", id);
         model.addAttribute("offer", new OfferCreateDTO());
 
-        return new Security(clientRepo, email, password).kickNonSeller("offer/client/add");
+        return new SecurityService(email, password).new ClientAuth().kickNonSeller("offer/client/add");
     }
 
     @PostMapping("/add/{id}")
     public String addOffer(
-            Model model,
             @PathVariable(name = "id") int id,
-
+            Model model,
             @Valid @ModelAttribute("offer") OfferCreateDTO offer,
             BindingResult result,
+
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-        String finger = new Security(clientRepo, email, password).kickNonSeller("");
+        String finger = new SecurityService(email, password).new ClientAuth().kickNonSeller("");
         if (!finger.equals(""))
             return finger;
 
-        model.addAttribute("id", id);
-        model.addAttribute("offer", offer);
+        // check errors
+        if (result.hasErrors()) {
+            return "offer/client/add";
+        }
 
-        // form validation
+        // save
+        Offer offr = offer.convertToEntity(clientRepo.findByEmail(email), propertyRepo.findById(id));
+        offerRepo.save(offr);
 
-        // existance
+        return "redirect:/client/offer";
 
-
-        return "redirect:/client/offer/add/" + id;
     }
 
 }

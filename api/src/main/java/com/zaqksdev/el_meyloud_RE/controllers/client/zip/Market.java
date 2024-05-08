@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zaqksdev.el_meyloud_RE.controllers.client.utils.security.Security;
-import com.zaqksdev.el_meyloud_RE.services.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.services.SecurityService;
+
 
 @Controller
 @RequestMapping("client")
@@ -21,7 +22,7 @@ public class Market {
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        return new Security(clientRepo, email, password).kickNonLogged("market/home");
+        return new SecurityService(clientRepo, email, password).kickNonLogged("market/home");
 
     }
 }

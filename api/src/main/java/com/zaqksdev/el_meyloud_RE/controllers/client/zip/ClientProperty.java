@@ -9,13 +9,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.zaqksdev.el_meyloud_RE.controllers.client.utils.security.Security;
-import com.zaqksdev.el_meyloud_RE.controllers.client.utils.storage.Storage;
-import com.zaqksdev.el_meyloud_RE.models.dtos.property.PropertyCreateDTO;
-
-import com.zaqksdev.el_meyloud_RE.models.entities.Property;
-import com.zaqksdev.el_meyloud_RE.services.repos.ClientRepo;
-import com.zaqksdev.el_meyloud_RE.services.repos.PropertyRepo;
+import com.zaqksdev.el_meyloud_RE.dtos.property.PropertyCreateDTO;
+import com.zaqksdev.el_meyloud_RE.models.Property;
+import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
+import com.zaqksdev.el_meyloud_RE.services.SecurityService;
+import com.zaqksdev.el_meyloud_RE.services.Storage;
 
 import jakarta.validation.Valid;
 
@@ -42,7 +41,7 @@ public class ClientProperty {
 
         model.addAttribute("properties", propertyRepo.findByOwner(clientRepo.findByEmail(email)));
 
-        return new Security(clientRepo, email, password).kickNonSeller("property/client/showAll");
+        return new SecurityService(clientRepo, email, password).kickNonSeller("property/client/showAll");
     }
 
     @GetMapping("/property/{id}")
@@ -53,12 +52,15 @@ public class ClientProperty {
             @CookieValue(name = "password", defaultValue = "") String password) {
 
         Property rslt = propertyRepo.findById(id);
+
         if (rslt != null) {
-            model.addAttribute("property", rslt);
-            return new Security(clientRepo, email, password).kickNonSeller("property/client/show");
-        } else {
-            return "redirect:/client/property";
+            // check if he's the owner
+            if (rslt.getOwner().getId() == clientRepo.findByEmail(email).getId()) {
+                model.addAttribute("property", rslt);
+                return new SecurityService(clientRepo, email, password).kickNonSeller("property/client/show");
+            }
         }
+        return "redirect:/client/property";
 
     }
 
@@ -70,7 +72,7 @@ public class ClientProperty {
 
         model.addAttribute("property", new PropertyCreateDTO());
 
-        return new Security(clientRepo, email, password).kickNonSeller("property/client/add");
+        return new SecurityService(clientRepo, email, password).kickNonSeller("property/client/add");
     }
 
     @PostMapping("/property/add")
@@ -79,7 +81,7 @@ public class ClientProperty {
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-        String finger = new Security(clientRepo, email, password).kickNonSeller("");
+        String finger = new SecurityService(clientRepo, email, password).kickNonSeller("");
         if (!finger.equals(""))
             return finger;
 
