@@ -62,10 +62,9 @@ public class SecurityService {
             return clientRepo.findByEmail(email);
         }
 
-        public void save(Client client){
+        public void save(Client client) {
             clientRepo.save(client);
         }
-        
 
         public class Form {
             private BindingResult result;
@@ -75,14 +74,15 @@ public class SecurityService {
             }
 
             public boolean checkSGIN() {
-                Client client = ((ClientAuth) clientRepo).get();
+
+                Client client = get();
 
                 if (client == null) {
                     result.rejectValue("email", null, "unexisting email");
                     return false;
                 }
 
-                if (((ClientAuth) clientRepo).checkAuth()) {
+                if (!checkAuth()) {
                     result.rejectValue("password", null, "incorrect password");
                     return false;
                 }
@@ -90,7 +90,7 @@ public class SecurityService {
             }
 
             public boolean checkSGUP() {
-                Client client = ((ClientAuth) clientRepo).get();
+                Client client = get();
 
                 if (clientRepo.findByNin(client.getNin()) != null) {
                     result.rejectValue("nin", null, "already in use");
