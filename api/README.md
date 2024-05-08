@@ -2,7 +2,7 @@
 
 
 # client actions:
--see the availble offers and filter them
+-filter the availble offers 
 -book an appointment to visit l 7ala (then buy/rent, the contracts will be created by an agent)
 -see his contracts and profile
 
@@ -30,3 +30,4 @@
 
 # client actions: 
 -put his property for sale (needs to be checked and activated by an agent)
+-see the availble offers
