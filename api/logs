@@ -13,90 +13,34 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-05T03:43:42.342+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 605543 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
-2024-05-05T03:43:42.346+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
-2024-05-05T03:43:42.487+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-05T03:43:42.488+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-05T03:43:44.181+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-05T03:43:44.308+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 2 JPA repository interfaces.
-2024-05-05T03:43:45.035+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
-2024-05-05T03:43:45.051+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-05T03:43:45.051+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-05T03:43:45.086+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-05T03:43:45.087+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2595 ms
-2024-05-05T03:43:45.299+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-05T03:43:45.358+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-05T03:43:45.408+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-05T03:43:45.778+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-05T03:43:45.850+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-05T03:43:46.347+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46df8710
-2024-05-05T03:43:46.352+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-05T03:43:46.420+01:00  WARN 605543 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-05-05T03:43:46.453+01:00  WARN 605543 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-05T03:43:46.457+01:00  WARN 605543 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-05-05T03:43:48.200+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-05T03:43:48.489+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-05T03:43:48.941+01:00  WARN 605543 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-05T03:43:49.031+01:00  WARN 605543 --- [el_meyloud_RE] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invalid mapping on handler class [com.zaqksdev.el_meyloud_RE.controllers.client.ClientProperty]: public java.lang.String com.zaqksdev.el_meyloud_RE.controllers.client.ClientProperty.showProperty(org.springframework.ui.Model,java.lang.String,java.lang.String)
-2024-05-05T03:43:49.032+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-05T03:43:49.034+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-05T03:43:49.041+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-05T03:43:49.044+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-05-05T03:43:49.055+01:00  INFO 605543 --- [el_meyloud_RE] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-05-05T03:43:49.071+01:00 ERROR 605543 --- [el_meyloud_RE] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invalid mapping on handler class [com.zaqksdev.el_meyloud_RE.controllers.client.ClientProperty]: public java.lang.String com.zaqksdev.el_meyloud_RE.controllers.client.ClientProperty.showProperty(org.springframework.ui.Model,java.lang.String,java.lang.String)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
-	at com.zaqksdev.el_meyloud_RE.ElMeyloudReApplication.main(ElMeyloudReApplication.java:10) ~[main/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
-Caused by: java.lang.IllegalStateException: Invalid mapping on handler class [com.zaqksdev.el_meyloud_RE.controllers.client.ClientProperty]: public java.lang.String com.zaqksdev.el_meyloud_RE.controllers.client.ClientProperty.showProperty(org.springframework.ui.Model,java.lang.String,java.lang.String)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:287) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.core.MethodIntrospector.lambda$selectMethods$0(MethodIntrospector.java:75) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:366) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.core.MethodIntrospector.selectMethods(MethodIntrospector.java:73) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:280) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
-	... 19 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'id' in value "/property/${id}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:953) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.beans.factory.config.EmbeddedValueResolver.resolveStringValue(EmbeddedValueResolver.java:54) ~[spring-beans-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.resolveEmbeddedValuesInPatterns(RequestMappingHandlerMapping.java:472) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.createRequestMappingInfo(RequestMappingHandlerMapping.java:423) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.createRequestMappingInfo(RequestMappingHandlerMapping.java:363) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getMappingForMethod(RequestMappingHandlerMapping.java:317) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getMappingForMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:283) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	... 29 common frames omitted
-
-
-BUILD SUCCESSFUL in 17s
-4 actionable tasks: 1 executed, 3 up-to-date
+2024-05-08T00:43:15.752+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 830811 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-08T00:43:15.755+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-08T00:43:15.820+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-08T00:43:15.820+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-08T00:43:17.410+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-08T00:43:17.595+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 3 JPA repository interfaces.
+2024-05-08T00:43:18.893+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-08T00:43:18.923+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-08T00:43:18.924+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-08T00:43:19.120+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-08T00:43:19.124+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3299 ms
+2024-05-08T00:43:19.563+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-08T00:43:19.612+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-08T00:43:19.647+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-08T00:43:20.042+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-08T00:43:20.070+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-08T00:43:20.376+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bf56180
+2024-05-08T00:43:20.382+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-08T00:43:20.462+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-08T00:43:20.499+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-08T00:43:20.501+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-08T00:43:22.309+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-08T00:43:22.557+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-08T00:43:23.074+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-08T00:43:23.598+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-08T00:43:23.628+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-08T00:43:23.638+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 8.355 seconds (process running for 8.793)
+2024-05-08T00:43:59.347+01:00  INFO 830811 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 0 deletions, 23 modifications)
+2024-05-08T00:43:59.374+01:00  INFO 830811 --- [el_meyloud_RE] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-08T00:43:59.384+01:00  INFO 830811 --- [el_meyloud_RE] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-08T00:43:59.408+01:00  INFO 830811 --- [el_meyloud_RE] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -7,11 +7,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fasterxml.jackson.datatype.jsr310.ser.OffsetTimeSerializer;
 import com.zaqksdev.el_meyloud_RE.dtos.offer.OfferCreateDTO;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
+import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
 import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
+import com.zaqksdev.el_meyloud_RE.services.OfferService;
+import com.zaqksdev.el_meyloud_RE.services.PropertyService;
 import com.zaqksdev.el_meyloud_RE.services.SecurityService;
 
 import jakarta.validation.Valid;
@@ -26,34 +30,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 public class ClientOffer {
     @Autowired
-    private ClientRepo clientRepo;
+    private SecurityService authSrvc;
     @Autowired
-    private PropertyRepo propertyRepo;
+    private OfferService offrSrvc;
     @Autowired
-    private OfferRepo offerRepo;
-
-    @Autowired
-    private SecurityService authSevice;
+    private PropertyService prprtSrvc;
 
     @GetMapping("")
     public String showAllOffer(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        model.addAttribute("offers", offerRepo.findByOwner(clientRepo.findByEmail(email)));
+        model.addAttribute("offers", offrSrvc.getOf(email));
 
-        return new SecurityService(email, password).new ClientAuth().kickNonSeller("offer/client/showAll");
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/showAll");
 
     }
 
     @GetMapping("/{id}")
-    public String showOffer(Model model,
+    public String showOffer(
+            @PathVariable(name = "id") int id,
+            Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        model.addAttribute("offers", offerRepo.findByOwner(clientRepo.findByEmail(email)));
+        Offer rslt = offrSrvc.getOf(email, id);
+        if (rslt == null)
+            return "redirect:/client/offer";
 
-        return new SecurityService(email, password).new ClientAuth().kickNonSeller("offer/client/show");
+        model.addAttribute("offer", rslt);
+
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/show");
     }
 
     @GetMapping("/add/{id}")
@@ -62,10 +69,14 @@ public class ClientOffer {
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
+        // check if prop id exists
+        if (prprtSrvc.getOf(email, id) == null)
+            return "redirect:/";
+
         model.addAttribute("id", id);
         model.addAttribute("offer", new OfferCreateDTO());
 
-        return new SecurityService(email, password).new ClientAuth().kickNonSeller("offer/client/add");
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/add");
     }
 
     @PostMapping("/add/{id}")
@@ -77,9 +88,13 @@ public class ClientOffer {
 
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-        String finger = new SecurityService(email, password).new ClientAuth().kickNonSeller("");
+        String finger = authSrvc.new ClientAuth(email, password).kickNonSeller("");
         if (!finger.equals(""))
             return finger;
+
+        Property prop = prprtSrvc.getOf(email, id);
+        if (prop == null)
+            return "redirect:/";
 
         // check errors
         if (result.hasErrors()) {
@@ -87,8 +102,8 @@ public class ClientOffer {
         }
 
         // save
-        Offer offr = offer.convertToEntity(clientRepo.findByEmail(email), propertyRepo.findById(id));
-        offerRepo.save(offr);
+        Offer offr = offer.convertToEntity(prop.getOwner(), prop);
+        offrSrvc.save(offr);
 
         return "redirect:/client/offer";
 

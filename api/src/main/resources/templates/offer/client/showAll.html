@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,43 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-
+    <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
 </head>
+
 <body>
     <h1>My Offers</h1>
 
+    <div id="offers" th:each="offer: ${offers}">
+        <div class="offerCard" th:prp_id="${offer.id}"
+            th:onclick="window.location.href=`/client/offer/${this.getAttribute('prp_id')}`">
+            <img th:src="${offer.property.imgs[0]}" alt="">
+
+            <div id="info">
+                <h3 th:text="@{'offer' + ${offer.id}}"></h3>
+                <h4 th:text="@{${offer.price} + 'DA'}"></h4>
+
+                <h3 th:if="${offer.rent}">Rent</h3>
+                <h3 th:if="${!offer.rent}">Sell</h3>
+
+
+                <p id="addr" th:text="@{'addr: ' +  ${offer.property.addr}}"></p>
+
+                <div class="row" id="coords">
+                    <p id="addr" th:text="${offer.property.x}"></p>
+                    <p id="addr" th:text="${offer.property.y}"></p>
+                </div>
+
+                <p id="addr" th:text="@{${offer.property.surf} + 'm²' }"></p>
+                <p id="addr" th:text="@{'rooms: ' + ${offer.property.rooms}}"></p>
+
+                <p id="addr" th:text="@{'floors: ' + ${offer.property.floors}}"></p>
+                <p id="addr" th:text="@{'cars: ' + ${offer.property.grgs}}"></p>
+                <p id="addr" th:text="@{'pools: ' +  ${offer.property.pools}}"></p>
+            </div>
+
+
+        </div>
+
 </body>
+
 </html>

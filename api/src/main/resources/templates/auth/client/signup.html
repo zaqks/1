@@ -76,7 +76,7 @@
 
 
         <label for="sells">Sells</label>
-        <input id="sells" type="checkbox" th:value="*{sells}">
+        <input id="sells" type="checkbox" th:field="*{sells}">
         <ul>
             <li th:each="err:${#fields.errors('sells')}" th:text="${err}"></li>
         </ul>
