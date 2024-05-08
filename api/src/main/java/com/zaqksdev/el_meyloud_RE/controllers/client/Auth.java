@@ -86,7 +86,7 @@ public class Auth {
         String email = client.getEmail();
         String password = client.getPassword();
 
-        if (!authSrvc.new ClientAuth(email, password).new Form(result).checkSGUP())
+        if (!authSrvc.new ClientAuth().new Form(result).checkSGUP(client))
             return "auth/client/signup";
 
         authSrvc.new ClientAuth(email, password).save(client);

@@ -34,3 +34,13 @@
 .offerCard #coords {
     column-gap: 10px;
 }
+
+
+.offerCard.checked {
+    background-color: lightgreen;
+}
+
+
+.offerCard.nonChecked {
+    background-color: lightcoral;
+}

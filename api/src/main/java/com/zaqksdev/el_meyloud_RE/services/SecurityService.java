@@ -19,6 +19,9 @@ public class SecurityService {
     public class ClientAuth {
         private String email, password;
 
+        public ClientAuth() {
+        }
+
         public ClientAuth(String email, String password) {
             this.email = email;
             this.password = password;
@@ -89,8 +92,7 @@ public class SecurityService {
                 return true;
             }
 
-            public boolean checkSGUP() {
-                Client client = get();
+            public boolean checkSGUP(Client client) {
 
                 if (clientRepo.findByNin(client.getNin()) != null) {
                     result.rejectValue("nin", null, "already in use");
