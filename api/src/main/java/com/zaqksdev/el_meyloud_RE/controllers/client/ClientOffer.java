@@ -39,7 +39,7 @@ public class ClientOffer {
     public String showAllOffer(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-
+            
         model.addAttribute("offers", offrSrvc.getOf(email));
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/showAll");

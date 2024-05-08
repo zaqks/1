@@ -3,7 +3,6 @@ package com.zaqksdev.el_meyloud_RE.controllers.client;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.zaqksdev.el_meyloud_RE.dtos.auth.ClientKeyDTO;
 import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
+import com.zaqksdev.el_meyloud_RE.services.SecurityService;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
@@ -25,7 +25,7 @@ import jakarta.validation.Valid;
 @RequestMapping("client/")
 public class Auth {
     @Autowired
-    private ClientRepo repo;
+    private SecurityService authSrvc;
 
     @GetMapping("signin")
     public String showSignIn(Model model) {
@@ -41,19 +41,15 @@ public class Auth {
         if (result.hasErrors()) {
             return "auth/client/signin";
         }
+
+        String email = client.getEmail();
+        String password = client.getPassword();
+
         // check existance
-        Client check = repo.findByEmail(client.getEmail());
-
-        if (check == null) {
-            result.rejectValue("email", null, "unexisting email");
+        if (!authSrvc.new ClientAuth(email, password).new Form(result).checkSGIN())
             return "auth/client/signin";
-        }
 
-        if (!(check.getPassword().equals(client.getPassword()))) {
-            result.rejectValue("password", null, "incorrect password");
-            return "auth/client/signin";
-        }
-
+        // set the cookies
         Cookie emailCookie = new Cookie("email", null);
         Cookie passwordCookie = new Cookie("password", null);
         emailCookie.setMaxAge(0);
@@ -87,31 +83,15 @@ public class Auth {
             return "auth/client/signup";
         }
 
-        // nin, phonenum, email, ccp, rip
-        // name=[val, func]
-        if (repo.findByNin(client.getNin()) != null) {
-            result.rejectValue("nin", null, "already in use");
-            return "auth/client/signup";
-        }
-        if (repo.findByNin(client.getPhonenum()) != null) {
-            result.rejectValue("phonenum", null, "already in use");
-            return "auth/client/signup";
-        }
-        if (repo.findByNin(client.getEmail()) != null) {
-            result.rejectValue("email", null, "already in use");
-            return "auth/client/signup";
-        }
-        if (repo.findByNin(client.getCcp()) != null) {
-            result.rejectValue("ccp", null, "already in use");
-            return "auth/client/signup";
-        }
-        if (repo.findByNin(client.getRip()) != null) {
-            result.rejectValue("rip", null, "already in use");
-            return "auth/client/signup";
-        }
+        String email = client.getEmail();
+        String password = client.getPassword();
 
-        repo.save(client);
+        if (!authSrvc.new ClientAuth(email, password).new Form(result).checkSGUP())
+            return "auth/client/signup";
 
+        authSrvc.new ClientAuth(email, password).save(client);
+
+        // set the cookies
         Cookie emailCookie = new Cookie("email", null);
         Cookie passwordCookie = new Cookie("password", null);
         emailCookie.setMaxAge(0);

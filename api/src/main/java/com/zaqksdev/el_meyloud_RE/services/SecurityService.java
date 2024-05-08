@@ -2,6 +2,7 @@ package com.zaqksdev.el_meyloud_RE.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
@@ -59,6 +60,62 @@ public class SecurityService {
 
         public Client get() {
             return clientRepo.findByEmail(email);
+        }
+
+        public void save(Client client){
+            clientRepo.save(client);
+        }
+        
+
+        public class Form {
+            private BindingResult result;
+
+            public Form(BindingResult result) {
+                this.result = result;
+            }
+
+            public boolean checkSGIN() {
+                Client client = ((ClientAuth) clientRepo).get();
+
+                if (client == null) {
+                    result.rejectValue("email", null, "unexisting email");
+                    return false;
+                }
+
+                if (((ClientAuth) clientRepo).checkAuth()) {
+                    result.rejectValue("password", null, "incorrect password");
+                    return false;
+                }
+                return true;
+            }
+
+            public boolean checkSGUP() {
+                Client client = ((ClientAuth) clientRepo).get();
+
+                if (clientRepo.findByNin(client.getNin()) != null) {
+                    result.rejectValue("nin", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(client.getPhonenum()) != null) {
+                    result.rejectValue("phonenum", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(client.getEmail()) != null) {
+                    result.rejectValue("email", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(client.getCcp()) != null) {
+                    result.rejectValue("ccp", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(client.getRip()) != null) {
+                    result.rejectValue("rip", null, "already in use");
+                    return false;
+                }
+
+                return true;
+            }
+
         }
 
     }
