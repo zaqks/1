@@ -20,3 +20,10 @@
 -manage the clients
 -dashboard
 
+
+
+
+# TODO
+- check the null stuff in the services
+
+

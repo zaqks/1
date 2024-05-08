@@ -27,7 +27,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequestMapping("client/offer")
-
 public class ClientOffer {
     @Autowired
     private SecurityService authSrvc;
@@ -71,7 +70,7 @@ public class ClientOffer {
 
         // check if prop id exists
         if (prprtSrvc.getOf(email, id) == null)
-            return "redirect:/";
+            return "redirect:/client/offer";
 
         model.addAttribute("id", id);
         model.addAttribute("offer", new OfferCreateDTO());
@@ -94,7 +93,7 @@ public class ClientOffer {
 
         Property prop = prprtSrvc.getOf(email, id);
         if (prop == null)
-            return "redirect:/";
+            return "redirect:/client/offer";
 
         // check errors
         if (result.hasErrors()) {
