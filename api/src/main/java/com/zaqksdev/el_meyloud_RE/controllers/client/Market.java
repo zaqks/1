@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.zaqksdev.el_meyloud_RE.services.OfferService;
 import com.zaqksdev.el_meyloud_RE.services.SecurityService;
 
 @Controller
@@ -14,13 +15,18 @@ import com.zaqksdev.el_meyloud_RE.services.SecurityService;
 public class Market {
     @Autowired
     private SecurityService authSrvc;
+    @Autowired
+    private OfferService offrSrvc;
 
     @GetMapping("")
     public String showHome(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        return authSrvc.new ClientAuth(email, password).kickNonLogged("market/home");
+        // show the offers not owned by the client
+        model.addAttribute("offers", offrSrvc.getNoOf(email));
+
+        return authSrvc.new ClientAuth(email, password).kickNonLogged("market/showAll");
 
     }
 }

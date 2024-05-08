@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offers</title>
+    <title>El Meyloud Real Estate</title>
 
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
     <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/market/showAll.css}" rel="stylesheet" />
+
+
 </head>
 
 <body>
-    <h1>My Offers</h1>
+    <h1>list the market</h1>
 
     <div id="offers" th:each="offer: ${offers}">
         <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}" th:prp_id="${offer.id}"
@@ -47,6 +50,8 @@
 
         </div>
     </div>
+
+
 
 </body>
 
