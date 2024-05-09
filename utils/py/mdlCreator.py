@@ -14,7 +14,7 @@ def replaceOn(fileLines, repDict):
     for line in fileLines:
         for j in repDict:
             if f"<PY>{j}<PY>" in line:
-                line = line.replace(f"<PY>{j}<PY>", f"<PY>{repDict[j]}<PY>")
+                line = line.replace(f"<PY>{j}<PY>", f"{repDict[j]}")
 
         rslt.append(line)
 
