@@ -2,8 +2,8 @@ from mdlCreator import getControllerLines, getTemplateLines, getStyleLines
 from os import mkdir, system
 
 APPNAME = "com.zaqksdev.el_meyloud_RE"
-ENTITIES = ["contract"]
-TEMPLATES = ["add", "show", "showAll"]
+ENTITIES = ["visit"]
+TEMPLATES = [ "show", "showAll", "update"]
 
 RSRCSPATH = "/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/src/main/resources/"
 #RSRCSPATH = "out/"
