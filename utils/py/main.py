@@ -2,11 +2,11 @@ from mdlCreator import getControllerLines, getTemplateLines, getStyleLines
 from os import mkdir, system
 
 APPNAME = "com.zaqksdev.el_meyloud_RE"
-ENTITIES = ["patient", "fichePatient"]
-TEMPLATES = ["update", "create", "showAll"]
+ENTITIES = ["contract"]
+TEMPLATES = ["add", "show", "showAll"]
 
-#RSRCSPATH = "/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/src/main/resources/"
-RSRCSPATH = "out/"
+RSRCSPATH = "/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/src/main/resources/"
+#RSRCSPATH = "out/"
 
 #reset everything
 #system("sudo rm out/static/* -r; sudo rm out/templates/* -r ")

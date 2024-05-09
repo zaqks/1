@@ -17,13 +17,13 @@ public class ClientContracts {
     private SecurityService authSrvc;
 
     @GetMapping("")
-    public String showAllOffer(Model model,
+    public String showAllContact(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
         // model.addAttribute("offers", offrSrvc.getOf(email));
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/offer/showAll");
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/client/showAll");
 
     }
 
