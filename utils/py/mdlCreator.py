@@ -1,12 +1,9 @@
-templates = {
-    "controller":None,
-    "template":None
-}
+templates = {"controller": None, "template": None}
 for i in templates:
     with open(f"templates/{i}", "r") as f:
-        templates[i]   = f.readlines()
+        templates[i] = f.readlines()
         f.close()
- 
+
 
 def replaceOn(fileLines, repDict):
     rslt = []
@@ -27,9 +24,6 @@ def getTemplateLines(title):
 
 def getControllerLines(appName, ctrlName, url):
     return replaceOn(
-        templates["controller"], {"APPNAME": appName, "CONTROLLER_NAME": ctrlName, "URL": url}
+        templates["controller"],
+        {"APPNAME": appName, "CONTROLLER_NAME": ctrlName, "URL": url},
     )
-
-
-
-
