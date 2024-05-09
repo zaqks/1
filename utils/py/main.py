@@ -2,8 +2,8 @@ from mdlCreator import getControllerLines, getTemplateLines, getStyleLines
 from os import mkdir, system
 
 APPNAME = "com.zaqksdev.el_meyloud_RE"
-ENTITIES = ["test1", "test2"]
-TEMPLATES = ["show", "add", "showAll"]
+ENTITIES = ["patient", "fichePatient"]
+TEMPLATES = ["update", "create", "showAll"]
 
 #RSRCSPATH = "/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/src/main/resources/"
 RSRCSPATH = "out/"
@@ -25,7 +25,7 @@ for i in ENTITIES:
             css.append(f"{k}/{k}")
 
         with open(tmpPath, "w") as f:
-            f.writelines(getTemplateLines(f"{j}{i[0].capitalize() + i[1:]}", getStyleLines("", css)) )
+            f.writelines(getTemplateLines(f"{j}{i[0].capitalize() + i[1:]}", getStyleLines(f"/{i}", css)) )
             f.close()
 
     #css
