@@ -1,4 +1,4 @@
-templates = {"controller": None, "template": None}
+templates = {"controller": None, "template": None, "style": None}
 for i in templates:
     with open(f"templates/{i}", "r") as f:
         templates[i] = f.readlines()
@@ -18,8 +18,18 @@ def replaceOn(fileLines, repDict):
     return rslt
 
 
-def getTemplateLines(title):
-    return replaceOn(templates["template"], {"TITLE": title})
+def getStyleLines(src, srcs=[]):
+    rslt = []
+
+    for i in srcs:
+        for j in replaceOn(templates["style"], {"URL": f"{src}/{i}.css"}):
+            rslt.append(j)
+
+    return "\t".join(rslt)
+
+
+def getTemplateLines(title, style):
+    return replaceOn(templates["template"], {"TITLE": title, "STYLE": style})
 
 
 def getControllerLines(appName, ctrlName, url):

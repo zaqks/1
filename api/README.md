@@ -23,7 +23,7 @@
 
 
 # TODO
-- check the null stuff in the services
+-check the null stuff in the services
 
 
 # DONE

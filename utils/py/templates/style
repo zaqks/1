@@ -1,0 +1,1 @@
+<link th:href="@{/css/templates<PY>URL<PY>}" rel="stylesheet" />
