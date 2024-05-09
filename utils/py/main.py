@@ -9,11 +9,9 @@ TEMPLATES = ["show", "add", "showAll"]
 RSRCSPATH = "out/"
 
 #reset everything
-system("sudo rm out/static/* -r; sudo rm out/templates/* -r ")
+#system("sudo rm out/static/* -r; sudo rm out/templates/* -r ")
 
-#create templates
-#static
-
+ 
 for i in ENTITIES:
     #folder
     rcrcPath = f"{RSRCSPATH}templates/{i}"
@@ -27,7 +25,7 @@ for i in ENTITIES:
             css.append(f"{k}/{k}")
 
         with open(tmpPath, "w") as f:
-            f.writelines(getTemplateLines(f"{j}{i}", getStyleLines("", css)) )
+            f.writelines(getTemplateLines(f"{j}{i[0].capitalize() + i[1:]}", getStyleLines("", css)) )
             f.close()
 
     #css
