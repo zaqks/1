@@ -13,34 +13,41 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-08T00:43:15.752+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 830811 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
-2024-05-08T00:43:15.755+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
-2024-05-08T00:43:15.820+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-08T00:43:15.820+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-08T00:43:17.410+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-08T00:43:17.595+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 3 JPA repository interfaces.
-2024-05-08T00:43:18.893+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
-2024-05-08T00:43:18.923+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-08T00:43:18.924+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-08T00:43:19.120+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-08T00:43:19.124+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3299 ms
-2024-05-08T00:43:19.563+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-08T00:43:19.612+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-08T00:43:19.647+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-08T00:43:20.042+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-08T00:43:20.070+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-08T00:43:20.376+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bf56180
-2024-05-08T00:43:20.382+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-08T00:43:20.462+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-05-08T00:43:20.499+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-08T00:43:20.501+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2024-05-08T00:43:22.309+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-08T00:43:22.557+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-08T00:43:23.074+01:00  WARN 830811 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-08T00:43:23.598+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-08T00:43:23.628+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
-2024-05-08T00:43:23.638+01:00  INFO 830811 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 8.355 seconds (process running for 8.793)
-2024-05-08T00:43:59.347+01:00  INFO 830811 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 0 deletions, 23 modifications)
-2024-05-08T00:43:59.374+01:00  INFO 830811 --- [el_meyloud_RE] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-08T00:43:59.384+01:00  INFO 830811 --- [el_meyloud_RE] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-08T00:43:59.408+01:00  INFO 830811 --- [el_meyloud_RE] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-10T19:29:20.879+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 177654 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-10T19:29:20.882+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-10T19:29:20.931+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-10T19:29:20.931+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-10T19:29:21.056+01:00  WARN 177654 --- [el_meyloud_RE] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.zaqksdev.el_meyloud_RE.ElMeyloudReApplication]
+2024-05-10T19:29:21.252+01:00 ERROR 177654 --- [el_meyloud_RE] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.zaqksdev.el_meyloud_RE.ElMeyloudReApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:179) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:416) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.zaqksdev.el_meyloud_RE.ElMeyloudReApplication.main(ElMeyloudReApplication.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'auth' for bean class [com.zaqksdev.el_meyloud_RE.controllers.client.Auth] conflicts with existing, non-compatible bean definition of same name and class [com.zaqksdev.el_meyloud_RE.controllers.agency.Auth]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165) ~[spring-context-6.1.6.jar:6.1.6]
+	... 16 common frames omitted
+
+
+BUILD SUCCESSFUL in 3s
+4 actionable tasks: 1 executed, 3 up-to-date

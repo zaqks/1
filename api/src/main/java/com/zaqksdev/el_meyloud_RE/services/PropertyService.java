@@ -63,15 +63,18 @@ public class PropertyService {
     public Property getOf(String email, int prp_id) {
         Property rslt = propertyRepo.findById(prp_id);
 
-        if (rslt != null && !rslt.getOwner().getEmail().equals(email))
+        if (rslt != null && owns(email, prp_id))
             return null;
 
         return rslt;
-
     }
 
+    public boolean owns(String email, int prp_id) {
+        Property rslt = propertyRepo.findById(prp_id);
+        return rslt.getOwner().getEmail().equals(email);
+    }
 
-    public void save(Property prp){
+    public void save(Property prp) {
         propertyRepo.save(prp);
     }
 

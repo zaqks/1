@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zaqksdev.el_meyloud_RE.services.OfferService;
-import com.zaqksdev.el_meyloud_RE.services.SecurityService;
+import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 @Controller
 @RequestMapping("client")
 public class Market {
     @Autowired
-    private SecurityService authSrvc;
+    private AuthService authSrvc;
     @Autowired
     private OfferService offrSrvc;
 

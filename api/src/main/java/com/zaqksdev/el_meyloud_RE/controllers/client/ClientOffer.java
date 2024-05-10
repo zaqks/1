@@ -16,7 +16,7 @@ import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
 import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
 import com.zaqksdev.el_meyloud_RE.services.OfferService;
 import com.zaqksdev.el_meyloud_RE.services.PropertyService;
-import com.zaqksdev.el_meyloud_RE.services.SecurityService;
+import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 import jakarta.validation.Valid;
 
@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequestMapping("client/offer")
 public class ClientOffer {
     @Autowired
-    private SecurityService authSrvc;
+    private AuthService authSrvc;
     @Autowired
     private OfferService offrSrvc;
     @Autowired

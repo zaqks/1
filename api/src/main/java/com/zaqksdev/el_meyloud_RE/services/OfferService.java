@@ -35,8 +35,8 @@ public class OfferService {
         return rslt;
     }
 
-    public Offer getOf(String email, int id) {
-        Offer rslt = offerRepo.findById(id);
+    public Offer getOf(String email, int offrID) {
+        Offer rslt = offerRepo.findById(offrID);
 
         if (rslt != null && rslt.getProperty().getOwner().getEmail().equals(email))
             return rslt;

@@ -4,27 +4,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.models.Client;
+import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 
 @Service
-public class SecurityService {
+public class AuthService {
+    private String email, password;
     private ClientRepo clientRepo;
+    private AgentRepo agentRepo;
 
     @Autowired
-    public void setClientRepo(ClientRepo clientRepo) {
+    public void setClientRepo(ClientRepo clientRepo, AgentRepo agentRepo) {
         this.clientRepo = clientRepo;
+        this.agentRepo = agentRepo;
     }
 
     public class ClientAuth {
-        private String email, password;
 
         public ClientAuth() {
         }
 
-        public ClientAuth(String email, String password) {
-            this.email = email;
-            this.password = password;
+        public ClientAuth(String clientEmail, String clientPassword) {
+            email = clientEmail;
+            password = clientPassword;
+
         }
 
         public Boolean checkAuth() {
@@ -115,6 +120,63 @@ public class SecurityService {
                     return false;
                 }
 
+                return true;
+            }
+
+        }
+
+    }
+
+    public class AgencyAuth {
+
+        public AgencyAuth() {
+        }
+
+        public AgencyAuth(String agentEmail, String agentPassword) {
+            agentEmail = email;
+            agentPassword = password;
+        }
+
+        public Boolean checkAuth() {
+            Agent rslt = agentRepo.findByEmail(email);
+            if (rslt != null) {
+                return rslt.getPassword().equals(password) && rslt.isAdmin();
+            }
+
+            return false;
+        }
+
+        public String kick(String src) {
+            if (!checkAuth()) {
+                return "redirect:/agency/signin";
+            }
+            return src;
+        }
+
+        public Agent get() {
+            return agentRepo.findByEmail(email);
+        }
+
+        public class Form {
+            private BindingResult result;
+
+            public Form(BindingResult result) {
+                this.result = result;
+            }
+
+            public boolean checkSGIN() {
+
+                Agent agent = get();
+
+                if (agent == null) {
+                    result.rejectValue("email", null, "unexisting email");
+                    return false;
+                }
+
+                if (!checkAuth()) {
+                    result.rejectValue("password", null, "incorrect password");
+                    return false;
+                }
                 return true;
             }
 

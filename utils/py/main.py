@@ -2,7 +2,7 @@ from mdlCreator import getControllerLines, getTemplateLines, getStyleLines
 from os import mkdir, system
 
 APPNAME = "com.zaqksdev.el_meyloud_RE"
-ENTITIES = ["visit"]
+ENTITIES = ["agent"]
 TEMPLATES = [ "show", "showAll", "update"]
 
 RSRCSPATH = "/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/src/main/resources/"
@@ -30,7 +30,7 @@ for i in ENTITIES:
 
     #css
     
-    staticPath = f"{RSRCSPATH}static/{i}"
+    staticPath = f"{RSRCSPATH}static/css/templates/{i}"
     mkdir(staticPath)
     
     for j in TEMPLATES:
