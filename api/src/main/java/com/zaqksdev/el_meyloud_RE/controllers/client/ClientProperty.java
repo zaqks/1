@@ -14,7 +14,7 @@ import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
 import com.zaqksdev.el_meyloud_RE.services.PropertyService;
-import com.zaqksdev.el_meyloud_RE.services.SecurityService;
+import com.zaqksdev.el_meyloud_RE.services.AuthService;
 import com.zaqksdev.el_meyloud_RE.services.StorageService;
 
 import jakarta.validation.Valid;
@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequestMapping("client")
 public class ClientProperty {
     @Autowired
-    private SecurityService authSrvc;
+    private AuthService authSrvc;
     @Autowired
     private PropertyService propertySrvc;
     @Autowired

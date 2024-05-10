@@ -69,7 +69,7 @@ public class Client {
     public void setPhonenum(String phonenum) {
         this.phonenum = phonenum;
     }
-    public String getEmail() {
+    public String  getEmail() {
         return email;
     }
     public void setEmail(String email) {

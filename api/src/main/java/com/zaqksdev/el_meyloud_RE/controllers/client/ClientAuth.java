@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zaqksdev.el_meyloud_RE.dtos.auth.ClientKeyDTO;
 import com.zaqksdev.el_meyloud_RE.models.Client;
-import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
-import com.zaqksdev.el_meyloud_RE.services.SecurityService;
+import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,9 +22,9 @@ import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("client/")
-public class Auth {
+public class ClientAuth {
     @Autowired
-    private SecurityService authSrvc;
+    private AuthService authSrvc;
 
     @GetMapping("signin")
     public String showSignIn(Model model) {
