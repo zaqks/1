@@ -31,7 +31,7 @@ public class AgencyAgents {
             @CookieValue(name = "admin_email", defaultValue = "") String email,
             @CookieValue(name = "admin_password", defaultValue = "") String password) {
 
-        model.addAttribute("agents", agntSrvc.getAllNonAdmin());
+        model.addAttribute("agents", agntSrvc.getAllNonAdminActive());
 
         return authSrvc.new AgentAuth(email, password).kickNonAdmin("agent/showAll");
 
@@ -57,11 +57,6 @@ public class AgencyAgents {
         return authSrvc.new AgentAuth(email,
                 password).kickNonAdmin("agent/show");
     }
-
-
-
-
-
 
     @GetMapping("/add")
     public String showAddAgent(
@@ -103,4 +98,29 @@ public class AgencyAgents {
         return "redirect:/agency/agent";
 
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteAgent(
+            @PathVariable(name = "id") int id,
+            Model model,
+            @CookieValue(name = "admin_email", defaultValue = "") String email,
+            @CookieValue(name = "admin_password", defaultValue = "") String password) {
+        String finger = authSrvc.new AgentAuth(email, password).kickNonAdmin("");
+        if (!finger.equals(""))
+            return finger;
+
+        Agent rslt = agntSrvc.get(id);
+        if (rslt == null)
+            return "redirect:/agency/agent";
+
+        // check if ure not checking your self
+        if (rslt.getEmail().equals(email))
+            return "redirect:/agency/agent";
+
+        agntSrvc.deleteNonAdmin(id);
+
+        return "redirect:/agency/agent";
+
+    }
+
 }

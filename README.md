@@ -24,6 +24,7 @@
 -check the null stuff in the services
 -check the agent schedule f db
 -add password confirm
+-dont show the non active agents
 
 # DONE
 
