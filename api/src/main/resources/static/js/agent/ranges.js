@@ -53,12 +53,38 @@ function updateRange(inpt) {
     var val = inpt.value;
     val = parseInt(val)
 
+    //ze checking
     //
 
+    for (const letter of ["W", "H"]) {
+        if (inptName.includes(letter)) {
+            if (inptName.includes("start")) {
+                //needs to be less than end
+                if (val >= vals[`end${letter}`]) {
+                    inpt.value = `${vals[`end${letter}`] - 1}`
+                    return
+                }
+            }
+            else {
+                //needs to be larger than start
+                if (val <= vals[`start${letter}`]) {
+                    inpt.value = `${vals[`start${letter}`] + 1}`
+                    return
+                }
+
+            }
+
+            break;
+        }
+
+    }
+
+
+
     //
 
 
-    vals[inptTxtName] = parseInt(val)
+    vals[inptTxtName] = val
     if (inptTxtName.includes("H"))
         val = `${val}H`;
     else
@@ -74,6 +100,10 @@ function initRanges() {
 
         vals[i] = document.getElementById(inptName).value;
         vals[i] = parseInt(vals[i])
+    }
+
+    for (const i of inpts) {
+        inptName = `${i}Inpt`;
 
         updateRange(document.getElementById(inptName))
     }
