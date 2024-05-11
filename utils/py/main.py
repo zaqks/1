@@ -2,8 +2,10 @@ from mdlCreator import getControllerLines, getTemplateLines, getStyleLines
 from os import mkdir, system
 
 APPNAME = "com.zaqksdev.el_meyloud_RE"
-ENTITIES = ["agent"]
-TEMPLATES = [ "show", "showAll", "update"]
+ENTITIES = ["agency"]
+#TEMPLATES = [ "show", "showAll", "update"]
+TEMPLATES = [ "dashboard"]
+
 
 RSRCSPATH = "/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/src/main/resources/"
 #RSRCSPATH = "out/"

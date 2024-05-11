@@ -27,7 +27,7 @@ public class AgencyAuth {
 
     @GetMapping("signin")
     public String showAgencySignIn(Model model) {
-        model.addAttribute("client", new ClientKeyDTO());
+        model.addAttribute("agent", new ClientKeyDTO());
         return "auth/agency/signin";
     }
 
@@ -45,7 +45,7 @@ public class AgencyAuth {
         String password = agent.getPassword();
 
         // check existance
-        if (!authSrvc.new AgencyAuth(email, password).new Form(result).checkSGIN())
+        if (!authSrvc.new AgentAuth(email, password).new Form(result).checkSGINAdmin())
             return "auth/agency/signin";
 
         // set the cookies

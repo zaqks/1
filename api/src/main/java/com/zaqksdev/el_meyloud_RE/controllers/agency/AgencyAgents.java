@@ -7,13 +7,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.services.AgentService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-@RequestMapping("agency/agents")
+@RequestMapping("agency/agent")
 public class AgencyAgents {
     @Autowired
     private AuthService authSrvc;
@@ -27,81 +30,36 @@ public class AgencyAgents {
 
         model.addAttribute("agents", agntSrvc.getAll());
 
-        return authSrvc.new AgencyAuth(email, password).kick("agency/showAll");
+        return authSrvc.new AgentAuth(email, password).kickNonAdmin("agent/showAll");
 
     }
-    /*
-     * @GetMapping("/{id}")
-     * public String showAgent(
-     * 
-     * @PathVariable(name = "id") int id,
-     * Model model,
-     * 
-     * @CookieValue(name = "email", defaultValue = "") String email,
-     * 
-     * @CookieValue(name = "password", defaultValue = "") String password) {
-     * 
-     * Offer rslt = offrSrvc.getOf(email, id);
-     * if (rslt == null)
-     * return "redirect:/client/offer";
-     * 
-     * model.addAttribute("offer", rslt);
-     * 
-     * return authSrvc.new ClientAuth(email,
-     * password).kickNonSeller("offer/client/show");
-     * }
-     * 
-     * @GetMapping("/add/{id}")
-     * public String showAddAgent(Model model,
-     * 
-     * @PathVariable(name = "id") int id,
-     * 
-     * @CookieValue(name = "email", defaultValue = "") String email,
-     * 
-     * @CookieValue(name = "password", defaultValue = "") String password) {
-     * 
-     * // check if prop id exists
-     * if (prprtSrvc.getOf(email, id) == null)
-     * return "redirect:/client/offer";
-     * 
-     * model.addAttribute("id", id);
-     * model.addAttribute("offer", new OfferCreateDTO());
-     * 
-     * return authSrvc.new ClientAuth(email,
-     * password).kickNonSeller("offer/client/add");
-     * }
-     * 
-     * @PostMapping("/add/{id}")
-     * public String addAgent(
-     * 
-     * @PathVariable(name = "id") int id,
-     * Model model,
-     * 
-     * @Valid @ModelAttribute("offer") OfferCreateDTO offer,
-     * BindingResult result,
-     * 
-     * @CookieValue(name = "email", defaultValue = "") String email,
-     * 
-     * @CookieValue(name = "password", defaultValue = "") String password) {
-     * String finger = authSrvc.new ClientAuth(email, password).kickNonSeller("");
-     * if (!finger.equals(""))
-     * return finger;
-     * 
-     * Property prop = prprtSrvc.getOf(email, id);
-     * if (prop == null)
-     * return "redirect:/client/offer";
-     * 
-     * // check errors
-     * if (result.hasErrors()) {
-     * return "offer/client/add";
-     * }
-     * 
-     * // save
-     * Offer offr = offer.convertToEntity(prop.getOwner(), prop);
-     * offrSrvc.register(offr);
-     * 
-     * return "redirect:/client/offer";
-     * 
-     * }
-     */
+
+    @GetMapping("/{id}")
+    public String showAgent(
+            @PathVariable(name = "id") int id,
+            Model model,
+            @CookieValue(name = "admin_email", defaultValue = "") String email,
+            @CookieValue(name = "admin_password", defaultValue = "") String password) {
+
+        Agent rslt = agntSrvc.get(id);
+        if (rslt == null)
+            return "redirect:/agency/agent";
+
+        // check if ure not checking your self
+        if (rslt.getEmail().equals(email))
+            return "redirect:/agency/agent";
+
+        model.addAttribute("agent", rslt);
+
+        return authSrvc.new AgentAuth(email,
+                password).kickNonAdmin("agent/show");
+    }
+
+    @GetMapping("/add")
+    public String addAgent(
+            Model model) {
+
+        model.addAttribute("agent", new Agent());
+        return "agent/add";
+    }
 }

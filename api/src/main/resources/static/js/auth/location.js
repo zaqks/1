@@ -9,7 +9,7 @@ var ready = false;
 
 
 function getLocation() {
-    console.log('pass')
+    //console.log('pass')
 
     if ("geolocation" in navigator) {
         //ask for permission

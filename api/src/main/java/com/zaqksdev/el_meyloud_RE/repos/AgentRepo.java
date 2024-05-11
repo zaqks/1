@@ -6,8 +6,11 @@ import org.springframework.stereotype.Repository;
 import com.zaqksdev.el_meyloud_RE.models.Agent;
 
 
+
+
 @Repository
 public interface AgentRepo extends JpaRepository<Agent, Integer> {
+    Agent findById(int id);
     Agent findByEmail(String email);
     
 

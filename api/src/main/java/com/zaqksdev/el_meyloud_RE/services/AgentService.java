@@ -10,18 +10,20 @@ import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 
 @Service
 public class AgentService {
-    private AgentRepo AgentRepo;
+    private AgentRepo agntRepo;
 
     @Autowired
-    public void setCtrtRepo(AgentRepo AgentRepo) {
-        this.AgentRepo = AgentRepo;
+    public void setCtrtRepo(AgentRepo repo) {
+        this.agntRepo = repo;
 
     }
 
     public List<Agent> getAll() {
+        return agntRepo.findAll();
+    }
 
-        return AgentRepo.findAll();
-
+    public Agent get(int id) {
+        return agntRepo.findById(id);
     }
 
 }

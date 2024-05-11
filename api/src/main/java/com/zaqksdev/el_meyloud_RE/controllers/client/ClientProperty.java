@@ -11,8 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.zaqksdev.el_meyloud_RE.dtos.property.PropertyCreateDTO;
 import com.zaqksdev.el_meyloud_RE.models.Property;
-import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
-import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
 import com.zaqksdev.el_meyloud_RE.services.PropertyService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 import com.zaqksdev.el_meyloud_RE.services.StorageService;
