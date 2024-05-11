@@ -22,7 +22,8 @@
 
 # TODO
 -check the null stuff in the services
--add the range script
+-check the agent schedule f db
+-add password confirm
 
 # DONE
 
@@ -30,6 +31,7 @@
 -put his property for sale (needs to be checked and activated by an agent)
 -see the availble offers
 
+-add the range script
 
 
 

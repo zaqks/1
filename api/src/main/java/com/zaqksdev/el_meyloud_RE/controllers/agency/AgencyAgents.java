@@ -3,16 +3,18 @@ package com.zaqksdev.el_meyloud_RE.controllers.agency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.services.AgentService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -29,7 +31,7 @@ public class AgencyAgents {
             @CookieValue(name = "admin_email", defaultValue = "") String email,
             @CookieValue(name = "admin_password", defaultValue = "") String password) {
 
-        model.addAttribute("agents", agntSrvc.getAll());
+        model.addAttribute("agents", agntSrvc.getAllNonAdmin());
 
         return authSrvc.new AgentAuth(email, password).kickNonAdmin("agent/showAll");
 
@@ -56,6 +58,11 @@ public class AgencyAgents {
                 password).kickNonAdmin("agent/show");
     }
 
+
+
+
+
+
     @GetMapping("/add")
     public String showAddAgent(
             Model model,
@@ -71,13 +78,29 @@ public class AgencyAgents {
     @PostMapping("/add")
     public String addAgent(
             Model model,
+            @Valid @ModelAttribute("agent") Agent agent,
+            BindingResult result,
             @CookieValue(name = "admin_email", defaultValue = "") String email,
             @CookieValue(name = "admin_password", defaultValue = "") String password) {
 
-        model.addAttribute("agent", new Agent());
+        String finger = authSrvc.new AgentAuth(email, password).kickNonAdmin("");
+        if (!finger.equals(""))
+            return finger;
 
-        
-        return authSrvc.new AgentAuth(email,
-                password).kickNonAdmin("agent/add");
+        if (result.hasErrors()) {
+            return "agent/add";
+        }
+
+        AuthService.AgentAuth authCheck = authSrvc.new AgentAuth();
+
+        // check existance blaabaaa...
+        if (!authCheck.new Form(result).checkSGUP(agent))
+            return "auth/client/signup";
+
+        // create agent
+        authCheck.save(agent);
+
+        return "redirect:/agency/agent";
+
     }
 }

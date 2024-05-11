@@ -22,6 +22,10 @@ public class AgentService {
         return agntRepo.findAll();
     }
 
+    public List<Agent> getAllNonAdmin() {
+        return agntRepo.findByAdmin(false);
+    }
+
     public Agent get(int id) {
         return agntRepo.findById(id);
     }

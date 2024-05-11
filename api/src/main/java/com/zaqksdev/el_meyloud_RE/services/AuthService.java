@@ -161,6 +161,11 @@ public class AuthService {
             return agentRepo.findByEmail(email);
         }
 
+        public void save(Agent agent){            
+
+            agentRepo.save(agent);
+        }
+
         public class Form {
             private BindingResult result;
 
@@ -183,6 +188,36 @@ public class AuthService {
                 }
                 return true;
             }
+
+            public boolean checkSGUP(Agent agent) {
+
+                if (clientRepo.findByNin(agent.getNin()) != null) {
+                    result.rejectValue("nin", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getPhonenum()) != null) {
+                    result.rejectValue("phonenum", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getEmail()) != null) {
+                    result.rejectValue("email", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getCcp()) != null) {
+                    result.rejectValue("ccp", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getRip()) != null) {
+                    result.rejectValue("rip", null, "already in use");
+                    return false;
+                }
+
+                //hna zid le check ta3 les horraires
+
+                return true;
+            }
+
+
 
             public boolean checkSGINAdmin() {
 

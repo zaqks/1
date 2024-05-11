@@ -11,7 +11,7 @@ public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private boolean admin;
+    private boolean admin = false; 
 
     @Size(min = 3, message = "invalid values")
     private String name, surname;

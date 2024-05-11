@@ -82,13 +82,12 @@ public class ClientAuth {
             return "auth/client/signup";
         }
 
-        String email = client.getEmail();
-        String password = client.getPassword();
+        AuthService.ClientAuth authCheck = authSrvc.new ClientAuth();
 
-        if (!authSrvc.new ClientAuth().new Form(result).checkSGUP(client))
+        if (!authCheck.new Form(result).checkSGUP(client))
             return "auth/client/signup";
 
-        authSrvc.new ClientAuth(email, password).save(client);
+        authCheck.save(client);
 
         // set the cookies
         Cookie emailCookie = new Cookie("email", null);
