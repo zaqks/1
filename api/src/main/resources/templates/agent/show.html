@@ -12,13 +12,31 @@
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
     <link th:href="@{/css/templates/agent/show/show.css}" rel="stylesheet" />
-	<link th:href="@{/css/templates/agent/showAll/showAll.css}" rel="stylesheet" />
-	<link th:href="@{/css/templates/agent/update/update.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/agent/showAll/showAll.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/agent/update/update.css}" rel="stylesheet" />
 
 
 </head>
 
 <body>
+
+    <h1 th:text="@{'Agent'+${agent.id}}"></h1>
+
+    <h2>
+        Info
+    </h2>
+    <h2>
+        Visits
+    </h2>
+    <h2>
+        Checkings
+    </h2>
+    <h2>
+        Contracts
+    </h2>
+
+
+    <a th:href="@{'/agency/agent/delete/' + ${agent.id}}" onclick="confirm('u sure?')">Delete Agent</a>
 
 </body>
 

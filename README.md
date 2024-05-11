@@ -22,7 +22,9 @@
 
 # TODO
 -check the null stuff in the services
-
+-check the agent schedule f db
+-add password confirm
+-dont show the non active agents
 
 # DONE
 
@@ -30,6 +32,7 @@
 -put his property for sale (needs to be checked and activated by an agent)
 -see the availble offers
 
+-add the range script
 
 
 
@@ -39,6 +42,6 @@ we also define the active day 0-6
 the visit is 1hour long
 
 we choose the less working agent
-we choose the closest agent
+we choose the closest agent relative to the property
 
 

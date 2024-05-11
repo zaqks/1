@@ -127,27 +127,31 @@ public class AuthService {
 
     }
 
-    public class AgencyAuth {
+    public class AgentAuth {
 
-        public AgencyAuth() {
+        public AgentAuth() {
         }
 
-        public AgencyAuth(String agentEmail, String agentPassword) {
-            agentEmail = email;
-            agentPassword = password;
+        public AgentAuth(String agentEmail, String agentPassword) {
+            email = agentEmail;
+            password = agentPassword;
         }
 
         public Boolean checkAuth() {
             Agent rslt = agentRepo.findByEmail(email);
             if (rslt != null) {
-                return rslt.getPassword().equals(password) && rslt.isAdmin();
+                return rslt.getPassword().equals(password);
             }
 
             return false;
         }
 
-        public String kick(String src) {
-            if (!checkAuth()) {
+        public Boolean isAdmin() {
+            return get().isAdmin();
+        }
+
+        public String kickNonAdmin(String src) {
+            if (!checkAuth() || !isAdmin()) {
                 return "redirect:/agency/signin";
             }
             return src;
@@ -155,6 +159,11 @@ public class AuthService {
 
         public Agent get() {
             return agentRepo.findByEmail(email);
+        }
+
+        public void save(Agent agent){            
+
+            agentRepo.save(agent);
         }
 
         public class Form {
@@ -177,6 +186,58 @@ public class AuthService {
                     result.rejectValue("password", null, "incorrect password");
                     return false;
                 }
+                return true;
+            }
+
+            public boolean checkSGUP(Agent agent) {
+
+                if (clientRepo.findByNin(agent.getNin()) != null) {
+                    result.rejectValue("nin", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getPhonenum()) != null) {
+                    result.rejectValue("phonenum", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getEmail()) != null) {
+                    result.rejectValue("email", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getCcp()) != null) {
+                    result.rejectValue("ccp", null, "already in use");
+                    return false;
+                }
+                if (clientRepo.findByNin(agent.getRip()) != null) {
+                    result.rejectValue("rip", null, "already in use");
+                    return false;
+                }
+
+                //hna zid le check ta3 les horraires
+
+                return true;
+            }
+
+
+
+            public boolean checkSGINAdmin() {
+
+                Agent agent = get();
+
+                if (agent == null) {
+                    result.rejectValue("email", null, "unexisting email");
+                    return false;
+                }
+
+                if (!checkAuth()) {
+                    result.rejectValue("password", null, "incorrect password");
+                    return false;
+                }
+
+                if (!isAdmin()) {
+                    result.rejectValue("email", null, "not allowed");
+                    return false;
+                }
+
                 return true;
             }
 

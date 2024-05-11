@@ -11,7 +11,8 @@ public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private boolean admin;
+    private boolean admin = false;
+    private boolean active = true;
 
     @Size(min = 3, message = "invalid values")
     private String name, surname;
@@ -39,7 +40,18 @@ public class Agent {
 
     private float x, y;
     // scheduling
-    private int startH, endH, startW, endW;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 6, message = "invalid value")
+    private int startW = 0;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 23, message = "invalid value")
+    private int startH = 0;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 6, message = "invalid value")
+    private int endW = 6;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 23, message = "invalid value")
+    private int endH = 23;
 
     public int getId() {
         return id;
@@ -175,6 +187,14 @@ public class Agent {
 
     public void setEndW(int endW) {
         this.endW = endW;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
 }

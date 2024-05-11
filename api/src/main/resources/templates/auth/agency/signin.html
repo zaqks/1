@@ -16,8 +16,8 @@
 
 <body>
 
-
     <form method="post" th:object="${agent}">
+        
         <input type="text" th:field="*{email}" placeholder="email">
         <ul>
             <li th:each="err:${#fields.errors('email')}" th:text="${err}"></li>
