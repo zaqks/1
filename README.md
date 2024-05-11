@@ -22,7 +22,7 @@
 
 # TODO
 -check the null stuff in the services
-
+-add the range script
 
 # DONE
 
@@ -39,6 +39,6 @@ we also define the active day 0-6
 the visit is 1hour long
 
 we choose the less working agent
-we choose the closest agent
+we choose the closest agent relative to the property
 
 

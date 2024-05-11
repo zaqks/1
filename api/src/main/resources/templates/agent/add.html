@@ -78,23 +78,23 @@
 
 
         <div id="ranges">
-            <p id="startH"></p>
-            <input id="startHInpt" th:field="*{startH}" type="range">
+            <p id="startW" th:text="*{startW}">999</p>
+            <input id="startWInpt" th:value="*{startW}" type="range" min="0" max="6" oninput="updateRange(this)">
 
-            <p id="endH"></p>
-            <input id="endHInpt" th:field="*{endH}" type="range">
+            <p id="endW" th:text="*{endW}">999</p>
+            <input id="endWInpt" th:value="*{endW}" type="range" min="0" max="6" oninput="updateRange(this)">
 
-            <p id="startW"></p>
-            <input id="startWInpt" th:field="*{startW}" type="range">
+            <p id="startH" th:text="*{startH}">999</p>
+            <input id="startHInpt" th:value="*{startH}" type="range" min="0" max="23" oninput="updateRange(this)">
 
-            <p id="endW"></p>
-            <input id="endWInpt" th:field="*{endW}" type="range">
+            <p id="endH" th:text="*{endH}">999</p>
+            <input id="endHInpt" th:value="*{endH}" type="range" min="0" max="23" oninput="updateRange(this)">
         </div>
 
 
 
 
-        <button id="submitBtn" type="submit" onclick="return ready;">Sign Up</button>
+        <button id="submitBtn" type="submit" onclick="return ready;">Add Agent</button>
 
     </form>
 
@@ -102,6 +102,9 @@
 
     <script th:src="@{/js/auth/location.js}"></script>
     <script th:src="@{/js/agent/ranges.js}"></script>
+    <script>
+        initRanges()
+    </script>
 
 </body>
 

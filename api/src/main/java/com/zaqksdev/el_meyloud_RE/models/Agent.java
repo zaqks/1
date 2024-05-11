@@ -39,7 +39,19 @@ public class Agent {
 
     private float x, y;
     // scheduling
-    private int startH, endH, startW, endW;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 6, message = "invalid value")
+    private int  startW = 0 ;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 23, message = "invalid value")
+    private int startH = 0 ;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 6, message = "invalid value")
+    private int  endW = 6;
+    @Min(value = 0, message = "invalid value")
+    @Max(value = 23, message = "invalid value")
+    private int  endH = 23;
+    
 
     public int getId() {
         return id;

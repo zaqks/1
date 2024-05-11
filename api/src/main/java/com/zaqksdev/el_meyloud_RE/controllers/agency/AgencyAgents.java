@@ -14,6 +14,7 @@ import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequestMapping("agency/agent")
@@ -56,10 +57,27 @@ public class AgencyAgents {
     }
 
     @GetMapping("/add")
-    public String addAgent(
-            Model model) {
+    public String showAddAgent(
+            Model model,
+            @CookieValue(name = "admin_email", defaultValue = "") String email,
+            @CookieValue(name = "admin_password", defaultValue = "") String password) {
 
         model.addAttribute("agent", new Agent());
-        return "agent/add";
+
+        return authSrvc.new AgentAuth(email,
+                password).kickNonAdmin("agent/add");
+    }
+
+    @PostMapping("/add")
+    public String addAgent(
+            Model model,
+            @CookieValue(name = "admin_email", defaultValue = "") String email,
+            @CookieValue(name = "admin_password", defaultValue = "") String password) {
+
+        model.addAttribute("agent", new Agent());
+
+        
+        return authSrvc.new AgentAuth(email,
+                password).kickNonAdmin("agent/add");
     }
 }
