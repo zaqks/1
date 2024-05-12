@@ -1,0 +1,36 @@
+.propertyCard {
+    display: flex;
+    align-items: start;
+
+    column-gap: 10px;
+
+    margin: 5px;
+    padding: 10px;
+
+    background-color: grey;
+
+    cursor: pointer;
+
+}
+
+
+.propertyCard img {
+    width: 10%;
+    aspect-ratio: 1;
+
+
+
+    object-fit: cover;
+    object-position: 50% 50%;
+
+}
+
+.propertyCard #info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.propertyCard #coords {
+    column-gap: 10px;
+}

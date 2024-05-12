@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/auth/auth.css}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form method="post" th:object="${client}">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name</span>
+              <input type="text" th:field="*{name}" placeholder="name" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('name')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">Surname</span>
+              <input type="text" th:field="*{surname}" placeholder="surname" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('surname')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">nin</span>
+              <input type="text" th:field="*{nin}" placeholder="nin" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('nin')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input
+                type="text"
+                th:field="*{phonenum}"
+                placeholder="phonenum"
+              />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('phonenum')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input type="text" th:field="*{email}" placeholder="email" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('email')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="password"
+                th:field="*{password}"
+                placeholder="password"
+              />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('password')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">CCP</span>
+              <input type="text" th:field="*{ccp}" placeholder="ccp" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('ccp')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">CCP KEY</span>
+              <input type="text" th:field="*{ccp_key}" placeholder="ccp_key" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('ccp_key')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+
+            <div class="input-box">
+              <span class="details">RIP</span>
+              <input type="text" th:field="*{rip}" placeholder="rip" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('rip')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">x</span>
+              <input id="x_coord" type="text" th:field="*{x}" placeholder="x" />
+              <ul>
+                <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <span class="details">y</span>
+              <input id="y_coord" type="text" th:field="*{y}" placeholder="y" />
+              <ul>
+                <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+              </ul>
+            </div>
+            <div class="input-box">
+              <label for="sells">Sells</label>
+              <input id="sells" type="checkbox" th:field="*{sells}" />
+              <ul>
+                <li
+                  th:each="err:${#fields.errors('sells')}"
+                  th:text="${err}"
+                ></li>
+              </ul>
+            </div>
+          </div>
+          <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" />
+            <input type="radio" name="gender" id="dot-2" />
+            <input type="radio" name="gender" id="dot-3" />
+            <span class="gender-title">Gender</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+            </div>
+          </div>
+          <div class="button">
+            <input
+              id="submitBtn"
+              value="REGISTER"
+              type="submit"
+              onclick="return ready;"
+            />
+          </div>
+          <div class="button">
+            <a href="/client/signin"><input value="SIGN IN" /></a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script th:src="@{/js/auth/location.js}"></script>
+  </body>
+</html>

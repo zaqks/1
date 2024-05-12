@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        showAllAgent
+    </title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+
+    <link th:href="@{/css/widgets/cards/agent.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/agent/showAll/showAll.css}" rel="stylesheet" />
+
+
+
+</head>
+
+
+
+
+<body>
+    <h1>Agents</h1>
+
+    <div class="agentCard" th:each="agent : ${agents}"
+        th:agent_id="${agent.id}"
+        th:onclick="window.location.href=`/agency/agent/${this.getAttribute('agent_id')}`">
+
+        <p th:text="${agent.email}"></p>
+        <p th:text="${agent.name}"></p>
+        <p th:text="${agent.surname}"></p>
+        <p th:text="${agent.phonenum}"></p>
+    </div>
+
+</body>
+
+</html>
