@@ -1,0 +1,24 @@
+.carousel {
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    column-gap: 10px;
+    overflow: scroll hidden;
+}
+
+.carouselItm {
+    width: 100%;
+    height: 100%;
+
+    flex: none;
+    padding: 10px;
+}
+
+.carouselItm img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 50% 50%;
+}

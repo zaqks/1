@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Properties</title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/templates/property/show/showAll.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/cards/property.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+    <h1>My properties</h1>
+
+
+    <div id="properties" th:each="property: ${properties}">
+        <div class="propertyCard" th:prp_id="${property.id}"
+            th:onclick="window.location.href=`/client/property/${this.getAttribute('prp_id')}`">
+            <img th:src="${property.imgs[0]}" alt="">
+
+
+            <div id="info">
+                <p id="addr" th:text="@{'addr: ' +  ${property.addr}}"></p>
+
+
+                <div class="row" id="coords">
+                    <p id="addr" th:text="${property.x}"></p>
+                    <p id="addr" th:text="${property.y}"></p>
+                </div>
+
+
+                <p id="addr" th:text="@{${property.surf} + 'm²' }"></p>
+                <p id="addr" th:text="@{'rooms: ' + ${property.rooms}}"></p>
+
+
+                <p id="addr" th:text="@{'floors: ' + ${property.floors}}"></p>
+                <p id="addr" th:text="@{'cars: ' + ${property.grgs}}"></p>
+                <p id="addr" th:text="@{'pools: ' +  ${property.pools}}"></p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

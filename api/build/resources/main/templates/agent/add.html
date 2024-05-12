@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add agent</title>
+
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/templates/agent/add/add.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/auth/auth.css}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <h1>Add Agent</h1>
+
+
+    <form method="post" th:object="${agent}">
+        <input type="text" th:field="*{name}" placeholder="name">
+        <ul>
+            <li th:each="err:${#fields.errors('name')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{surname}" placeholder="surname">
+        <ul>
+            <li th:each="err:${#fields.errors('surname')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{nin}" placeholder="nin">
+        <ul>
+            <li th:each="err:${#fields.errors('nin')}" th:text="${err}"></li>
+        </ul>
+
+
+
+        <input type="text" th:field="*{phonenum}" placeholder="phonenum">
+        <ul>
+            <li th:each="err:${#fields.errors('phonenum')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{email}" placeholder="email">
+        <ul>
+            <li th:each="err:${#fields.errors('email')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="password" th:field="*{password}" placeholder="password">
+        <ul>
+            <li th:each="err:${#fields.errors('password')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{ccp}" placeholder="ccp">
+        <ul>
+            <li th:each="err:${#fields.errors('ccp')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{ccp_key}" placeholder="ccp_key">
+        <ul>
+            <li th:each="err:${#fields.errors('ccp_key')}" th:text="${err}"></li>
+        </ul>
+
+        <input type="text" th:field="*{rip}" placeholder="rip">
+        <ul>
+            <li th:each="err:${#fields.errors('rip')}" th:text="${err}"></li>
+        </ul>
+
+        <input id="x_coord" type="text" th:field="*{x}" placeholder="x">
+        <ul>
+            <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+        </ul>
+        <input id="y_coord" type="text" th:field="*{y}" placeholder="y">
+        <ul>
+            <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+        </ul>
+
+
+        <div id="ranges">
+            <p id="startW" th:text="*{startW}">999</p>
+            <input id="startWInpt" th:value="*{startW}" type="range" min="0" max="6" oninput="updateRange(this)">
+
+            <p id="endW" th:text="*{endW}">999</p>
+            <input id="endWInpt" th:value="*{endW}" type="range" min="0" max="6" oninput="updateRange(this)">
+
+            <p id="startH" th:text="*{startH}">999</p>
+            <input id="startHInpt" th:value="*{startH}" type="range" min="0" max="23" oninput="updateRange(this)">
+
+            <p id="endH" th:text="*{endH}">999</p>
+            <input id="endHInpt" th:value="*{endH}" type="range" min="0" max="23" oninput="updateRange(this)">
+        </div>
+
+
+
+
+        <button id="submitBtn" type="submit" onclick="return ready;">Add Agent</button>
+
+    </form>
+
+
+
+    <script th:src="@{/js/auth/location.js}"></script>
+    <script th:src="@{/js/agent/ranges.js}"></script>
+    <script>
+        initRanges()
+    </script>
+
+</body>
+
+</html>
