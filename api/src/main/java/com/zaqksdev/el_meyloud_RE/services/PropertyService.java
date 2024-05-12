@@ -62,8 +62,10 @@ public class PropertyService {
 
     public Property getOf(String email, int prp_id) {
         Property rslt = propertyRepo.findById(prp_id);
+        if (rslt == null)
+            return null;
 
-        if (rslt != null && owns(email, prp_id))
+        if (!owns(email, prp_id))
             return null;
 
         return rslt;
