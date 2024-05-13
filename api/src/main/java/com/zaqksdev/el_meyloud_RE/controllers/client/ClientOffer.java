@@ -39,7 +39,7 @@ public class ClientOffer {
     public String showAllOffer(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-            
+
         model.addAttribute("offers", offrSrvc.getOf(email));
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/showAll");
@@ -58,6 +58,7 @@ public class ClientOffer {
             return "redirect:/client/offer";
 
         model.addAttribute("offer", rslt);
+        model.addAttribute("visits", offrSrvc.getCheckVisits(id, email));
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/show");
     }
@@ -96,13 +97,15 @@ public class ClientOffer {
             return "redirect:/client/offer";
 
         // check errors
-        if (result.hasErrors()) {
+        if (result.hasErrors())
             return "offer/client/add";
-        }
 
         // save
         Offer offr = offer.convertToEntity(prop.getOwner(), prop);
         offrSrvc.register(offr);
+
+        // create check visit
+        
 
         return "redirect:/client/offer";
 

@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
@@ -15,7 +14,7 @@ public class VisitService {
     private ClientRepo clientRepo;
 
     @Autowired
-    public void setCtrtRepo(VisitRepo visitRepo, ClientRepo clientRepo) {
+    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo) {
         this.visitRepo = visitRepo;
         this.clientRepo = clientRepo;
     }

@@ -10,6 +10,9 @@ public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private boolean passed = false;
+    private boolean missed = false;
+    
 
     private Date date;
     private Time time;
@@ -74,7 +77,15 @@ public class Visit {
         this.agent = agent;
     }
 
+	public boolean isPassed() {
+		return passed;
+	}
 
+	public void setPassed(boolean passed) {
+		this.passed = passed;
+	}
+
+    
     
 
 }
