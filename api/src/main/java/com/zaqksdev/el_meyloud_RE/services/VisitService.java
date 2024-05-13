@@ -81,12 +81,16 @@ public class VisitService {
             invHours.put(hour, todays.get(i));
         }
 
-        List<Integer> vals = (List<Integer>) hours.values();
+        List<Integer> vals = new ArrayList<Integer>(hours.values());
+
         Collections.sort(vals);
 
         // the highest val hya the endtime (last one on the sort)
 
-        return invHours.get(vals.get(vals.size() - 1));
+        if (vals.size() > 0)
+            return invHours.get(vals.get(vals.size() - 1));
+        else
+            return null;
 
     }
 

@@ -1,35 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const inpts = [
@@ -41,10 +9,6 @@ const inpts = [
 
 const vals = {}
 
-
-
-
-
 function updateRange(inpt) {
     const inptName = inpt.id;
     const inptTxtName = inptName.split("Inpt")[0];
@@ -55,7 +19,6 @@ function updateRange(inpt) {
 
     //ze checking
     //
-
     for (const letter of ["W", "H"]) {
         if (inptName.includes(letter)) {
             if (inptName.includes("start")) {
@@ -79,11 +42,7 @@ function updateRange(inpt) {
 
     }
 
-
-
     //
-
-
     vals[inptTxtName] = val
     if (inptTxtName.includes("H"))
         val = `${val}H`;

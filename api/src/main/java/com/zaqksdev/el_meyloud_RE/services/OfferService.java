@@ -129,6 +129,8 @@ public class OfferService {
         visit.setClient(client);
         visit.setAgent(closestAgnt);
 
-        //visitRepo.save(visit);
+    
+
+        visitRepo.save(visit);
     }
 }

@@ -1,8 +1,6 @@
 package com.zaqksdev.el_meyloud_RE.models;
 
-import java.sql.Time;
 import java.util.Calendar;
-import java.sql.Date;
 import jakarta.persistence.*;
 
 @Entity
