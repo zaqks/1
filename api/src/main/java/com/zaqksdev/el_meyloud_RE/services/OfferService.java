@@ -1,26 +1,33 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
 import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
+import com.zaqksdev.el_meyloud_RE.services.coords.Coords;
+import com.zaqksdev.el_meyloud_RE.services.coords.Point;
 
 @Service
 public class OfferService {
     static OfferRepo offerRepo;
     static VisitRepo visitRepo;
 
+    static PropertyService prprtSrvc;
+
     @Autowired
-    public void setOfferRepo(OfferRepo offerRepo, VisitRepo visitRepo) {
+    public void setOfferRepo(OfferRepo offerRepo, VisitRepo visitRepo, PropertyService prprtSrvc) {
         OfferService.offerRepo = offerRepo;
         OfferService.visitRepo = visitRepo;
+        OfferService.prprtSrvc = prprtSrvc;
     }
 
     public Offer get(int id) {
@@ -103,7 +110,10 @@ public class OfferService {
     }
 
     public void createVisit(Offer offer, String client_email) {
-        // sooo lzmnla dabord n3rfou l'agent le plus proche de la propriete
+        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
+        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
+
+        
 
     }
 }

@@ -12,6 +12,7 @@ public class Coords {
     }
 
     public float getDistance() {
+        //Haversine formula
         // hna its an arc length
         // 6371 is the earth radius
         return (float) (Math.acos(

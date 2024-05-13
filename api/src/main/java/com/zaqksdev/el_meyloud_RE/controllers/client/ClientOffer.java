@@ -102,7 +102,7 @@ public class ClientOffer {
 
         // save
         Offer offr = offer.convertToEntity(prop.getOwner(), prop);
-        offrSrvc.save(offr);
+        //offrSrvc.save(offr);
 
         // create check visit
         offrSrvc.createVisit(offr, email);
