@@ -102,10 +102,10 @@ public class ClientOffer {
 
         // save
         Offer offr = offer.convertToEntity(prop.getOwner(), prop);
-        offrSrvc.register(offr);
+        offrSrvc.save(offr);
 
         // create check visit
-        
+        offrSrvc.createVisit(offr, email);
 
         return "redirect:/client/offer";
 

@@ -11,13 +11,13 @@ import com.zaqksdev.el_meyloud_RE.repos.ContractRepo;
 
 @Service
 public class ContractService {
-    private ContractRepo cntrctRepo;
-    private ClientRepo clientRepo;
+    static ContractRepo cntrctRepo;
+    static ClientRepo clientRepo;
 
     @Autowired
     public void setCtrtRepo(ContractRepo cntrctRepo, ClientRepo clientRepo) {
-        this.cntrctRepo = cntrctRepo;
-        this.clientRepo = clientRepo;
+        ContractService.cntrctRepo = cntrctRepo;
+        ContractService.clientRepo = clientRepo;
     }
 
     public List<Contract> getOf(String email) {

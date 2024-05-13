@@ -14,13 +14,13 @@ import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
 
 @Service
 public class OfferService {
-    private OfferRepo offerRepo;
-    private VisitRepo visitRepo;
+    static OfferRepo offerRepo;
+    static VisitRepo visitRepo;
 
     @Autowired
     public void setOfferRepo(OfferRepo offerRepo, VisitRepo visitRepo) {
-        this.offerRepo = offerRepo;
-        this.visitRepo = visitRepo;
+        OfferService.offerRepo = offerRepo;
+        OfferService.visitRepo = visitRepo;
     }
 
     public Offer get(int id) {
@@ -53,7 +53,7 @@ public class OfferService {
 
     }
 
-    public void register(Offer offr) {
+    public void save(Offer offr) {
         // hna u schedule the check
         offerRepo.save(offr);
     }
@@ -102,8 +102,8 @@ public class OfferService {
         return result;
     }
 
-    public void createVisit(Offer offer, String client_email){
-        
+    public void createVisit(Offer offer, String client_email) {
+        // sooo lzmnla dabord n3rfou l'agent le plus proche de la propriete
 
     }
 }

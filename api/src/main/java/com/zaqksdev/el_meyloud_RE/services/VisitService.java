@@ -10,13 +10,13 @@ import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
 
 @Service
 public class VisitService {
-    private VisitRepo visitRepo;
-    private ClientRepo clientRepo;
+    static VisitRepo visitRepo;
+    static ClientRepo clientRepo;
 
     @Autowired
     public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo) {
-        this.visitRepo = visitRepo;
-        this.clientRepo = clientRepo;
+        VisitService.visitRepo = visitRepo;
+        VisitService.clientRepo = clientRepo;
     }
 
     public List<Visit> getOf(String email) {

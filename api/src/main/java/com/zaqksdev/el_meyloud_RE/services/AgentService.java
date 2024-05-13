@@ -11,11 +11,11 @@ import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 
 @Service
 public class AgentService {
-    private AgentRepo agntRepo;
+    static AgentRepo agntRepo;
 
     @Autowired
     public void setCtrtRepo(AgentRepo repo) {
-        this.agntRepo = repo;
+        AgentService.agntRepo = repo;
 
     }
 

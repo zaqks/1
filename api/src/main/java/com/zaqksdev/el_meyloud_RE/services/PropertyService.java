@@ -12,13 +12,13 @@ import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
 
 @Service
 public class PropertyService {
-    private PropertyRepo propertyRepo;
-    private ClientRepo clientRepo;
+    static PropertyRepo propertyRepo;
+    static ClientRepo clientRepo;
 
     @Autowired
     public void setPropertyRepo(PropertyRepo propertyRepo, ClientRepo clientRepo) {
-        this.propertyRepo = propertyRepo;
-        this.clientRepo = clientRepo;
+        PropertyService.propertyRepo = propertyRepo;
+        PropertyService.clientRepo = clientRepo;
 
     }
 
