@@ -1,12 +1,13 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
-
+import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 
 @Service
@@ -58,6 +59,30 @@ public class AgentService {
             // agntRepo.delete(rslt);
         }
 
+    }
+
+    public Visit getNextVisit(Agent agent, int gap, int duration) {
+        int startW = agent.getStartH();
+        int endW = agent.getEndW();
+        int startH = agent.getStartH();
+        int endH = agent.getEndH();
+
+        // doka a7km today+GAP
+        Calendar today = Calendar.getInstance();
+        System.out.print(today);
+
+        // a93d tzid day la ta7t f wahed ma ysl7ch
+
+        // doka chouf la derniere visite f hadak e nhar 3la d9ah
+
+        // la h == endH
+        // dir day+1
+        // a93d tzid day la ta7t f wahed ma ysl7ch
+
+        // doka rah 3ndek le parfait timing
+        // tu cree la visite ou cbn
+
+        return new Visit();
     }
 
 }

@@ -88,7 +88,9 @@ public class ClientOffer {
 
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
-        String finger = authSrvc.new ClientAuth(email, password).kickNonSeller("");
+        AuthService.ClientAuth clientSrvc = authSrvc.new ClientAuth(email, password);
+
+        String finger = clientSrvc.kickNonSeller("");
         if (!finger.equals(""))
             return finger;
 
@@ -102,10 +104,10 @@ public class ClientOffer {
 
         // save
         Offer offr = offer.convertToEntity(prop.getOwner(), prop);
-        //offrSrvc.save(offr);
+        // offrSrvc.save(offr);
 
         // create check visit
-        offrSrvc.createVisit(offr, email);
+        offrSrvc.createVisit(offr, clientSrvc.get());
 
         return "redirect:/client/offer";
 
