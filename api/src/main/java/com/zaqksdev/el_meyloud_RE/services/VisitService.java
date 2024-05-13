@@ -2,6 +2,8 @@ package com.zaqksdev.el_meyloud_RE.services;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,6 +69,20 @@ public class VisitService {
 
     public Visit getLastOn(Agent agent, Calendar date) {
         List<Visit> todays = filterByDate(getPresentedBy(agent), date);
+
+        HashMap<Integer, Integer> hours = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> invHours = new HashMap<Integer, Integer>();
+
+        // each indx linkih m3a hour + 1
+        int hour;
+        for (int i = 0; i < todays.size(); i++) {
+            hour = todays.get(i).getDatetime().get(Calendar.HOUR_OF_DAY) + 1;
+            hours.put(i, hour);
+            invHours.put(hour, i);
+        }
+
+        List<Integer> ends = Collections.sort(hours.values());
+    
 
         return todays.get(0);
 
