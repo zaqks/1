@@ -15,9 +15,12 @@ import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 public class AgentService {
     static AgentRepo agntRepo;
 
+    static VisitService visitSrvc;
+
     @Autowired
-    public void setCtrtRepo(AgentRepo repo) {
+    public void setCtrtRepo(AgentRepo repo, VisitService visitSrvc) {
         AgentService.agntRepo = repo;
+        AgentService.visitSrvc = visitSrvc;
 
     }
 
@@ -62,7 +65,6 @@ public class AgentService {
 
     }
 
-
     public boolean isWorkDay(Agent agent, int day_num) {
         // day 0 => 6
         int startH = agent.getStartH();
@@ -74,7 +76,6 @@ public class AgentService {
             return startH >= day_num && day_num >= endH;
 
     }
-
 
     public Visit getNextVisit(Agent agent, int gap, int duration) {
         /*
@@ -92,22 +93,21 @@ public class AgentService {
          * 
          */
 
-        int startW = agent.getStartH();
-        int endW = agent.getEndW();
-        int startH = agent.getStartH();
-        int endH = agent.getEndH();
-
         // doka a7km today+GAP
-        Calendar today = Calendar.getInstance();
-        today.add(Calendar.DAY_OF_MONTH, gap);
+        Calendar ftrVstDate = Calendar.getInstance(); // today's datetime
+        ftrVstDate.add(Calendar.DAY_OF_MONTH, gap);
+        
+        ftrVstDate.set(Calendar.MINUTE, 0);
+        ftrVstDate.set(Calendar.SECOND, 0);
+        ftrVstDate.set(Calendar.MILLISECOND, 0);
 
         // a93d tzid day la ta7t f wahed ma ysl7ch
-        while (!isWorkDay(agent, today.get(Calendar.DAY_OF_WEEK))) {
-            today.add(Calendar.DAY_OF_MONTH, 1);
+        while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+            ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
         }
 
         // doka chouf la derniere visite f hadak e nhar 3la d9ah
-        List<Visit> visits = 
+        Visit lastVst = visitSrvc.getLastOn(agent, ftrVstDate);
 
         // la h == endH
         // dir day+1
@@ -119,5 +119,4 @@ public class AgentService {
         return new Visit();
     }
 
-   
 }
