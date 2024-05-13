@@ -107,9 +107,9 @@ public class OfferService {
 
         for (int i = 0; i < visits.size(); i++) {
             current = visits.get(i);
-            if (current.getOffer().getProperty().getOwner().getEmail().equals(owner_email)) {
+            if (current.getOffer().getProperty().getOwner().getEmail().equals(owner_email))
                 result.add(current);
-            }
+
         }
         return result;
     }
@@ -128,8 +128,6 @@ public class OfferService {
         visit.setOffer(offer);
         visit.setClient(client);
         visit.setAgent(closestAgnt);
-
-    
 
         visitRepo.save(visit);
     }

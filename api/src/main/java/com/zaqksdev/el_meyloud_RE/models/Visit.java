@@ -29,6 +29,9 @@ public class Visit {
     @JoinColumn(name = "agent_id", referencedColumnName = "id")
     private Agent agent;
 
+
+    //
+
     public int getId() {
         return id;
     }
@@ -86,3 +89,4 @@ public class Visit {
     }
 
 }
+

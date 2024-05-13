@@ -27,13 +27,6 @@
 -dont show the non active agents
 -add the range invertor
 
-# DONE
-
-# client actions: 
--put his property for sale (needs to be checked and activated by an agent)
--see the availble offers
-
--add the range script
 
 
 
@@ -46,3 +39,10 @@ we choose the less working agent
 we choose the closest agent relative to the property
 
 
+# DONE
+
+# client actions: 
+-put his property for sale (needs to be checked and activated by an agent)
+-see the availble offers
+
+-add the range script

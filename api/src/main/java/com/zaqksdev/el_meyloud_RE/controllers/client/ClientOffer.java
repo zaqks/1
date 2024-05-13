@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fasterxml.jackson.datatype.jsr310.ser.OffsetTimeSerializer;
 import com.zaqksdev.el_meyloud_RE.dtos.offer.OfferCreateDTO;
+import com.zaqksdev.el_meyloud_RE.dtos.visit.VisitShowDTO;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
@@ -58,7 +59,7 @@ public class ClientOffer {
             return "redirect:/client/offer";
 
         model.addAttribute("offer", rslt);
-        model.addAttribute("visits", offrSrvc.getCheckVisits(id, email));
+        model.addAttribute("visits", new VisitShowDTO().VisitShowDTOs(offrSrvc.getCheckVisits(id, email)));
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/show");
     }
