@@ -110,9 +110,25 @@ public class OfferService {
     }
 
     public void createVisit(Offer offer, String client_email) {
+        final int GAP = 2;//days
+        final int DURATION = 1;//hours
+
         // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
         Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
 
+
+
+        // doka a7km today+GAP
+        // a93d tzid day la ta7t f wahed ma ysl7ch
+        
+        // doka chouf la derniere visite f hadak e nhar 3la d9ah
+        
+        // la h == endH
+        // dir day+1 
+        // a93d tzid day la ta7t f wahed ma ysl7ch
+
+        // doka rah 3ndek le parfait timing
+        // tu cree la visite ou cbn
         
 
     }

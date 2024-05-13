@@ -12,10 +12,11 @@ public class Visit {
     private int id;
     private boolean passed = false;
     private boolean missed = false;
-    
 
     private Date date;
-    private Time time;
+    private int time, day;
+
+    // private Time time;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "offer_id", referencedColumnName = "id")
@@ -45,11 +46,11 @@ public class Visit {
         this.date = date;
     }
 
-    public Time getTime() {
+    public int getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(int time) {
         this.time = time;
     }
 
@@ -77,15 +78,28 @@ public class Visit {
         this.agent = agent;
     }
 
-	public boolean isPassed() {
-		return passed;
-	}
+    public boolean isPassed() {
+        return passed;
+    }
 
-	public void setPassed(boolean passed) {
-		this.passed = passed;
-	}
+    public void setPassed(boolean passed) {
+        this.passed = passed;
+    }
 
-    
-    
+    public boolean isMissed() {
+        return missed;
+    }
+
+    public void setMissed(boolean missed) {
+        this.missed = missed;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
 
 }
