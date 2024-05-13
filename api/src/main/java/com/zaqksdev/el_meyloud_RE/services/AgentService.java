@@ -77,7 +77,7 @@ public class AgentService {
 
     }
 
-    public Visit getNextVisit(Agent agent, int gap, int duration) {
+    public Calendar getNextVisitDate(Agent agent, int gap, int duration) {
         /*
          * 
          * System.out.println("-------------------------");
@@ -96,7 +96,7 @@ public class AgentService {
         // doka a7km today+GAP
         Calendar ftrVstDate = Calendar.getInstance(); // today's datetime
         ftrVstDate.add(Calendar.DAY_OF_MONTH, gap);
-        
+
         ftrVstDate.set(Calendar.MINUTE, 0);
         ftrVstDate.set(Calendar.SECOND, 0);
         ftrVstDate.set(Calendar.MILLISECOND, 0);
@@ -108,15 +108,21 @@ public class AgentService {
 
         // doka chouf la derniere visite f hadak e nhar 3la d9ah
         Visit lastVst = visitSrvc.getLastOn(agent, ftrVstDate);
-
         // la h == endH
-        // dir day+1
-        // a93d tzid day la ta7t f wahed ma ysl7ch
+        if (lastVst.getDatetime().get(Calendar.HOUR_OF_DAY) + duration >= agent.getEndH()) {
+            // dir day+1
+            ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
+
+            // a93d tzid day la ta7t f wahed ma ysl7ch
+            while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+                ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
+            }
+        }
 
         // doka rah 3ndek le parfait timing
         // tu cree la visite ou cbn
 
-        return new Visit();
+        return ftrVstDate;
     }
 
 }

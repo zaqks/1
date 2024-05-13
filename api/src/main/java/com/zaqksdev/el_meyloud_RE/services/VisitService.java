@@ -71,20 +71,22 @@ public class VisitService {
         List<Visit> todays = filterByDate(getPresentedBy(agent), date);
 
         HashMap<Integer, Integer> hours = new HashMap<Integer, Integer>();
-        HashMap<Integer, Integer> invHours = new HashMap<Integer, Integer>();
+        HashMap<Integer, Visit> invHours = new HashMap<Integer, Visit>();
 
         // each indx linkih m3a hour + 1
         int hour;
         for (int i = 0; i < todays.size(); i++) {
-            hour = todays.get(i).getDatetime().get(Calendar.HOUR_OF_DAY) + 1;
+            hour = todays.get(i).getDatetime().get(Calendar.HOUR_OF_DAY);
             hours.put(i, hour);
-            invHours.put(hour, i);
+            invHours.put(hour, todays.get(i));
         }
 
-        List<Integer> ends = Collections.sort(hours.values());
-    
+        List<Integer> vals = (List<Integer>) hours.values();
+        Collections.sort(vals);
 
-        return todays.get(0);
+        // the highest val hya the endtime (last one on the sort)
+
+        return invHours.get(vals.get(vals.size() - 1));
 
     }
 

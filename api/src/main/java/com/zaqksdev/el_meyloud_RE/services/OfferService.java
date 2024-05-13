@@ -1,6 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -120,10 +121,14 @@ public class OfferService {
         // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
         Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
 
-        Visit nextVisit = agntSrvc.getNextVisit(closestAgnt, GAP, DURATION);
+        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
 
-        nextVisit.setOffer(offer);
-        nextVisit.setClient(client);
+        Visit visit = new Visit();
+        visit.setDatetime(nextVisitDate);
+        visit.setOffer(offer);
+        visit.setClient(client);
+        visit.setAgent(closestAgnt);
 
+        visitRepo.save(visit);
     }
 }
