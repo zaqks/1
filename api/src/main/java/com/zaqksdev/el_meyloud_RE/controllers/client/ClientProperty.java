@@ -53,6 +53,7 @@ public class ClientProperty {
             @CookieValue(name = "password", defaultValue = "") String password) {
 
         Property rslt = propertySrvc.getOf(email, id);
+        
         // check if he's the owner
         if (rslt != null) {
 

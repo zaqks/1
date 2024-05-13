@@ -140,7 +140,7 @@ public class AuthService {
         public Boolean checkAuth() {
             Agent rslt = agentRepo.findByEmail(email);
             if (rslt != null) {
-                return rslt.getPassword().equals(password);
+                return rslt.getPassword().equals(password) && rslt.isActive();
             }
 
             return false;
@@ -161,7 +161,7 @@ public class AuthService {
             return agentRepo.findByEmail(email);
         }
 
-        public void save(Agent agent){            
+        public void save(Agent agent) {
 
             agentRepo.save(agent);
         }
@@ -212,12 +212,10 @@ public class AuthService {
                     return false;
                 }
 
-                //hna zid le check ta3 les horraires
+                // hna zid le check ta3 les horraires
 
                 return true;
             }
-
-
 
             public boolean checkSGINAdmin() {
 

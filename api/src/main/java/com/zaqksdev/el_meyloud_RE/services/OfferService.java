@@ -8,15 +8,23 @@ import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Property;
+import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
+import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
 
 @Service
 public class OfferService {
     private OfferRepo offerRepo;
+    private VisitRepo visitRepo;
 
     @Autowired
-    public void setOfferRepo(OfferRepo offerRepo) {
+    public void setOfferRepo(OfferRepo offerRepo, VisitRepo visitRepo) {
         this.offerRepo = offerRepo;
+        this.visitRepo = visitRepo;
+    }
+
+    public Offer get(int id) {
+        return offerRepo.findById(id);
     }
 
     public List<Offer> getOf(String email) {
@@ -74,4 +82,28 @@ public class OfferService {
         return rslt;
     }
 
+    public List<Visit> getVisits(int offer_id) {
+        return visitRepo.findByOffer(get(offer_id));
+    }
+
+    public List<Visit> getCheckVisits(int offer_id, String owner_email) {
+        List<Visit> visits = getVisits(offer_id);
+        // client visits his offer
+
+        Visit current;
+        List<Visit> result = new ArrayList<Visit>();
+
+        for (int i = 0; i < visits.size(); i++) {
+            current = visits.get(i);
+            if (current.getOffer().getProperty().getOwner().getEmail().equals(owner_email)) {
+                result.add(current);
+            }
+        }
+        return result;
+    }
+
+    public void createVisit(Offer offer, String client_email){
+        
+
+    }
 }

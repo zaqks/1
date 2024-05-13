@@ -26,6 +26,17 @@
 
     <p th:text="${offer.description}"></p>
 
+
+    <h2>visit</h2>
+    <p>your offer needs to be checked by an agent on:</p>
+
+
+    <div th:each="visit:${visits}">
+        <p th:text="${visit.date}"></p>
+        <p th:text="${visit.time}"></p>
+    </div>
+
+
 </body>
 
 </html>
