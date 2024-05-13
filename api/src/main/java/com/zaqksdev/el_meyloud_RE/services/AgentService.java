@@ -1,5 +1,6 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -61,7 +62,36 @@ public class AgentService {
 
     }
 
+
+    public boolean isWorkDay(Agent agent, int day_num) {
+        // day 0 => 6
+        int startH = agent.getStartH();
+        int endH = agent.getEndH();
+
+        if (startH < endH) {
+            return startH <= day_num && day_num <= endH;
+        } else
+            return startH >= day_num && day_num >= endH;
+
+    }
+
+
     public Visit getNextVisit(Agent agent, int gap, int duration) {
+        /*
+         * 
+         * System.out.println("-------------------------");
+         * System.out.println(c1.get(Calendar.HOUR_OF_DAY));// hour
+         * System.out.println(c1.get(Calendar.MINUTE));// minute
+         * System.out.println(c1.get(Calendar.SECOND));// seconds
+         * 
+         * System.out.println(c1.get(Calendar.YEAR));// year
+         * System.out.println(c1.get(Calendar.MONTH) + 1);// month
+         * System.out.println(c1.get(Calendar.DAY_OF_MONTH));// day num
+         * System.out.println(c1.get(Calendar.DAY_OF_WEEK) - 1);// day name
+         * System.out.println("-------------------------");
+         * 
+         */
+
         int startW = agent.getStartH();
         int endW = agent.getEndW();
         int startH = agent.getStartH();
@@ -69,11 +99,15 @@ public class AgentService {
 
         // doka a7km today+GAP
         Calendar today = Calendar.getInstance();
-        System.out.print(today);
+        today.add(Calendar.DAY_OF_MONTH, gap);
 
         // a93d tzid day la ta7t f wahed ma ysl7ch
+        while (!isWorkDay(agent, today.get(Calendar.DAY_OF_WEEK))) {
+            today.add(Calendar.DAY_OF_MONTH, 1);
+        }
 
         // doka chouf la derniere visite f hadak e nhar 3la d9ah
+        List<Visit> visits = 
 
         // la h == endH
         // dir day+1
@@ -85,4 +119,5 @@ public class AgentService {
         return new Visit();
     }
 
+   
 }

@@ -1,6 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.models;
 
 import java.sql.Time;
+import java.util.Calendar;
 import java.sql.Date;
 import jakarta.persistence.*;
 
@@ -13,8 +14,8 @@ public class Visit {
     private boolean passed = false;
     private boolean missed = false;
 
-    private Date date;
-    private int time, day;
+    private Calendar datetime;
+    // private int time, day;
 
     // private Time time;
 
@@ -36,22 +37,6 @@ public class Visit {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
     }
 
     public Offer getOffer() {
@@ -94,12 +79,12 @@ public class Visit {
         this.missed = missed;
     }
 
-    public int getDay() {
-        return day;
+    public Calendar getDatetime() {
+        return datetime;
     }
 
-    public void setDay(int day) {
-        this.day = day;
+    public void setDatetime(Calendar datetime) {
+        this.datetime = datetime;
     }
 
 }
