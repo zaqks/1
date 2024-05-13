@@ -67,13 +67,13 @@ public class AgentService {
 
     public boolean isWorkDay(Agent agent, int day_num) {
         // day 0 => 6
-        int startH = agent.getStartH();
-        int endH = agent.getEndH();
+        int startW = agent.getStartW();
+        int endW = agent.getEndW();
 
-        if (startH < endH) {
-            return startH <= day_num && day_num <= endH;
+        if (startW < endW) {
+            return startW <= day_num && day_num <= endW;
         } else
-            return startH >= day_num && day_num >= endH;
+            return startW >= day_num && day_num >= endW;
 
     }
 
@@ -102,20 +102,29 @@ public class AgentService {
         ftrVstDate.set(Calendar.MILLISECOND, 0);
 
         // a93d tzid day la ta7t f wahed ma ysl7ch
-        while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+
+        while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK) - 1)) {
             ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
+            System.out.println("pass");
         }
 
         // doka chouf la derniere visite f hadak e nhar 3la d9ah
         Visit lastVst = visitSrvc.getLastOn(agent, ftrVstDate);
-        // la h == endH
-        if (lastVst.getDatetime().get(Calendar.HOUR_OF_DAY) + duration >= agent.getEndH()) {
-            // dir day+1
-            ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
 
-            // a93d tzid day la ta7t f wahed ma ysl7ch
-            while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+        // la mknch
+        if (lastVst == null) {
+            ftrVstDate.set(Calendar.HOUR_OF_DAY, agent.getEndH() - duration);
+        } else {
+            ftrVstDate.set(Calendar.HOUR_OF_DAY, lastVst.getDatetime().get(Calendar.HOUR_OF_DAY));
+            // la h == endH
+            if (ftrVstDate.get(Calendar.HOUR_OF_DAY) + duration >= agent.getEndH()) {
+                // dir day+1
                 ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
+
+                // a93d tzid day la ta7t f wahed ma ysl7ch
+                while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+                    ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
+                }
             }
         }
 
