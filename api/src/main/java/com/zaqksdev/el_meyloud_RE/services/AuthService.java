@@ -11,14 +11,14 @@ import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 
 @Service
 public class AuthService {
-    private String email, password;
-    private ClientRepo clientRepo;
-    private AgentRepo agentRepo;
+    static String email, password;
+    static ClientRepo clientRepo;
+    static AgentRepo agentRepo;
 
     @Autowired
     public void setClientRepo(ClientRepo clientRepo, AgentRepo agentRepo) {
-        this.clientRepo = clientRepo;
-        this.agentRepo = agentRepo;
+        AuthService.clientRepo = clientRepo;
+        AuthService.agentRepo = agentRepo;
     }
 
     public class ClientAuth {

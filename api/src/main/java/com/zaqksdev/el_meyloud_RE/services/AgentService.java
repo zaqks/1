@@ -1,21 +1,26 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
-
+import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 
 @Service
 public class AgentService {
-    private AgentRepo agntRepo;
+    static AgentRepo agntRepo;
+
+    static VisitService visitSrvc;
 
     @Autowired
-    public void setCtrtRepo(AgentRepo repo) {
-        this.agntRepo = repo;
+    public void setCtrtRepo(AgentRepo repo, VisitService visitSrvc) {
+        AgentService.agntRepo = repo;
+        AgentService.visitSrvc = visitSrvc;
 
     }
 
@@ -58,6 +63,60 @@ public class AgentService {
             // agntRepo.delete(rslt);
         }
 
+    }
+
+    public boolean isWorkDay(Agent agent, int day_num) {
+        // day 0 => 6
+        int startH = agent.getStartH();
+        int endH = agent.getEndH();
+
+        if (startH < endH) {
+            return startH <= day_num && day_num <= endH;
+        } else
+            return startH >= day_num && day_num >= endH;
+
+    }
+
+    public Visit getNextVisit(Agent agent, int gap, int duration) {
+        /*
+         * 
+         * System.out.println("-------------------------");
+         * System.out.println(c1.get(Calendar.HOUR_OF_DAY));// hour
+         * System.out.println(c1.get(Calendar.MINUTE));// minute
+         * System.out.println(c1.get(Calendar.SECOND));// seconds
+         * 
+         * System.out.println(c1.get(Calendar.YEAR));// year
+         * System.out.println(c1.get(Calendar.MONTH) + 1);// month
+         * System.out.println(c1.get(Calendar.DAY_OF_MONTH));// day num
+         * System.out.println(c1.get(Calendar.DAY_OF_WEEK) - 1);// day name
+         * System.out.println("-------------------------");
+         * 
+         */
+
+        // doka a7km today+GAP
+        Calendar ftrVstDate = Calendar.getInstance(); // today's datetime
+        ftrVstDate.add(Calendar.DAY_OF_MONTH, gap);
+        
+        ftrVstDate.set(Calendar.MINUTE, 0);
+        ftrVstDate.set(Calendar.SECOND, 0);
+        ftrVstDate.set(Calendar.MILLISECOND, 0);
+
+        // a93d tzid day la ta7t f wahed ma ysl7ch
+        while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+            ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
+        }
+
+        // doka chouf la derniere visite f hadak e nhar 3la d9ah
+        Visit lastVst = visitSrvc.getLastOn(agent, ftrVstDate);
+
+        // la h == endH
+        // dir day+1
+        // a93d tzid day la ta7t f wahed ma ysl7ch
+
+        // doka rah 3ndek le parfait timing
+        // tu cree la visite ou cbn
+
+        return new Visit();
     }
 
 }

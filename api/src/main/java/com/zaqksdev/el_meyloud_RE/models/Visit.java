@@ -1,6 +1,7 @@
 package com.zaqksdev.el_meyloud_RE.models;
 
 import java.sql.Time;
+import java.util.Calendar;
 import java.sql.Date;
 import jakarta.persistence.*;
 
@@ -12,10 +13,11 @@ public class Visit {
     private int id;
     private boolean passed = false;
     private boolean missed = false;
-    
 
-    private Date date;
-    private Time time;
+    private Calendar datetime;
+    // private int time, day;
+
+    // private Time time;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "offer_id", referencedColumnName = "id")
@@ -35,22 +37,6 @@ public class Visit {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Time getTime() {
-        return time;
-    }
-
-    public void setTime(Time time) {
-        this.time = time;
     }
 
     public Offer getOffer() {
@@ -77,15 +63,28 @@ public class Visit {
         this.agent = agent;
     }
 
-	public boolean isPassed() {
-		return passed;
-	}
+    public boolean isPassed() {
+        return passed;
+    }
 
-	public void setPassed(boolean passed) {
-		this.passed = passed;
-	}
+    public void setPassed(boolean passed) {
+        this.passed = passed;
+    }
 
-    
-    
+    public boolean isMissed() {
+        return missed;
+    }
+
+    public void setMissed(boolean missed) {
+        this.missed = missed;
+    }
+
+    public Calendar getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Calendar datetime) {
+        this.datetime = datetime;
+    }
 
 }

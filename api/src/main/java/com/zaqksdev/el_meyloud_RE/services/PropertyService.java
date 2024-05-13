@@ -1,24 +1,33 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
+import com.zaqksdev.el_meyloud_RE.services.coords.Coords;
+import com.zaqksdev.el_meyloud_RE.services.coords.Point;
 
 @Service
 public class PropertyService {
-    private PropertyRepo propertyRepo;
-    private ClientRepo clientRepo;
+    static PropertyRepo propertyRepo;
+    static ClientRepo clientRepo;
+
+    static AgentService agntSrvc;
 
     @Autowired
-    public void setPropertyRepo(PropertyRepo propertyRepo, ClientRepo clientRepo) {
-        this.propertyRepo = propertyRepo;
-        this.clientRepo = clientRepo;
+    public void setPropertyRepo(PropertyRepo propertyRepo, ClientRepo clientRepo, AgentService agntSrvc) {
+        PropertyService.propertyRepo = propertyRepo;
+        PropertyService.clientRepo = clientRepo;
+        PropertyService.agntSrvc = agntSrvc;
 
     }
 
@@ -78,6 +87,40 @@ public class PropertyService {
 
     public void save(Property prp) {
         propertyRepo.save(prp);
+    }
+
+    public Agent getClosestAgent(Property property) {
+        Point prpPnt = new Point().getPoint(property);
+
+        List<Agent> agnts = agntSrvc.getAllNonAdminActive();
+        Point agntPnt;
+        Agent current;
+
+        HashMap<Integer, Float> distances = new HashMap<Integer, Float>();
+        HashMap<Float, Integer> distancesInv = new HashMap<Float, Integer>();
+
+        float d;
+
+        // link each agent with d
+        for (int i = 0; i < agnts.size(); i++) {
+            current = agnts.get(i);
+            agntPnt = new Point().getPoint(current);
+            d = new Coords(prpPnt, agntPnt).getDistance();
+
+            distances.put(current.getId(), d);
+
+            // inv
+            distancesInv.put(d, current.getId());
+        }
+
+        // get the shortest distance to get the closest agent
+        List<Float> vals = new ArrayList<Float>(distances.values());
+        Collections.sort(vals);// ASCD tsma the closest c vraiment the first elem
+
+        // doka chouf la distance a quel agent elle correspond
+
+        return agntSrvc.get(distancesInv.get(vals.get(0)));
+
     }
 
 }

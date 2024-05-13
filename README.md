@@ -25,6 +25,7 @@
 -check the agent schedule f db
 -add password confirm
 -dont show the non active agents
+-add the range invertor
 
 # DONE
 
