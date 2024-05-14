@@ -94,4 +94,51 @@ public class VisitService {
 
     }
 
+    //
+
+    public List<Visit> getAllRent(String agent_email) {
+        List<Visit> inpt = visitRepo.findByAgent(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
+
+        Visit current;
+        for (int i = 0; i < inpt.size(); i++) {
+            current = inpt.get(i);
+            if (current.getOffer().isRent())
+                rslt.add(current);
+        }
+
+        System.out.println(rslt.size());
+        return rslt;
+    }
+
+    public List<Visit> getAllBuy(String agent_email) {
+        List<Visit> inpt = visitRepo.findByAgent(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
+
+        Visit current;
+        for (int i = 0; i < inpt.size(); i++) {
+            current = inpt.get(i);
+            if (!current.getOffer().isRent())
+                rslt.add(current);
+        }
+
+        System.out.println(rslt.size());
+        return rslt;
+    }
+
+    public List<Visit> getAllCheck(String agent_email) {
+        List<Visit> inpt = visitRepo.findByAgent(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
+
+        Visit current;
+        for (int i = 0; i < inpt.size(); i++) {
+            current = inpt.get(i);
+            if (!current.getOffer().isChecked())
+                rslt.add(current);
+        }
+
+        System.out.println(rslt.size());
+        return rslt;
+    }
+
 }

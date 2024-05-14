@@ -7,6 +7,7 @@ import java.util.List;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 
 public class VisitShowDTO extends Visit {
+    private int id;
 
     private int hour;
     private int minute;
@@ -21,7 +22,7 @@ public class VisitShowDTO extends Visit {
     }
 
     public VisitShowDTO(Visit visit) {
-
+        this.setId(visit.getId());
         this.setAgent(visit.getAgent());
         this.setClient(visit.getClient());
         this.setOffer(visit.getOffer());
@@ -34,7 +35,7 @@ public class VisitShowDTO extends Visit {
         minute = clndr.get(Calendar.MINUTE);
 
         day = clndr.get(Calendar.DAY_OF_MONTH);
-        month = clndr.get(Calendar.MONTH) + 1; //months start from 0 !!!!
+        month = clndr.get(Calendar.MONTH) + 1; // months start from 0 !!!!
         year = clndr.get(Calendar.YEAR);
 
         time = String.format("%dh" + (minute < 10 ? "0" : "") + "%d", hour, minute);
@@ -106,6 +107,14 @@ public class VisitShowDTO extends Visit {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

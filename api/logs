@@ -5441,3 +5441,992 @@ org.springframework.expression.spel.SpelParseException: Expression [visit.] @5: 
 2024-05-14T02:26:39.634+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-05-14T02:26:39.634+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-05-14T02:26:39.641+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2024-05-14T02:30:10.125+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2024-05-14T02:30:10.135+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-398] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:30:10.136+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-398] com.zaxxer.hikari.HikariDataSource       : HikariPool-100 - Shutdown initiated...
+2024-05-14T02:30:10.138+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-398] com.zaxxer.hikari.HikariDataSource       : HikariPool-100 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:30:10.610+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:30:10.611+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:30:10.765+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:30:10.778+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:30:10.905+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:30:10.906+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:30:10.906+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:30:10.912+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:30:10.912+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 300 ms
+2024-05-14T02:30:10.948+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:30:10.949+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:30:10.952+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:30:10.952+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-101 - Starting...
+2024-05-14T02:30:10.955+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-101 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3cda5fba
+2024-05-14T02:30:10.955+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-101 - Start completed.
+2024-05-14T02:30:10.955+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:30:10.956+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:30:10.956+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:30:11.062+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:30:11.291+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:30:11.606+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:30:11.769+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:30:11.778+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:30:11.783+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.202 seconds (process running for 10230.512)
+2024-05-14T02:30:11.785+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:30:21.282+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2024-05-14T02:30:21.294+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-402] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:30:21.295+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-402] com.zaxxer.hikari.HikariDataSource       : HikariPool-101 - Shutdown initiated...
+2024-05-14T02:30:21.297+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-402] com.zaxxer.hikari.HikariDataSource       : HikariPool-101 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:30:21.619+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:30:21.619+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:30:21.762+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:30:21.772+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:30:21.934+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:30:21.935+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:30:21.935+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:30:21.946+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:30:21.946+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 326 ms
+2024-05-14T02:30:22.019+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:30:22.021+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:30:22.026+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:30:22.027+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-102 - Starting...
+2024-05-14T02:30:22.030+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-102 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d23ac90
+2024-05-14T02:30:22.030+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-102 - Start completed.
+2024-05-14T02:30:22.031+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:30:22.031+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:30:22.031+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:30:22.172+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:30:22.308+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:30:22.432+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:30:22.648+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:30:22.666+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:30:22.672+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.077 seconds (process running for 10241.4)
+2024-05-14T02:30:22.674+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:30:36.277+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2024-05-14T02:30:36.287+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-406] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:30:36.289+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-406] com.zaxxer.hikari.HikariDataSource       : HikariPool-102 - Shutdown initiated...
+2024-05-14T02:30:36.292+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-406] com.zaxxer.hikari.HikariDataSource       : HikariPool-102 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:30:36.825+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:30:36.825+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:30:37.084+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:30:37.111+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:30:37.219+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:30:37.220+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:30:37.220+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:30:37.227+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:30:37.227+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 399 ms
+2024-05-14T02:30:37.278+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:30:37.279+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:30:37.282+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:30:37.283+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-103 - Starting...
+2024-05-14T02:30:37.286+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-103 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13350ba0
+2024-05-14T02:30:37.286+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-103 - Start completed.
+2024-05-14T02:30:37.287+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:30:37.287+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:30:37.287+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:30:37.416+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:30:37.657+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:30:37.882+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:30:38.186+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:30:38.253+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:30:38.272+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.481 seconds (process running for 10257.0)
+2024-05-14T02:30:38.276+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:30:41.135+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:30:41.135+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:30:41.141+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-05-14T02:35:32.223+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-05-14T02:35:32.252+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-410] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:35:32.258+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-410] com.zaxxer.hikari.HikariDataSource       : HikariPool-103 - Shutdown initiated...
+2024-05-14T02:35:32.265+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-410] com.zaxxer.hikari.HikariDataSource       : HikariPool-103 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:35:32.954+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:35:32.954+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:35:33.146+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:35:33.178+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:35:33.415+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:35:33.415+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:35:33.416+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:35:33.425+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:35:33.426+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 470 ms
+2024-05-14T02:35:33.470+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:35:33.472+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:35:33.476+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:35:33.477+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-104 - Starting...
+2024-05-14T02:35:33.480+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-104 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b408c9d
+2024-05-14T02:35:33.481+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-104 - Start completed.
+2024-05-14T02:35:33.481+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:35:33.481+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:35:33.481+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:35:33.561+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:35:33.731+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:35:33.920+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:35:34.038+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:35:34.046+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:35:34.052+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.128 seconds (process running for 10552.78)
+2024-05-14T02:35:34.054+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:35:42.977+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (2 additions, 2 deletions, 0 modifications)
+2024-05-14T02:35:42.990+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-414] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:35:42.992+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-414] com.zaxxer.hikari.HikariDataSource       : HikariPool-104 - Shutdown initiated...
+2024-05-14T02:35:42.995+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-414] com.zaxxer.hikari.HikariDataSource       : HikariPool-104 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:35:43.418+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:35:43.419+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:35:43.564+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:35:43.574+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:35:43.673+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:35:43.674+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:35:43.674+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:35:43.680+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:35:43.680+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 260 ms
+2024-05-14T02:35:43.727+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:35:43.729+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:35:43.731+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:35:43.733+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-105 - Starting...
+2024-05-14T02:35:43.738+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-105 - Added connection com.mysql.cj.jdbc.ConnectionImpl@663acec2
+2024-05-14T02:35:43.738+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-105 - Start completed.
+2024-05-14T02:35:43.739+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:35:43.739+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:35:43.739+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:35:43.846+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:35:43.994+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:35:44.124+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:35:44.351+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:35:44.370+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:35:44.377+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.99 seconds (process running for 10563.105)
+2024-05-14T02:35:44.381+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:36:54.830+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:36:54.831+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:36:54.839+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2024-05-14T02:37:41.003+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (1 addition, 0 deletions, 57 modifications)
+2024-05-14T02:37:41.026+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-418] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:37:41.027+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-418] com.zaxxer.hikari.HikariDataSource       : HikariPool-105 - Shutdown initiated...
+2024-05-14T02:37:41.029+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-418] com.zaxxer.hikari.HikariDataSource       : HikariPool-105 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:37:41.464+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:37:41.465+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:37:41.779+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:37:41.804+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:37:41.983+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:37:41.984+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:37:41.984+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:37:41.998+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:37:41.998+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 531 ms
+2024-05-14T02:37:42.093+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:37:42.096+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:37:42.105+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:37:42.106+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-106 - Starting...
+2024-05-14T02:37:42.115+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-106 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d12a479
+2024-05-14T02:37:42.116+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-106 - Start completed.
+2024-05-14T02:37:42.119+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:37:42.120+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:37:42.120+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:37:42.352+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:37:42.523+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:37:42.754+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:37:42.863+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:37:42.872+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:37:42.878+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.445 seconds (process running for 10681.606)
+2024-05-14T02:37:42.881+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:38:12.775+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:38:12.788+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-422] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:38:12.790+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-422] com.zaxxer.hikari.HikariDataSource       : HikariPool-106 - Shutdown initiated...
+2024-05-14T02:38:12.793+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-422] com.zaxxer.hikari.HikariDataSource       : HikariPool-106 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:38:13.139+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:38:13.139+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:38:13.296+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:38:13.306+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:38:13.403+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:38:13.404+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:38:13.404+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:38:13.410+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:38:13.410+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 269 ms
+2024-05-14T02:38:13.446+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:38:13.447+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:38:13.450+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:38:13.450+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-107 - Starting...
+2024-05-14T02:38:13.452+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-107 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66ce2c09
+2024-05-14T02:38:13.453+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-107 - Start completed.
+2024-05-14T02:38:13.453+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:38:13.453+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:38:13.453+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:38:13.576+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:38:13.731+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:38:13.868+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:38:13.992+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:38:14.002+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:38:14.006+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.885 seconds (process running for 10712.734)
+2024-05-14T02:38:14.007+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:38:36.816+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:38:36.828+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-426] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:38:36.830+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-426] com.zaxxer.hikari.HikariDataSource       : HikariPool-107 - Shutdown initiated...
+2024-05-14T02:38:36.833+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-426] com.zaxxer.hikari.HikariDataSource       : HikariPool-107 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:38:37.187+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:38:37.187+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:38:37.336+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:38:37.348+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:38:37.433+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:38:37.433+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:38:37.433+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:38:37.443+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:38:37.443+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 254 ms
+2024-05-14T02:38:37.480+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:38:37.481+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:38:37.484+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:38:37.484+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-108 - Starting...
+2024-05-14T02:38:37.487+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-108 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21c59244
+2024-05-14T02:38:37.487+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-108 - Start completed.
+2024-05-14T02:38:37.488+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:38:37.488+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:38:37.488+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:38:37.576+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:38:37.742+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:38:37.872+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:38:38.064+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:38:38.076+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:38:38.083+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.916 seconds (process running for 10736.811)
+2024-05-14T02:38:38.086+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:38:39.312+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:38:39.312+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:38:39.313+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-14T02:39:55.996+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:39:56.020+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-430] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:39:56.022+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-430] com.zaxxer.hikari.HikariDataSource       : HikariPool-108 - Shutdown initiated...
+2024-05-14T02:39:56.028+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-430] com.zaxxer.hikari.HikariDataSource       : HikariPool-108 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:39:56.383+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:39:56.383+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:39:56.547+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:39:56.558+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:39:56.658+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:39:56.659+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:39:56.659+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:39:56.666+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:39:56.666+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 281 ms
+2024-05-14T02:39:56.736+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:39:56.741+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:39:56.747+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:39:56.748+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-109 - Starting...
+2024-05-14T02:39:56.754+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-109 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7aa9e62b
+2024-05-14T02:39:56.754+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-109 - Start completed.
+2024-05-14T02:39:56.755+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:39:56.755+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:39:56.755+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:39:56.866+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:39:57.017+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:39:57.128+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:39:57.283+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:39:57.293+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:39:57.297+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.937 seconds (process running for 10816.025)
+2024-05-14T02:39:57.299+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:39:59.720+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:39:59.723+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-434] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:39:59.723+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-434] com.zaxxer.hikari.HikariDataSource       : HikariPool-109 - Shutdown initiated...
+2024-05-14T02:39:59.724+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-434] com.zaxxer.hikari.HikariDataSource       : HikariPool-109 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:40:00.137+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:40:00.138+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:40:00.443+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:40:00.465+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:40:00.608+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:40:00.610+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:40:00.610+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:40:00.618+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:40:00.618+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 479 ms
+2024-05-14T02:40:00.673+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:40:00.678+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:40:00.682+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:40:00.683+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-110 - Starting...
+2024-05-14T02:40:00.686+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-110 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a12391d
+2024-05-14T02:40:00.686+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-110 - Start completed.
+2024-05-14T02:40:00.687+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:40:00.687+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:40:00.687+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:40:00.818+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:40:01.084+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:01.266+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:40:01.480+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:40:01.492+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:40:01.497+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.4 seconds (process running for 10820.225)
+2024-05-14T02:40:01.500+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:40:36.451+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:40:36.456+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-438] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:36.457+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-438] com.zaxxer.hikari.HikariDataSource       : HikariPool-110 - Shutdown initiated...
+2024-05-14T02:40:36.459+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-438] com.zaxxer.hikari.HikariDataSource       : HikariPool-110 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:40:36.940+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:40:36.940+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:40:37.135+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:40:37.151+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:40:37.360+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:40:37.361+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:40:37.361+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:40:37.374+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:40:37.374+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 433 ms
+2024-05-14T02:40:37.427+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:40:37.429+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:40:37.434+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:40:37.434+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-111 - Starting...
+2024-05-14T02:40:37.438+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-111 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a678d8e
+2024-05-14T02:40:37.438+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-111 - Start completed.
+2024-05-14T02:40:37.439+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:40:37.439+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:40:37.439+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:40:37.571+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:40:37.713+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:37.870+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:40:38.025+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:40:38.033+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:40:38.037+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.117 seconds (process running for 10856.765)
+2024-05-14T02:40:38.039+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:40:39.449+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:40:39.457+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-442] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:39.457+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-442] com.zaxxer.hikari.HikariDataSource       : HikariPool-111 - Shutdown initiated...
+2024-05-14T02:40:39.459+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-442] com.zaxxer.hikari.HikariDataSource       : HikariPool-111 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:40:39.908+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:40:39.908+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:40:40.042+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:40:40.059+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:40:40.151+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:40:40.152+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:40:40.153+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:40:40.160+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:40:40.160+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
+2024-05-14T02:40:40.205+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:40:40.208+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:40:40.216+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:40:40.217+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-112 - Starting...
+2024-05-14T02:40:40.222+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-112 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67c39d5
+2024-05-14T02:40:40.222+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-112 - Start completed.
+2024-05-14T02:40:40.223+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:40:40.223+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:40:40.223+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:40:40.310+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:40:40.432+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:40.529+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:40:40.636+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:40:40.645+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:40:40.648+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.758 seconds (process running for 10859.376)
+2024-05-14T02:40:40.649+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:40:48.178+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:40:48.185+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-446] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:48.186+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-446] com.zaxxer.hikari.HikariDataSource       : HikariPool-112 - Shutdown initiated...
+2024-05-14T02:40:48.187+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-446] com.zaxxer.hikari.HikariDataSource       : HikariPool-112 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:40:48.455+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:40:48.455+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:40:48.620+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:40:48.630+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:40:48.752+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:40:48.752+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:40:48.752+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:40:48.760+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:40:48.760+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 304 ms
+2024-05-14T02:40:48.814+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:40:48.817+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:40:48.822+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:40:48.823+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-113 - Starting...
+2024-05-14T02:40:48.827+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-113 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a1060c1
+2024-05-14T02:40:48.827+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-113 - Start completed.
+2024-05-14T02:40:48.828+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:40:48.829+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:40:48.829+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:40:48.948+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:40:49.118+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:49.349+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:40:49.718+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:40:49.754+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:40:49.770+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.33 seconds (process running for 10868.499)
+2024-05-14T02:40:49.776+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:40:50.540+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:40:50.541+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:40:50.544+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-14T02:40:51.167+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:40:51.176+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-450] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:51.178+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-450] com.zaxxer.hikari.HikariDataSource       : HikariPool-113 - Shutdown initiated...
+2024-05-14T02:40:51.180+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-450] com.zaxxer.hikari.HikariDataSource       : HikariPool-113 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:40:51.556+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:40:51.556+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:40:51.683+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:40:51.694+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:40:51.795+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:40:51.796+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:40:51.796+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:40:51.803+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:40:51.803+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 246 ms
+2024-05-14T02:40:51.841+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:40:51.843+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:40:51.845+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:40:51.846+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-114 - Starting...
+2024-05-14T02:40:51.848+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-114 - Added connection com.mysql.cj.jdbc.ConnectionImpl@17033660
+2024-05-14T02:40:51.848+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-114 - Start completed.
+2024-05-14T02:40:51.849+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:40:51.849+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:40:51.849+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:40:51.921+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:40:52.042+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:40:52.150+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:40:52.268+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:40:52.286+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:40:52.293+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.755 seconds (process running for 10871.021)
+2024-05-14T02:40:52.294+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:40:52.589+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:40:52.590+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:40:52.594+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-14T02:51:42.367+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 10 class path changes (0 additions, 0 deletions, 10 modifications)
+2024-05-14T02:51:42.392+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-454] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:51:42.393+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-454] com.zaxxer.hikari.HikariDataSource       : HikariPool-114 - Shutdown initiated...
+2024-05-14T02:51:42.397+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-454] com.zaxxer.hikari.HikariDataSource       : HikariPool-114 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:51:42.824+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:51:42.825+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:51:42.966+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:51:42.977+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:51:43.078+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:51:43.080+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:51:43.080+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:51:43.087+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:51:43.087+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 260 ms
+2024-05-14T02:51:43.130+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:51:43.132+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:51:43.134+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:51:43.135+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-115 - Starting...
+2024-05-14T02:51:43.138+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-115 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a12b061
+2024-05-14T02:51:43.138+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-115 - Start completed.
+2024-05-14T02:51:43.139+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:51:43.139+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:51:43.139+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:51:43.217+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:51:43.391+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:51:43.536+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:51:43.680+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:51:43.691+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:51:43.697+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.897 seconds (process running for 11522.425)
+2024-05-14T02:51:43.698+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:51:43.873+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:51:43.873+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:51:43.878+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-05-14T02:52:38.976+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:52:38.988+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-458] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:38.989+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-458] com.zaxxer.hikari.HikariDataSource       : HikariPool-115 - Shutdown initiated...
+2024-05-14T02:52:38.990+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-458] com.zaxxer.hikari.HikariDataSource       : HikariPool-115 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:52:39.272+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:52:39.272+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:52:39.522+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:52:39.539+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:52:39.700+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:52:39.701+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:52:39.701+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:52:39.722+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:52:39.722+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 449 ms
+2024-05-14T02:52:39.801+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:52:39.803+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:52:39.807+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:52:39.808+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-116 - Starting...
+2024-05-14T02:52:39.811+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-116 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3553bd5e
+2024-05-14T02:52:39.811+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-116 - Start completed.
+2024-05-14T02:52:39.812+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:52:39.812+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:52:39.812+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:52:39.950+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:52:40.102+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:40.249+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:52:40.425+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:52:40.437+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:52:40.442+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.187 seconds (process running for 11579.17)
+2024-05-14T02:52:40.443+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:52:43.870+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:52:43.880+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-462] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:43.881+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-462] com.zaxxer.hikari.HikariDataSource       : HikariPool-116 - Shutdown initiated...
+2024-05-14T02:52:43.883+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-462] com.zaxxer.hikari.HikariDataSource       : HikariPool-116 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:52:44.284+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:52:44.284+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:52:44.470+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:52:44.487+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:52:44.650+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:52:44.651+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:52:44.651+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:52:44.661+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:52:44.661+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 375 ms
+2024-05-14T02:52:44.750+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:52:44.754+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:52:44.762+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:52:44.766+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-117 - Starting...
+2024-05-14T02:52:44.777+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-117 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b45bf15
+2024-05-14T02:52:44.777+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-117 - Start completed.
+2024-05-14T02:52:44.778+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:52:44.779+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:52:44.779+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:52:44.935+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:52:45.086+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:45.186+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:52:45.297+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:52:45.304+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:52:45.308+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.044 seconds (process running for 11584.036)
+2024-05-14T02:52:45.310+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:52:50.199+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:52:50.238+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-466] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:50.239+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-466] com.zaxxer.hikari.HikariDataSource       : HikariPool-117 - Shutdown initiated...
+2024-05-14T02:52:50.256+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-466] com.zaxxer.hikari.HikariDataSource       : HikariPool-117 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:52:50.958+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:52:50.959+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:52:51.152+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:52:51.163+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:52:51.261+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:52:51.262+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:52:51.262+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:52:51.270+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:52:51.270+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 309 ms
+2024-05-14T02:52:51.306+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:52:51.307+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:52:51.310+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:52:51.311+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-118 - Starting...
+2024-05-14T02:52:51.313+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-118 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35d2d4c3
+2024-05-14T02:52:51.313+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-118 - Start completed.
+2024-05-14T02:52:51.314+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:52:51.314+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:52:51.314+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:52:51.403+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:52:51.586+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:51.822+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:52:51.998+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:52:52.013+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:52:52.020+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.091 seconds (process running for 11590.748)
+2024-05-14T02:52:52.024+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:52:57.459+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:52:57.468+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-470] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:57.470+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-470] com.zaxxer.hikari.HikariDataSource       : HikariPool-118 - Shutdown initiated...
+2024-05-14T02:52:57.473+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-470] com.zaxxer.hikari.HikariDataSource       : HikariPool-118 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:52:57.853+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:52:57.853+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:52:58.054+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:52:58.068+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:52:58.179+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:52:58.179+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:52:58.179+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:52:58.186+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:52:58.186+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 332 ms
+2024-05-14T02:52:58.248+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:52:58.252+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:52:58.257+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:52:58.258+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-119 - Starting...
+2024-05-14T02:52:58.261+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-119 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39f070c9
+2024-05-14T02:52:58.261+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-119 - Start completed.
+2024-05-14T02:52:58.262+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:52:58.263+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:52:58.263+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:52:58.437+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:52:58.603+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:52:58.741+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:52:58.837+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:52:58.845+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:52:58.848+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.018 seconds (process running for 11597.577)
+2024-05-14T02:52:58.849+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:55:13.649+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-05-14T02:55:13.657+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-474] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:55:13.658+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-474] com.zaxxer.hikari.HikariDataSource       : HikariPool-119 - Shutdown initiated...
+2024-05-14T02:55:13.660+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-474] com.zaxxer.hikari.HikariDataSource       : HikariPool-119 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:55:14.026+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:55:14.026+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:55:14.216+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:55:14.229+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:55:14.350+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:55:14.350+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:55:14.350+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:55:14.358+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:55:14.358+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 330 ms
+2024-05-14T02:55:14.402+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:55:14.405+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:55:14.413+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:55:14.414+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-120 - Starting...
+2024-05-14T02:55:14.421+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-120 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3882d2e2
+2024-05-14T02:55:14.421+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-120 - Start completed.
+2024-05-14T02:55:14.422+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:55:14.423+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:55:14.423+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:55:14.653+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:55:14.983+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:55:15.233+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:55:15.369+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:55:15.390+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:55:15.396+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.398 seconds (process running for 11734.125)
+2024-05-14T02:55:15.399+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:55:16.025+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:55:16.025+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:55:16.029+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-14T02:55:43.272+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:55:43.289+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-478] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:55:43.290+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-478] com.zaxxer.hikari.HikariDataSource       : HikariPool-120 - Shutdown initiated...
+2024-05-14T02:55:43.293+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-478] com.zaxxer.hikari.HikariDataSource       : HikariPool-120 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:55:43.581+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:55:43.581+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:55:43.741+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:55:43.754+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:55:43.861+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:55:43.861+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:55:43.861+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:55:43.871+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:55:43.871+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 288 ms
+2024-05-14T02:55:43.927+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:55:43.929+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:55:43.932+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:55:43.933+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-121 - Starting...
+2024-05-14T02:55:43.935+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-121 - Added connection com.mysql.cj.jdbc.ConnectionImpl@160ae58f
+2024-05-14T02:55:43.935+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-121 - Start completed.
+2024-05-14T02:55:43.936+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:55:43.936+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:55:43.936+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:55:44.023+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:55:44.179+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:55:44.323+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:55:44.495+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:55:44.509+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:55:44.517+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.96 seconds (process running for 11763.246)
+2024-05-14T02:55:44.520+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:55:44.930+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:55:44.930+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:55:44.932+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-14T02:56:01.157+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:56:01.181+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-482] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:56:01.183+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-482] com.zaxxer.hikari.HikariDataSource       : HikariPool-121 - Shutdown initiated...
+2024-05-14T02:56:01.185+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-482] com.zaxxer.hikari.HikariDataSource       : HikariPool-121 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:56:01.501+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:56:01.501+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:56:01.654+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:56:01.667+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:56:01.777+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:56:01.778+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:56:01.779+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:56:01.786+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:56:01.786+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 283 ms
+2024-05-14T02:56:01.831+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:56:01.832+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:56:01.835+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:56:01.836+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-122 - Starting...
+2024-05-14T02:56:01.838+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-122 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c97d924
+2024-05-14T02:56:01.838+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-122 - Start completed.
+2024-05-14T02:56:01.838+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:56:01.839+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:56:01.839+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:56:01.944+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:56:02.127+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:56:02.254+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:56:02.380+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:56:02.391+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:56:02.394+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.916 seconds (process running for 11781.122)
+2024-05-14T02:56:02.395+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:56:02.501+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:56:02.501+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:56:02.505+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-14T02:56:21.159+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:56:21.171+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-486] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:56:21.172+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-486] com.zaxxer.hikari.HikariDataSource       : HikariPool-122 - Shutdown initiated...
+2024-05-14T02:56:21.175+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-486] com.zaxxer.hikari.HikariDataSource       : HikariPool-122 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:56:21.526+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:56:21.526+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:56:21.723+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:56:21.753+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:56:21.875+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:56:21.875+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:56:21.875+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:56:21.882+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:56:21.882+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 355 ms
+2024-05-14T02:56:21.942+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:56:21.944+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:56:21.948+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:56:21.948+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-123 - Starting...
+2024-05-14T02:56:21.953+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-123 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40a04fe6
+2024-05-14T02:56:21.953+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-123 - Start completed.
+2024-05-14T02:56:21.954+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:56:21.954+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:56:21.954+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:56:22.040+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:56:22.216+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:56:22.421+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:56:22.695+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:56:22.721+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:56:22.728+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 1.226 seconds (process running for 11801.456)
+2024-05-14T02:56:22.730+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:56:24.084+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:56:24.084+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:56:24.088+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-14T02:56:24.112+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 58 class path changes (0 additions, 0 deletions, 58 modifications)
+2024-05-14T02:56:24.172+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-490] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:56:24.173+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-490] com.zaxxer.hikari.HikariDataSource       : HikariPool-123 - Shutdown initiated...
+2024-05-14T02:56:24.176+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-490] com.zaxxer.hikari.HikariDataSource       : HikariPool-123 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:56:24.510+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:56:24.510+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:56:24.737+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:56:24.763+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:56:24.960+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:56:24.960+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:56:24.961+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:56:24.968+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:56:24.968+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 455 ms
+2024-05-14T02:56:25.009+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:56:25.011+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:56:25.014+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:56:25.014+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-124 - Starting...
+2024-05-14T02:56:25.017+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-124 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f790f8
+2024-05-14T02:56:25.017+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-124 - Start completed.
+2024-05-14T02:56:25.018+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:56:25.018+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:56:25.018+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:56:25.096+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:56:25.223+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:56:25.366+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:56:25.461+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:56:25.469+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:56:25.475+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.989 seconds (process running for 11804.203)
+2024-05-14T02:56:25.476+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:56:25.611+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:56:25.611+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:56:25.615+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-14T02:57:49.651+01:00  INFO 862328 --- [el_meyloud_RE] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 10 class path changes (0 additions, 0 deletions, 10 modifications)
+2024-05-14T02:57:49.659+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-494] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:57:49.660+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-494] com.zaxxer.hikari.HikariDataSource       : HikariPool-124 - Shutdown initiated...
+2024-05-14T02:57:49.661+01:00  INFO 862328 --- [el_meyloud_RE] [     Thread-494] com.zaxxer.hikari.HikariDataSource       : HikariPool-124 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-14T02:57:50.035+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 862328 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-14T02:57:50.035+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-14T02:57:50.144+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14T02:57:50.154+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 6 JPA repository interfaces.
+2024-05-14T02:57:50.247+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-14T02:57:50.247+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-14T02:57:50.247+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-14T02:57:50.255+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-14T02:57:50.255+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 219 ms
+2024-05-14T02:57:50.290+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14T02:57:50.292+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-14T02:57:50.294+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-14T02:57:50.295+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-125 - Starting...
+2024-05-14T02:57:50.297+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-125 - Added connection com.mysql.cj.jdbc.ConnectionImpl@707b6b27
+2024-05-14T02:57:50.297+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-125 - Start completed.
+2024-05-14T02:57:50.298+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-14T02:57:50.298+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-14T02:57:50.298+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-14T02:57:50.371+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-14T02:57:50.487+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14T02:57:50.586+01:00  WARN 862328 --- [el_meyloud_RE] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-14T02:57:50.674+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-14T02:57:50.682+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2024-05-14T02:57:50.686+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Started ElMeyloudReApplication in 0.666 seconds (process running for 11889.414)
+2024-05-14T02:57:50.687+01:00  INFO 862328 --- [el_meyloud_RE] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-14T02:57:53.623+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14T02:57:53.623+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-14T02:57:53.625+01:00  INFO 862328 --- [el_meyloud_RE] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+0
+0
+0
