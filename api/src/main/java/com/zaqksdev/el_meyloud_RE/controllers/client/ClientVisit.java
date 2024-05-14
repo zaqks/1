@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.zaqksdev.el_meyloud_RE.dtos.visit.VisitShowDTO;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.services.VisitService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
@@ -26,13 +26,15 @@ public class ClientVisit {
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
-        model.addAttribute("visits", vztSrvc.getOf(email));
+        model.addAttribute("visits",
+                new VisitShowDTO().VisitShowDTOs(vztSrvc.getOf(email))
+        );
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("visit/client/showAll");
 
     }
 
-    @GetMapping("/{id}") 
+    @GetMapping("/{id}")
     public String showVisit(
             @PathVariable(name = "id") int id,
             Model model,
@@ -43,7 +45,7 @@ public class ClientVisit {
 
         if (rslt == null)
             return "redirect:/client/visit";
-        
+
         model.addAttribute("visit", rslt);
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("visit/client/show");
