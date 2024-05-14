@@ -34,7 +34,7 @@ public class VisitShowDTO extends Visit {
         minute = clndr.get(Calendar.MINUTE);
 
         day = clndr.get(Calendar.DAY_OF_MONTH);
-        month = clndr.get(Calendar.MONTH) + 1;
+        month = clndr.get(Calendar.MONTH) + 1; //months start from 0 !!!!
         year = clndr.get(Calendar.YEAR);
 
         time = String.format("%dh" + (minute < 10 ? "0" : "") + "%d", hour, minute);
