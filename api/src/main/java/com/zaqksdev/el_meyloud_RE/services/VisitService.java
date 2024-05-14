@@ -47,6 +47,13 @@ public class VisitService {
         return visitRepo.findByAgent(agent);
     }
 
+    public Visit getPresentedBy(String agent_email, int visitID) {
+        Visit rslt = visitRepo.findById(visitID);
+
+        return (rslt != null && rslt.getAgent().equals(agentRepo.findByEmail(agent_email))) ? rslt : null;
+
+    }
+
     public boolean equalDates(Calendar c1, Calendar c2) {
         return c1.get(Calendar.YEAR) == c2.get(Calendar.YEAR) &&
                 c1.get(Calendar.MONTH) == c2.get(Calendar.MONTH) &&
@@ -97,7 +104,7 @@ public class VisitService {
     //
 
     public List<Visit> getAllRent(String agent_email) {
-        List<Visit> inpt = visitRepo.findByAgent(agentRepo.findByEmail(agent_email));
+        List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
         List<Visit> rslt = new ArrayList<Visit>();
 
         Visit current;
@@ -111,7 +118,7 @@ public class VisitService {
     }
 
     public List<Visit> getAllBuy(String agent_email) {
-        List<Visit> inpt = visitRepo.findByAgent(agentRepo.findByEmail(agent_email));
+        List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
         List<Visit> rslt = new ArrayList<Visit>();
 
         Visit current;
@@ -125,8 +132,8 @@ public class VisitService {
     }
 
     public List<Visit> getAllCheck(String agent_email) {
-        List<Visit> inpt = visitRepo.findByAgent(agentRepo.findByEmail(agent_email));
-        List<Visit> rslt = new ArrayList<Visit>();        
+        List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
 
         Visit current;
         for (int i = 0; i < inpt.size(); i++) {

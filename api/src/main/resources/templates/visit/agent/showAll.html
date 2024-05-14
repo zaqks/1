@@ -11,7 +11,7 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-    
+
     <link th:href="@{/css/templates/visit/showAll/showAll.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/cards/visit.css}" rel="stylesheet" />
 
@@ -27,12 +27,13 @@
     <h2>Buying</h2>
 
     <h2>Checking</h2>
-    <div class="visitCard" th:each="visit: ${check}">
-        <p th:text="${visit.date}" >bonjour</p>
+    <div class="visitCard" th:each="visit: ${check}" th:vst_id="${visit.id}"
+        th:onclick="window.location.href=`/agent/visit/${this.getAttribute('vst_id')}`">
+        <p th:text="${visit.date}"></p>
     </div>
 
 
-    
+
 
 </body>
 
