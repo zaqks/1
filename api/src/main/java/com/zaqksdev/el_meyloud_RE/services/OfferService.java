@@ -15,8 +15,7 @@ import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
 import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
-import com.zaqksdev.el_meyloud_RE.services.coords.Coords;
-import com.zaqksdev.el_meyloud_RE.services.coords.Point;
+
 
 @Service
 public class OfferService {
@@ -132,10 +131,9 @@ public class OfferService {
         visitRepo.save(visit);
     }
 
-    public void checkOffer(Offer offr) {
+    public void activateOffer(Offer offr) {
         offr.setChecked(true);
         offr.setAvlbl(true);
-
         offerRepo.save(offr);
     }
 

@@ -65,7 +65,7 @@ public class ClientAuth {
         response.addCookie(emailCookie);
         response.addCookie(passwordCookie);
 
-        return "redirect:/client";
+        return "redirect:/client/market";
     }
 
     //
@@ -106,7 +106,7 @@ public class ClientAuth {
         response.addCookie(emailCookie);
         response.addCookie(passwordCookie);
 
-        return "redirect:/client";
+        return "redirect:/client/market";
     }
 
 }

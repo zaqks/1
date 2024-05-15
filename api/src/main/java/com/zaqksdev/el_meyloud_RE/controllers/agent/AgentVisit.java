@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.zaqksdev.el_meyloud_RE.dtos.offer.OfferCheckDTO;
 import com.zaqksdev.el_meyloud_RE.dtos.visit.VisitShowDTO;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
@@ -47,26 +48,25 @@ public class AgentVisit {
             return "redirect:/agent/visit";
 
         model.addAttribute("visit", rslt);
+        model.addAttribute("checkDTO", new OfferCheckDTO());
 
         return authSrvc.new AgentAuth(email, password).kick("visit/agent/show");
     }
 
     @PostMapping("/{id}")
-    public String confirmCheckOffer(
-            @PathVariable(name = "id") int id,
+    public String successVisit(
+            @PathVariable(name = "id") int id, //
             Model model,
             @CookieValue(name = "agent_email", defaultValue = "") String email,
             @CookieValue(name = "agent_password", defaultValue = "") String password) {
 
         String finger = authSrvc.new AgentAuth(email, password).kick("");
-        if (!finger.equals("")) // do the thingy if there is auth
+        if (finger.equals("")) // do the thingy after auth
         {
-            
-
-
+            vztSrvc.successVst(id);
         }
 
-        return "redirect:/agent/visit/" + id;
+        return "redirect:/agent/visit";
 
     }
 

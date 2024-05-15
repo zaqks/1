@@ -11,6 +11,7 @@ public class Visit {
     private int id;
     private boolean passed = false;
     private boolean missed = false;
+    private String notes = "";
 
     private Calendar datetime;
     // private int time, day;
@@ -28,7 +29,6 @@ public class Visit {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "agent_id", referencedColumnName = "id")
     private Agent agent;
-
 
     //
 
@@ -88,5 +88,12 @@ public class Visit {
         this.datetime = datetime;
     }
 
-}
+    public String getNotes() {
+        return notes;
+    }
 
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+}

@@ -1,6 +1,5 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -14,7 +13,6 @@ import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 @Service
 public class AgentService {
     static AgentRepo agntRepo;
-
     static VisitService visitSrvc;
 
     @Autowired

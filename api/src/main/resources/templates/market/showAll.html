@@ -19,8 +19,8 @@
     <h1>list the market</h1>
 
     <div id="offers" th:each="offer: ${offers}">
-        <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}" th:prp_id="${offer.id}"
-            th:onclick="window.location.href=`/client/offer/${this.getAttribute('prp_id')}`">
+        <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}" th:offr_id="${offer.id}"
+            th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`">
             <img th:src="${offer.property.imgs[0]}" alt="">
             <div id="info">
                 <h3 th:text="@{'offer' + ${offer.id}}"></h3>
@@ -29,7 +29,7 @@
                 <h3 th:if="${offer.rent}">Rent</h3>
                 <h3 th:if="${!offer.rent}">Sell</h3>
 
-                <h5 th:text="${offer.checked}"></h5>
+                
 
 
                 <p id="addr" th:text="@{'addr: ' +  ${offer.property.addr}}"></p>

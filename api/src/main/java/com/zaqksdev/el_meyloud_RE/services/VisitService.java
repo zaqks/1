@@ -19,15 +19,17 @@ public class VisitService {
     static VisitRepo visitRepo;
     static ClientRepo clientRepo;
     static AgentRepo agentRepo;
-
     static OfferService offrSrvc;
+    static ContractService cntrctSrvc;
 
     @Autowired
-    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo, OfferService offrSrvc) {
+    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo, OfferService offrSrvc,
+            ContractService cntrtSrvc) {
         VisitService.visitRepo = visitRepo;
         VisitService.clientRepo = clientRepo;
         VisitService.agentRepo = agentRepo;
         VisitService.offrSrvc = offrSrvc;
+        VisitService.cntrctSrvc = cntrtSrvc;
     }
 
     public Visit get(int visitID) {
@@ -153,12 +155,15 @@ public class VisitService {
     }
 
     //
-    public void checkOffer(int visitID) {
-        Visit visit = get(visitID);
-        offrSrvc.checkOffer(visit.getOffer());
-        
-        visit.setPassed(true);
-        visitRepo.save(visit);
+    public void successVst(int vstID) {
+        Visit vst = visitRepo.findById(vstID);
+        vst.setPassed(true);
+
+        // enable the offer
+        offrSrvc.activateOffer(vst.getOffer());
+        // create the contract
+        cntrctSrvc.createContract(vst);
+
     }
 
 }

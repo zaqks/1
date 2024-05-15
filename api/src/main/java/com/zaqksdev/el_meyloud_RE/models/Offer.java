@@ -18,7 +18,6 @@ public class Offer {
     @Size(min = 16, max = 256, message = "invalid length")
     private String description;
 
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "property_id", referencedColumnName = "id")
     private Property property;
@@ -62,8 +61,6 @@ public class Offer {
     public void setDescription(String description) {
         this.description = description;
     }
-
- 
 
     public boolean isChecked() {
         return checked;
