@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
+import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
@@ -54,6 +55,12 @@ public class VisitService {
 
     public List<Visit> getPresentedBy(Agent agent) {
         return visitRepo.findByAgent(agent);
+    }
+
+    public List<Visit> getVisits(int offer_id) {
+
+        return visitRepo.findByOffer(offrSrvc.get(offer_id));
+
     }
 
     public Visit getPresentedBy(String agent_email, int visitID) {
@@ -116,11 +123,15 @@ public class VisitService {
         List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
         List<Visit> rslt = new ArrayList<Visit>();
 
-        Visit current;
+        Visit currentVzt;
+        Offer currentOffr;
         for (int i = 0; i < inpt.size(); i++) {
-            current = inpt.get(i);
-            if (current.getOffer().isRent())
-                rslt.add(current);
+            currentVzt = inpt.get(i);
+            currentOffr = inpt.get(i).getOffer();
+
+            if (currentOffr.isChecked() && currentOffr.isRent())
+                if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
+                    rslt.add(currentVzt);
         }
 
         return rslt;
@@ -130,11 +141,15 @@ public class VisitService {
         List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
         List<Visit> rslt = new ArrayList<Visit>();
 
-        Visit current;
+        Visit currentVzt;
+        Offer currentOffr;
         for (int i = 0; i < inpt.size(); i++) {
-            current = inpt.get(i);
-            if (!current.getOffer().isRent())
-                rslt.add(current);
+            currentVzt = inpt.get(i);
+            currentOffr = inpt.get(i).getOffer();
+
+            if (currentOffr.isChecked() && !currentOffr.isRent())
+                if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
+                    rslt.add(currentVzt);
         }
 
         return rslt;
@@ -152,6 +167,10 @@ public class VisitService {
         }
 
         return rslt;
+    }
+
+    public void save(Visit vst) {
+        visitRepo.save(vst);
     }
 
     //

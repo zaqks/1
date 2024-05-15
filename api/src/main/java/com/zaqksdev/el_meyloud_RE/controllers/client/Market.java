@@ -6,11 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zaqksdev.el_meyloud_RE.services.OfferService;
+import com.zaqksdev.el_meyloud_RE.services.VisitService;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
+
 
 @Controller
 @RequestMapping("client/market")
@@ -19,14 +22,15 @@ public class Market {
     private AuthService authSrvc;
     @Autowired
     private OfferService offrSrvc;
+    
 
     @GetMapping("")
-    public String showHome(Model model,
+    public String showMarket(Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
             @CookieValue(name = "password", defaultValue = "") String password) {
 
         // show the offers not owned by the client
-        model.addAttribute("offers", offrSrvc.getNoOf(email));
+        model.addAttribute("offers", offrSrvc.getNoOfNoBooked(email));
 
         return authSrvc.new ClientAuth(email, password).kickNonLogged("market/showAll");
 
@@ -43,10 +47,30 @@ public class Market {
         if (rslt != null)
             return "redirect:/client/market";
 
+        rslt = offrSrvc.get(id);
+        if (rslt == null)
+            return "redirect:/client/market";
+
         model.addAttribute("offer", rslt);
         model.addAttribute("owns", false);
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/show");
+        return authSrvc.new ClientAuth(email, password).kickNonLogged("offer/client/show");
+    }
+
+    @PostMapping("/{id}")
+    public String bookOfferVisit(
+            @PathVariable(name = "id") int id,
+            Model model,
+            @CookieValue(name = "email", defaultValue = "") String email,
+            @CookieValue(name = "password", defaultValue = "") String password) {
+
+        String finger = authSrvc.new ClientAuth(email, password).kickNonLogged("");
+        if (finger.equals("")) // check auth
+        {
+            offrSrvc.createVisit(id, email);
+        }
+
+        return "redirect:/client/market";
     }
 
 }
