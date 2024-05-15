@@ -12,9 +12,6 @@
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
     <link th:href="@{/css/templates/visit/show/show.css}" rel="stylesheet" />
-    <link th:href="@{/css/templates/visit/showAll/showAll.css}" rel="stylesheet" />
-    <link th:href="@{/css/templates/visit/update/update.css}" rel="stylesheet" />
-
 
 </head>
 
@@ -25,6 +22,15 @@
         <div th:case="false">
             <h1>Check Offer</h1>
 
+            <form action="" method="post">
+                <p>notes</p>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Notes">
+
+                </textarea>
+
+                <button type="submit" onclick="confirm('u sure?')">Validate this offer</button>
+            </form>
+
         </div>
 
         <div th:case="true">
@@ -33,9 +39,6 @@
                 <h1 th:case="false">Buy Offer</h1>
                 <h1 th:case="true">Buy Offer</h1>
             </div>
-
-
-
         </div>
 
     </div>

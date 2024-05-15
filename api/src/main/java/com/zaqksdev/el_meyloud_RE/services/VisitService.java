@@ -20,11 +20,18 @@ public class VisitService {
     static ClientRepo clientRepo;
     static AgentRepo agentRepo;
 
+    static OfferService offrSrvc;
+
     @Autowired
-    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo) {
+    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo, OfferService offrSrvc) {
         VisitService.visitRepo = visitRepo;
         VisitService.clientRepo = clientRepo;
         VisitService.agentRepo = agentRepo;
+        VisitService.offrSrvc = offrSrvc;
+    }
+
+    public Visit get(int visitID) {
+        return visitRepo.findById(visitID);
     }
 
     public List<Visit> getOf(String client_email) {
@@ -143,6 +150,15 @@ public class VisitService {
         }
 
         return rslt;
+    }
+
+    //
+    public void checkOffer(int visitID) {
+        Visit visit = get(visitID);
+        offrSrvc.checkOffer(visit.getOffer());
+        
+        visit.setPassed(true);
+        visitRepo.save(visit);
     }
 
 }

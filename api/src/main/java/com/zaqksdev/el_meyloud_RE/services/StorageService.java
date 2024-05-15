@@ -18,7 +18,7 @@ public class StorageService {
     public String saveImage(MultipartFile image) {
         // Date createdAt = new Date();
         String dst = "/images/properties/" + new Date() + "_" + image.getOriginalFilename();
-
+        dst = dst.replace(" ", "");
         try {
             try (InputStream inputStream = image.getInputStream()) {
                 Files.copy(inputStream, Paths.get("public" + dst), StandardCopyOption.REPLACE_EXISTING);

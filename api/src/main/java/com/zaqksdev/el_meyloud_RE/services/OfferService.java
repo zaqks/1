@@ -131,4 +131,12 @@ public class OfferService {
 
         visitRepo.save(visit);
     }
+
+    public void checkOffer(Offer offr) {
+        offr.setChecked(true);
+        offr.setAvlbl(true);
+
+        offerRepo.save(offr);
+    }
+
 }
