@@ -24,11 +24,11 @@ public class PropertyService {
     static AgentService agntSrvc;
 
     @Autowired
-    public void setPropertyRepo(PropertyRepo propertyRepo, ClientRepo clientRepo, AgentService agntSrvc) {
+    public void setPropertyRepo(PropertyRepo propertyRepo, ClientRepo clientRepo,
+            AgentService agntSrvc) {
         PropertyService.propertyRepo = propertyRepo;
         PropertyService.clientRepo = clientRepo;
         PropertyService.agntSrvc = agntSrvc;
-
     }
 
     public Boolean exists(Property property, BindingResult result) {

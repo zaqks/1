@@ -1,6 +1,6 @@
-> Task :compileJava UP-TO-DATE
+> Task :compileJava
 > Task :processResources UP-TO-DATE
-> Task :classes UP-TO-DATE
+> Task :classes
 > Task :resolveMainClassName UP-TO-DATE
 
 > Task :bootRun
@@ -13,21 +13,48 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-10T19:29:20.879+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 177654 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
-2024-05-10T19:29:20.882+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
-2024-05-10T19:29:20.931+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-10T19:29:20.931+01:00  INFO 177654 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-10T19:29:21.056+01:00  WARN 177654 --- [el_meyloud_RE] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.zaqksdev.el_meyloud_RE.ElMeyloudReApplication]
-2024-05-10T19:29:21.252+01:00 ERROR 177654 --- [el_meyloud_RE] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+2024-05-15T17:21:12.870+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : Starting ElMeyloudReApplication using Java 21.0.2 with PID 1395112 (/home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api/build/classes/java/main started by zak in /home/zak/Desktop/myDesk/javaProjects/el_meyloud_RE/api)
+2024-05-15T17:21:12.873+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] c.z.e.ElMeyloudReApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-05-15T17:21:12.934+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-15T17:21:12.935+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-15T17:21:13.699+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-15T17:21:13.776+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 6 JPA repository interfaces.
+2024-05-15T17:21:14.385+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2024-05-15T17:21:14.401+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-15T17:21:14.401+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-15T17:21:14.463+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-15T17:21:14.464+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1527 ms
+2024-05-15T17:21:14.663+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-15T17:21:14.737+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-15T17:21:14.777+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-15T17:21:15.023+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-15T17:21:15.046+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-15T17:21:15.347+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69a73bed
+2024-05-15T17:21:15.350+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-15T17:21:15.400+01:00  WARN 1395112 --- [el_meyloud_RE] [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-05-15T17:21:15.419+01:00  WARN 1395112 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-15T17:21:15.423+01:00  WARN 1395112 --- [el_meyloud_RE] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-05-15T17:21:15.792+01:00 ERROR 1395112 --- [el_meyloud_RE] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Property 'com.zaqksdev.el_meyloud_RE.models.Contract.Contract.agent' is a '@ManyToMany' and is directly annotated '@JoinColumn' (specify '@JoinColumn' inside '@JoinTable' or '@CollectionTable')
+2024-05-15T17:21:15.797+01:00  WARN 1395112 --- [el_meyloud_RE] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.zaqksdev.el_meyloud_RE.models.Contract.Contract.agent' is a '@ManyToMany' and is directly annotated '@JoinColumn' (specify '@JoinColumn' inside '@JoinTable' or '@CollectionTable')
+2024-05-15T17:21:15.799+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-15T17:21:15.829+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-15T17:21:15.832+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-05-15T17:21:15.894+01:00  INFO 1395112 --- [el_meyloud_RE] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.zaqksdev.el_meyloud_RE.ElMeyloudReApplication]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:179) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:416) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.6.jar:6.1.6]
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-15T17:21:15.953+01:00 ERROR 1395112 --- [el_meyloud_RE] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.zaqksdev.el_meyloud_RE.models.Contract.Contract.agent' is a '@ManyToMany' and is directly annotated '@JoinColumn' (specify '@JoinColumn' inside '@JoinTable' or '@CollectionTable')
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
@@ -38,16 +65,30 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'auth' for bean class [com.zaqksdev.el_meyloud_RE.controllers.client.Auth] conflicts with existing, non-compatible bean definition of same name and class [com.zaqksdev.el_meyloud_RE.controllers.agency.Auth]
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-6.1.6.jar:6.1.6]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165) ~[spring-context-6.1.6.jar:6.1.6]
-	... 16 common frames omitted
+Caused by: org.hibernate.AnnotationException: Property 'com.zaqksdev.el_meyloud_RE.models.Contract.Contract.agent' is a '@ManyToMany' and is directly annotated '@JoinColumn' (specify '@JoinColumn' inside '@JoinTable' or '@CollectionTable')
+	at org.hibernate.boot.model.internal.CollectionBinder.checkAnnotations(CollectionBinder.java:446) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindCollection(CollectionBinder.java:278) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:874) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:788) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:709) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1041) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:357) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:237) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:423) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:256) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:279) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:322) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
 
 
-BUILD SUCCESSFUL in 3s
-4 actionable tasks: 1 executed, 3 up-to-date
+BUILD SUCCESSFUL in 10s
+4 actionable tasks: 2 executed, 2 up-to-date

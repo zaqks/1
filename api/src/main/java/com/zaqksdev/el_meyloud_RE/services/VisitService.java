@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
+import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
@@ -19,12 +20,21 @@ public class VisitService {
     static VisitRepo visitRepo;
     static ClientRepo clientRepo;
     static AgentRepo agentRepo;
+    static OfferService offrSrvc;
+    static ContractService cntrctSrvc;
 
     @Autowired
-    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo) {
+    public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo, OfferService offrSrvc,
+            ContractService cntrtSrvc) {
         VisitService.visitRepo = visitRepo;
         VisitService.clientRepo = clientRepo;
         VisitService.agentRepo = agentRepo;
+        VisitService.offrSrvc = offrSrvc;
+        VisitService.cntrctSrvc = cntrtSrvc;
+    }
+
+    public Visit get(int visitID) {
+        return visitRepo.findById(visitID);
     }
 
     public List<Visit> getOf(String client_email) {
@@ -45,6 +55,19 @@ public class VisitService {
 
     public List<Visit> getPresentedBy(Agent agent) {
         return visitRepo.findByAgent(agent);
+    }
+
+    public List<Visit> getVisits(int offer_id) {
+
+        return visitRepo.findByOffer(offrSrvc.get(offer_id));
+
+    }
+
+    public Visit getPresentedBy(String agent_email, int visitID) {
+        Visit rslt = visitRepo.findById(visitID);
+
+        return (rslt != null && rslt.getAgent().equals(agentRepo.findByEmail(agent_email))) ? rslt : null;
+
     }
 
     public boolean equalDates(Calendar c1, Calendar c2) {
@@ -81,12 +104,84 @@ public class VisitService {
             invHours.put(hour, todays.get(i));
         }
 
-        List<Integer> vals = (List<Integer>) hours.values();
+        List<Integer> vals = new ArrayList<Integer>(hours.values());
+
         Collections.sort(vals);
 
         // the highest val hya the endtime (last one on the sort)
 
-        return invHours.get(vals.get(vals.size() - 1));
+        if (vals.size() > 0)
+            return invHours.get(vals.get(vals.size() - 1));
+        else
+            return null;
+
+    }
+
+    //
+
+    public List<Visit> getAllRent(String agent_email) {
+        List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
+
+        Visit currentVzt;
+        Offer currentOffr;
+        for (int i = 0; i < inpt.size(); i++) {
+            currentVzt = inpt.get(i);
+            currentOffr = inpt.get(i).getOffer();
+
+            if (currentOffr.isChecked() && currentOffr.isRent())
+                if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
+                    rslt.add(currentVzt);
+        }
+
+        return rslt;
+    }
+
+    public List<Visit> getAllBuy(String agent_email) {
+        List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
+
+        Visit currentVzt;
+        Offer currentOffr;
+        for (int i = 0; i < inpt.size(); i++) {
+            currentVzt = inpt.get(i);
+            currentOffr = inpt.get(i).getOffer();
+
+            if (currentOffr.isChecked() && !currentOffr.isRent())
+                if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
+                    rslt.add(currentVzt);
+        }
+
+        return rslt;
+    }
+
+    public List<Visit> getAllCheck(String agent_email) {
+        List<Visit> inpt = getPresentedBy(agentRepo.findByEmail(agent_email));
+        List<Visit> rslt = new ArrayList<Visit>();
+
+        Visit current;
+        for (int i = 0; i < inpt.size(); i++) {
+            current = inpt.get(i);
+            if (!(current.getOffer().isChecked()))
+                rslt.add(current);
+        }
+
+        return rslt;
+    }
+
+    public void save(Visit vst) {
+        visitRepo.save(vst);
+    }
+
+    //
+    public void successVst(int vstID) {
+        Visit vst = visitRepo.findById(vstID);
+        vst.setPassed(true);
+
+        // enable the offer
+        offrSrvc.activateOffer(vst.getOffer());
+        // create the contract
+        cntrctSrvc.createContract(vst);
 
     }
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        showAllVisit
+    </title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/templates/visit/show/show.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/visit/showAll/showAll.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/visit/update/update.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/calendar.css}" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+    <!--<h1>Visits</h1>-->
+
+
+    <div class="wrapper">
+        <header>
+            <p class="current-date"></p>
+            <div class="icons">
+                <span id="prev" class="material-symbols-rounded"><</span>
+                <span id="next" class="material-symbols-rounded">></span>
+            </div>
+        </header>
+
+        <div class="calendar">
+            <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+
+            <ul class="days"></ul>
+            
+        </div>
+    </div>
+
+
+    <script th:src="@{/js/calendar/calendar.js}"></script>
+
+
+
+</body>
+
+</html>

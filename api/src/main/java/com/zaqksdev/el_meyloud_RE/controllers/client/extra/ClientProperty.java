@@ -1,4 +1,4 @@
-package com.zaqksdev.el_meyloud_RE.controllers.client;
+package com.zaqksdev.el_meyloud_RE.controllers.client.extra;
 
 import java.util.ArrayList;
 

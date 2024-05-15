@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Client;
-import com.zaqksdev.el_meyloud_RE.models.Contract;
+import com.zaqksdev.el_meyloud_RE.models.Offer;
+import com.zaqksdev.el_meyloud_RE.models.Visit;
+import com.zaqksdev.el_meyloud_RE.models.Contract.Contract;
+import com.zaqksdev.el_meyloud_RE.models.Contract.ContractType;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ContractRepo;
 
@@ -47,6 +50,25 @@ public class ContractService {
         String dst = contract.getDst().getName();
 
         return (src.equals(email) || dst.equals(email));
+    }
+
+    public void createContract(
+            Visit vst) {
+
+        Offer offr = vst.getOffer();
+        Contract contract = new Contract();
+
+        contract.setOffer(offr);
+        contract.setSrc(offr.getProperty().getOwner());
+        contract.setDst(vst.getClient());
+        contract.setAgent(vst.getAgent());
+
+        // now lets set the contract type
+        contract.setType(
+                ContractType.values()[(offr.isChecked() ? 0 : 2) + (offr.isRent() ? 0 : 1)]
+        );
+
+        cntrctRepo.save(contract);
     }
 
 }

@@ -157,6 +157,14 @@ public class AuthService {
             return src;
         }
 
+        public String kick(String src) {
+            if (!checkAuth() ) {
+                return "redirect:/agent/signin";
+            }
+            return src;
+        }
+
+
         public Agent get() {
             return agentRepo.findByEmail(email);
         }

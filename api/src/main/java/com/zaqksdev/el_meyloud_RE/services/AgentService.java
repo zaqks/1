@@ -1,6 +1,5 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -14,7 +13,6 @@ import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 @Service
 public class AgentService {
     static AgentRepo agntRepo;
-
     static VisitService visitSrvc;
 
     @Autowired
@@ -105,7 +103,6 @@ public class AgentService {
 
         while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK) - 1)) {
             ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
-            System.out.println("pass");
         }
 
         // doka chouf la derniere visite f hadak e nhar 3la d9ah
@@ -113,18 +110,18 @@ public class AgentService {
 
         // la mknch
         if (lastVst == null) {
-            ftrVstDate.set(Calendar.HOUR_OF_DAY, agent.getEndH() - duration);
+            ftrVstDate.set(Calendar.HOUR_OF_DAY, agent.getStartH());
         } else {
-            ftrVstDate.set(Calendar.HOUR_OF_DAY, lastVst.getDatetime().get(Calendar.HOUR_OF_DAY));
+            ftrVstDate.set(Calendar.HOUR_OF_DAY, lastVst.getDatetime().get(Calendar.HOUR_OF_DAY) + duration);
             // la h == endH
-            if (ftrVstDate.get(Calendar.HOUR_OF_DAY) + duration >= agent.getEndH()) {
+            if (ftrVstDate.get(Calendar.HOUR_OF_DAY) >= agent.getEndH()) {
                 // dir day+1
                 ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
 
                 // a93d tzid day la ta7t f wahed ma ysl7ch
-                while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK))) {
+                while (!isWorkDay(agent, ftrVstDate.get(Calendar.DAY_OF_WEEK)))
                     ftrVstDate.add(Calendar.DAY_OF_MONTH, 1);
-                }
+
             }
         }
 

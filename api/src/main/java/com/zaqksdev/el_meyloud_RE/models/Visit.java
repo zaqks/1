@@ -1,8 +1,6 @@
 package com.zaqksdev.el_meyloud_RE.models;
 
-import java.sql.Time;
 import java.util.Calendar;
-import java.sql.Date;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,23 +11,26 @@ public class Visit {
     private int id;
     private boolean passed = false;
     private boolean missed = false;
+    private String notes = "";
 
     private Calendar datetime;
     // private int time, day;
 
     // private Time time;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "offer_id", referencedColumnName = "id")
     private Offer offer;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     private Client client;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "agent_id", referencedColumnName = "id")
     private Agent agent;
+
+    //
 
     public int getId() {
         return id;
@@ -85,6 +86,14 @@ public class Visit {
 
     public void setDatetime(Calendar datetime) {
         this.datetime = datetime;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
 }

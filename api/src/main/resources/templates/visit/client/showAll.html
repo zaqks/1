@@ -11,15 +11,24 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-    <link th:href="@{/css/templates/visit/show/show.css}" rel="stylesheet" />
 	<link th:href="@{/css/templates/visit/showAll/showAll.css}" rel="stylesheet" />
-	<link th:href="@{/css/templates/visit/update/update.css}" rel="stylesheet" />
+	<link th:href="@{/css/widgets/cards/visit.css}" rel="stylesheet" />
+    
 
 
 </head>
 
 <body>
     <h1>My visits</h1>
+
+
+    <div class="visitCard"  th:each="visit: ${visits}" 
+    th:vst_id="${visit.id}"
+    th:onclick="window.location.href=`/client/visit/${this.getAttribute('vst_id')}`">
+        <p th:text="${visit.time}"></p>
+    </div>
+
+
 </body>
 
 </html>
