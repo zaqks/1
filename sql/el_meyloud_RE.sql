@@ -104,22 +104,22 @@ DROP TABLE IF EXISTS `contracts`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contracts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` date DEFAULT NULL,
-  `time` time(6) DEFAULT NULL,
+  `datetime` datetime(6) DEFAULT NULL,
+  `type` tinyint(4) DEFAULT NULL,
   `agent_id` int(11) DEFAULT NULL,
   `dst_client_id` int(11) DEFAULT NULL,
   `offer_id` int(11) DEFAULT NULL,
   `src_client_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_snhi3q6hw8miq9i4imyc5skst` (`agent_id`),
-  UNIQUE KEY `UK_n12pr4vhhr76q2bblkb5fqeuc` (`dst_client_id`),
-  UNIQUE KEY `UK_o7squml1j1ttxtrxnnwiqn5yi` (`offer_id`),
-  UNIQUE KEY `UK_2mtnxkxp6vc4191jaa274lfwg` (`src_client_id`),
+  KEY `FKnbhb51819uegckw5t2kmm8xui` (`agent_id`),
+  KEY `FKrft5kqxajp9wr41wit3aw3kap` (`dst_client_id`),
+  KEY `FK3vdvpti6cakyel9fs5lm940mt` (`offer_id`),
+  KEY `FK35tly79s7qbo1hr2kc7xk4jvk` (`src_client_id`),
   CONSTRAINT `FK35tly79s7qbo1hr2kc7xk4jvk` FOREIGN KEY (`src_client_id`) REFERENCES `clients` (`id`),
   CONSTRAINT `FK3vdvpti6cakyel9fs5lm940mt` FOREIGN KEY (`offer_id`) REFERENCES `offers` (`id`),
   CONSTRAINT `FKnbhb51819uegckw5t2kmm8xui` FOREIGN KEY (`agent_id`) REFERENCES `agents` (`id`),
   CONSTRAINT `FKrft5kqxajp9wr41wit3aw3kap` FOREIGN KEY (`dst_client_id`) REFERENCES `clients` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,6 +128,10 @@ CREATE TABLE `contracts` (
 
 LOCK TABLES `contracts` WRITE;
 /*!40000 ALTER TABLE `contracts` DISABLE KEYS */;
+INSERT INTO `contracts` VALUES
+(1,'2024-05-15 18:29:49.755000',0,4,1,1,1),
+(2,'2024-05-15 18:46:52.546000',1,4,1,2,1),
+(3,'2024-05-15 18:47:43.123000',1,4,1,2,1);
 /*!40000 ALTER TABLE `contracts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,6 +150,7 @@ CREATE TABLE `offers` (
   `price` int(11) NOT NULL,
   `rent` bit(1) NOT NULL,
   `property_id` int(11) DEFAULT NULL,
+  `notes` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKhgol4w22m5h4fq9m3r3qakkvj` (`property_id`),
   CONSTRAINT `FKhgol4w22m5h4fq9m3r3qakkvj` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`)
@@ -159,8 +164,8 @@ CREATE TABLE `offers` (
 LOCK TABLES `offers` WRITE;
 /*!40000 ALTER TABLE `offers` DISABLE KEYS */;
 INSERT INTO `offers` VALUES
-(1,'\0','\0','un tres tres tres belle grimace',200000,'',1),
-(2,'\0','\0','un tres tres tres belle affaire',3030000,'\0',1);
+(1,'','','un tres tres tres belle grimace',200000,'',1,NULL),
+(2,'','','un tres tres tres belle affaire',3030000,'\0',1,NULL);
 /*!40000 ALTER TABLE `offers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,6 +250,7 @@ CREATE TABLE `visits` (
   `agent_id` int(11) DEFAULT NULL,
   `client_id` int(11) DEFAULT NULL,
   `offer_id` int(11) DEFAULT NULL,
+  `notes` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKjiqjtc1qc8jsct1fbtcmuk7v6` (`agent_id`),
   KEY `FKitoc4h8xfvle8onuqxb1fl0ix` (`client_id`),
@@ -262,8 +268,8 @@ CREATE TABLE `visits` (
 LOCK TABLES `visits` WRITE;
 /*!40000 ALTER TABLE `visits` DISABLE KEYS */;
 INSERT INTO `visits` VALUES
-(1,'2024-05-17 08:00:00.000000','\0','\0',4,1,1),
-(2,'2024-05-17 09:00:00.000000','\0','\0',4,1,2);
+(1,'2024-05-17 08:00:00.000000','\0','',4,1,1,NULL),
+(2,'2024-05-17 09:00:00.000000','\0','',4,1,2,NULL);
 /*!40000 ALTER TABLE `visits` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -276,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-15 11:44:14
+-- Dump completed on 2024-05-15 19:35:29
