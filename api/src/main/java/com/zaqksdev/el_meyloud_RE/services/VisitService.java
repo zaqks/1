@@ -178,8 +178,14 @@ public class VisitService {
         Visit vst = visitRepo.findById(vstID);
         vst.setPassed(true);
 
-        // enable the offer
-        offrSrvc.activateOffer(vst.getOffer());
+        // enable the offer or nah
+        if (vst.getOffer().isChecked()) {
+            // set the offer to non availble
+            offrSrvc.deactivateOffer(vst.getOffer());
+
+        } else
+            offrSrvc.activateOffer(vst.getOffer());
+
         // create the contract
         cntrctSrvc.createContract(vst);
 

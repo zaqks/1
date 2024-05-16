@@ -195,6 +195,10 @@ public class OfferService {
         offerRepo.save(offr);
     }
 
-    
+    public void deactivateOffer(Offer offr) {
+        // offr.setChecked(true);
+        offr.setAvlbl(false);
+        offerRepo.save(offr);
+    }
 
 }
