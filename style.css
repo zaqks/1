@@ -1,3 +1,7 @@
 body {
   overflow: hidden;
 }
+#calendar {
+  height: 100vw;
+  width: 100vh;
+}
