@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
+import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
+import com.zaqksdev.el_meyloud_RE.vars.VisitVars;
 
 @Service
 public class VisitService {
@@ -22,15 +24,30 @@ public class VisitService {
     static AgentRepo agentRepo;
     static OfferService offrSrvc;
     static ContractService cntrctSrvc;
+    // vztSrvc clntSrvc agntSrvc
+    static VisitService vztSrvc;
+    static ClientService clntSrvc;
+    static AgentService agntSrvc;
+    static PropertyService prprtSrvc;
 
     @Autowired
     public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo, OfferService offrSrvc,
-            ContractService cntrtSrvc) {
+            ContractService cntrtSrvc, VisitService vztSrvc, ClientService clntSrvc, AgentService agntSrvc,
+            PropertyService prprtSrvc
+
+    ) {
         VisitService.visitRepo = visitRepo;
         VisitService.clientRepo = clientRepo;
         VisitService.agentRepo = agentRepo;
         VisitService.offrSrvc = offrSrvc;
         VisitService.cntrctSrvc = cntrtSrvc;
+
+        //
+        VisitService.vztSrvc = vztSrvc;
+        VisitService.clntSrvc = clntSrvc;
+        VisitService.agntSrvc = agntSrvc;
+        VisitService.prprtSrvc = prprtSrvc;
+
     }
 
     public Visit get(int visitID) {
@@ -171,6 +188,46 @@ public class VisitService {
 
     public void save(Visit vst) {
         visitRepo.save(vst);
+    }
+
+    public void createVisit(Offer offer, Client client) {
+        final int GAP = VisitVars.GAP;// days
+        final int DURATION = VisitVars.DURATION;// hours
+
+        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
+        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
+
+        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
+
+        Visit visit = new Visit();
+        visit.setDatetime(nextVisitDate);
+        visit.setOffer(offer);
+        visit.setClient(client);
+        visit.setAgent(closestAgnt);
+
+        vztSrvc.save(visit);
+
+    }
+
+    public void createVisit(int id_offer, String email_client) {
+        final int GAP = VisitVars.GAP;// days
+        final int DURATION = VisitVars.DURATION;// hours
+
+        Offer offer = offrSrvc.get(id_offer);
+        Client client = clntSrvc.get(email_client);
+
+        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
+        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
+
+        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
+
+        Visit visit = new Visit();
+        visit.setDatetime(nextVisitDate);
+        visit.setOffer(offer);
+        visit.setClient(client);
+        visit.setAgent(closestAgnt);
+
+        vztSrvc.save(visit);
     }
 
     //

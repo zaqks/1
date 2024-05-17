@@ -22,7 +22,8 @@ public class Market {
     private AuthService authSrvc;
     @Autowired
     private OfferService offrSrvc;
-    
+    @Autowired
+    private VisitService vztSrvc;
 
     @GetMapping("")
     public String showMarket(Model model,
@@ -67,7 +68,8 @@ public class Market {
         String finger = authSrvc.new ClientAuth(email, password).kickNonLogged("");
         if (finger.equals("")) // check auth
         {
-            offrSrvc.createVisit(id, email);
+            vztSrvc.createVisit(id, email);
+            
         }
 
         return "redirect:/client/market";

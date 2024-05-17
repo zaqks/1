@@ -65,8 +65,7 @@ public class ContractService {
 
         // now lets set the contract type
         contract.setType(
-                ContractType.values()[(offr.isChecked() ? 0 : 2) + (offr.isRent() ? 0 : 1)]
-        );
+                ContractType.values()[(offr.isChecked() ? 0 : 2) + (offr.isRent() ? 0 : 1)]);
 
         cntrctRepo.save(contract);
     }

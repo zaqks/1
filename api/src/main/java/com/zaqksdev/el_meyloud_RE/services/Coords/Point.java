@@ -1,4 +1,4 @@
-package com.zaqksdev.el_meyloud_RE.services.coords;
+package com.zaqksdev.el_meyloud_RE.services.Coords;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.models.Client;

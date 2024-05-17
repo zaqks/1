@@ -1,39 +1,25 @@
 package com.zaqksdev.el_meyloud_RE.services;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zaqksdev.el_meyloud_RE.models.Agent;
-import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
-import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
 
 @Service
 public class OfferService {
     static OfferRepo offerRepo;
-    // static VisitRepo visitRepo;
 
-    static PropertyService prprtSrvc;
-    static AgentService agntSrvc;
-    static ClientService clntSrvc;
     static VisitService vztSrvc;
 
     @Autowired
-    public void setOfferRepo(OfferRepo offerRepo, VisitRepo visitRepo, PropertyService prprtSrvc,
-            AgentService agntSrvc, ClientService clntSrvc, VisitService vztSrvc) {
+    public void setOfferRepo(OfferRepo offerRepo, VisitService vztSrvc) {
         OfferService.offerRepo = offerRepo;
-        // OfferService.visitRepo = visitRepo;
-        OfferService.prprtSrvc = prprtSrvc;
-        OfferService.agntSrvc = agntSrvc;
-        OfferService.clntSrvc = clntSrvc;
         OfferService.vztSrvc = vztSrvc;
     }
 
@@ -147,46 +133,6 @@ public class OfferService {
 
         }
         return result;
-    }
-
-    public void createVisit(Offer offer, Client client) {
-        final int GAP = 2;// days
-        final int DURATION = 1;// hours
-
-        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
-        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
-
-        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
-
-        Visit visit = new Visit();
-        visit.setDatetime(nextVisitDate);
-        visit.setOffer(offer);
-        visit.setClient(client);
-        visit.setAgent(closestAgnt);
-
-        vztSrvc.save(visit);
-
-    }
-
-    public void createVisit(int id_offer, String email_client) {
-        final int GAP = 2;// days
-        final int DURATION = 1;// hours
-
-        Offer offer = get(id_offer);
-        Client client = clntSrvc.get(email_client);
-
-        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
-        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
-
-        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
-
-        Visit visit = new Visit();
-        visit.setDatetime(nextVisitDate);
-        visit.setOffer(offer);
-        visit.setClient(client);
-        visit.setAgent(closestAgnt);
-
-        vztSrvc.save(visit);
     }
 
     public void activateOffer(Offer offr) {
