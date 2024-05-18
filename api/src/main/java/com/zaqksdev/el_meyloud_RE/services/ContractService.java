@@ -33,7 +33,7 @@ public class ContractService {
         for (int i = 0; i < rslt2.size(); i++) {
             current = rslt2.get(i);
 
-            if (!rslt2.contains(current))
+            if (!rslt.contains(current))
                 rslt2.add(current);
 
         }
@@ -45,18 +45,18 @@ public class ContractService {
     public Contract getOf(String email, int ctrtID) {
         Contract rslt = cntrctRepo.findById(ctrtID);
 
-        if (rslt != null && isMember(email, ctrtID))
+        if (rslt != null && isPart(email, ctrtID))
             return rslt;
 
         return null;
 
     }
 
-    public boolean isMember(String email, int ctrtID) {
+    public boolean isPart(String email, int ctrtID) {
         Contract contract = cntrctRepo.findById(ctrtID);
 
         String src = contract.getSrc().getEmail();
-        String dst = contract.getDst().getName();
+        String dst = contract.getDst().getEmail();
 
         return (src.equals(email) || dst.equals(email));
     }
