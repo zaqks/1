@@ -33,7 +33,6 @@ public class Market {
         model.addAttribute("offers", offrSrvc.getNoOfNoBooked(email));
 
         return authSrvc.new ClientAuth(email, password).kickNonLogged("market/showAll");
-
     }
 
     @GetMapping("/{id}")
@@ -56,8 +55,9 @@ public class Market {
 
         model.addAttribute("offer", rslt);
         model.addAttribute("owns", false);
+        model.addAttribute("book", vztSrvc.canVisit(id, email));
 
-        return authSrvc.new ClientAuth(email, password).kickNonLogged("offer/client/show");
+        return authSrvc.new ClientAuth(email, password).kickNonLogged("offer/show");
     }
 
     @PostMapping("/{id}")
@@ -70,10 +70,9 @@ public class Market {
         String finger = authSrvc.new ClientAuth(email, password).kickNonLogged("");
         if (finger.equals("")) // check auth
         {
-
             // chouf la m3ndouch deja
-
-            vztSrvc.createVisit(id, email);
+            if (vztSrvc.canVisit(id, email))
+                vztSrvc.createVisit(id, email);
 
         }
 

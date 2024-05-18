@@ -113,7 +113,8 @@ public class OfferService {
             currentPrp = currentOfr.getProperty();
             // li tkhliha lzm tkoun not owned by the client + avlb + non booked
             if (!(!currentPrp.getOwner().getEmail().equals(email) && currentOfr.isAvlbl()
-                    && !bookedOffr(email, currentOfr.getId())))
+                    //&& !bookedOffr(email, currentOfr.getId())
+                    ))
                 toDel.add(currentOfr);
         }
 

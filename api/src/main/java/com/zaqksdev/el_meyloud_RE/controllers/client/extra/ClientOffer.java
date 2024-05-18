@@ -64,6 +64,7 @@ public class ClientOffer {
         model.addAttribute("offer", rslt);
         model.addAttribute("owns", offrSrvc.owns(rslt, email));
         model.addAttribute("visits", new VisitShowDTO().VisitShowDTOs(offrSrvc.getCheckVisits(id, email)));
+        model.addAttribute("book", false);
         
 
         return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/show");

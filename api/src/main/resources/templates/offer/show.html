@@ -48,14 +48,13 @@
         </div>
 
 
-
-
     </div>
 
     <div th:unless="${owns}">
-        <form action="" method="post">
+        <form th:if="${book}" action="" method="post">
             <button type="submit">Visit</button>
         </form>
+
     </div>
 
 

@@ -228,4 +228,18 @@ public class VisitService {
 
     }
 
+    public boolean canVisit(int offer_id, String client_email) {
+        List<Visit> visits = getOf(client_email);
+
+        // checki la 3ndou une visite not passed
+        Visit current;
+        for (int i = 0; i < visits.size(); i++) {
+            current = visits.get(i);
+            if (!current.isPassed())
+                return false;
+        }
+
+        return true;
+    }
+
 }
