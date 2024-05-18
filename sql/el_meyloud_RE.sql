@@ -52,9 +52,9 @@ CREATE TABLE `agents` (
 LOCK TABLES `agents` WRITE;
 /*!40000 ALTER TABLE `agents` DISABLE KEYS */;
 INSERT INTO `agents` VALUES
-(1,'11111111','11','agent@gmail.com','moh','1234567890','0567849302','1234567890123','e nigrou',30,20,0,0,0,0,'','lacanon16',''),
-(2,'77665544','34','lagentmo@gmal.com','lagent','0000000000','0987654857','123456789012345','li hasb roh directeur',36.7642,3.1468,17,4,8,0,'\0','hadlilakhalwiamo',''),
-(4,'77665544','34','lagentmo2@gmal.com','lagent2','0000000123','0987654097','123456765212345','li hasb roh directeurrr',36.7642,3.1468,17,4,8,0,'\0','hadlilakhalwiamo','');
+(1,'11111111','11','agent1@gmail.com','moh','1234567890','0567849302','1234567890123','e nigrou',30,20,0,0,0,0,'','1234567890',''),
+(2,'77665544','34','agent2@gmail.com','lagent','0000000000','0987654857','123456789012345','li hasb roh directeur',36.7642,3.1468,17,4,8,0,'\0','1234567890',''),
+(4,'77665544','34','agent4@gmail.com','lagent2','0000000123','0987654097','123456765212345','li hasb roh directeurrr',36.7642,3.1468,17,4,8,0,'\0','1234567890','');
 /*!40000 ALTER TABLE `agents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,8 +90,8 @@ CREATE TABLE `clients` (
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
 INSERT INTO `clients` VALUES
-(1,'12345678','12','abcefght@yahoo.fr','Cristinao','1234567890','y&!SKB9E7UM&&_#','0777777777','123456789012345','','Ronaldo',36.7295,3.0905),
-(2,'12345678','90','zadmalmfs@gmail.com','el bachir','1234567892','__5V@8}_BAnBi\"B','0677886655','123456789012345','','ben dada',36.7295,3.0905);
+(1,'12345678','12','client1@gmail.com','Cristinao','1234567890','1234567890','0777777777','123456789012345','','Ronaldo',36.7295,3.0905),
+(2,'12345678','90','client2@gmail.com','el bachir','1234567892','1234567890','0677886655','123456789012345','','ben dada',36.7295,3.0905);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `contracts` (
   CONSTRAINT `FK3vdvpti6cakyel9fs5lm940mt` FOREIGN KEY (`offer_id`) REFERENCES `offers` (`id`),
   CONSTRAINT `FKnbhb51819uegckw5t2kmm8xui` FOREIGN KEY (`agent_id`) REFERENCES `agents` (`id`),
   CONSTRAINT `FKrft5kqxajp9wr41wit3aw3kap` FOREIGN KEY (`dst_client_id`) REFERENCES `clients` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,9 +129,10 @@ CREATE TABLE `contracts` (
 LOCK TABLES `contracts` WRITE;
 /*!40000 ALTER TABLE `contracts` DISABLE KEYS */;
 INSERT INTO `contracts` VALUES
-(1,'2024-05-15 18:29:49.755000',0,4,1,1,1),
-(2,'2024-05-15 18:46:52.546000',1,4,1,2,1),
-(3,'2024-05-15 18:47:43.123000',1,4,1,2,1);
+(1,'2024-05-17 18:50:06.755000',2,4,1,1,1),
+(2,'2024-05-18 18:55:36.086000',0,4,2,1,1),
+(3,'2024-05-18 22:21:27.754000',3,4,1,2,1),
+(4,'2024-05-18 22:24:13.021000',1,4,2,2,1);
 /*!40000 ALTER TABLE `contracts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +151,6 @@ CREATE TABLE `offers` (
   `price` int(11) NOT NULL,
   `rent` bit(1) NOT NULL,
   `property_id` int(11) DEFAULT NULL,
-  `notes` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKhgol4w22m5h4fq9m3r3qakkvj` (`property_id`),
   CONSTRAINT `FKhgol4w22m5h4fq9m3r3qakkvj` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`)
@@ -164,8 +164,8 @@ CREATE TABLE `offers` (
 LOCK TABLES `offers` WRITE;
 /*!40000 ALTER TABLE `offers` DISABLE KEYS */;
 INSERT INTO `offers` VALUES
-(1,'','','un tres tres tres belle grimace',200000,'',1,NULL),
-(2,'','','un tres tres tres belle affaire',3030000,'\0',1,NULL);
+(1,'\0','','un tres belle maision pour les vaccances',999999,'',1),
+(2,'\0','','no dogs, safe, no drug dealers',777777777,'\0',1);
 /*!40000 ALTER TABLE `offers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,11 +246,12 @@ CREATE TABLE `visits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `datetime` datetime(6) DEFAULT NULL,
   `missed` bit(1) NOT NULL,
+  `notes` varchar(255) DEFAULT NULL,
   `passed` bit(1) NOT NULL,
+  `self` bit(1) NOT NULL,
   `agent_id` int(11) DEFAULT NULL,
   `client_id` int(11) DEFAULT NULL,
   `offer_id` int(11) DEFAULT NULL,
-  `notes` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKjiqjtc1qc8jsct1fbtcmuk7v6` (`agent_id`),
   KEY `FKitoc4h8xfvle8onuqxb1fl0ix` (`client_id`),
@@ -258,7 +259,7 @@ CREATE TABLE `visits` (
   CONSTRAINT `FKitoc4h8xfvle8onuqxb1fl0ix` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`),
   CONSTRAINT `FKjiqjtc1qc8jsct1fbtcmuk7v6` FOREIGN KEY (`agent_id`) REFERENCES `agents` (`id`),
   CONSTRAINT `FKlua3dgen2xdooiyg99jkbu3qr` FOREIGN KEY (`offer_id`) REFERENCES `offers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,8 +269,10 @@ CREATE TABLE `visits` (
 LOCK TABLES `visits` WRITE;
 /*!40000 ALTER TABLE `visits` DISABLE KEYS */;
 INSERT INTO `visits` VALUES
-(1,'2024-05-17 08:00:00.000000','\0','',4,1,1,NULL),
-(2,'2024-05-17 09:00:00.000000','\0','',4,1,2,NULL);
+(1,'2024-05-27 08:00:00.000000','\0','','','',4,1,1),
+(2,'2024-05-28 08:00:00.000000','\0','','','\0',4,2,1),
+(3,'2024-05-28 09:00:00.000000','\0','','','',4,1,2),
+(4,'2024-05-28 10:00:00.000000','\0','','','\0',4,2,2);
 /*!40000 ALTER TABLE `visits` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -282,4 +285,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-15 19:35:29
+-- Dump completed on 2024-05-18 23:51:07
