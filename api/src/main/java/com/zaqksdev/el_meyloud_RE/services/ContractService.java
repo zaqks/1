@@ -9,6 +9,7 @@ import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.models.Contract.Contract;
 import com.zaqksdev.el_meyloud_RE.models.Contract.ContractType;
+import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ContractRepo;
 
@@ -16,17 +17,21 @@ import com.zaqksdev.el_meyloud_RE.repos.ContractRepo;
 public class ContractService {
     static ContractRepo cntrctRepo;
     static ClientRepo clientRepo;
+    static AgentRepo agentRepo;
 
     @Autowired
-    public void setCtrtRepo(ContractRepo cntrctRepo, ClientRepo clientRepo) {
+    public void setCtrtRepo(ContractRepo cntrctRepo, ClientRepo clientRepo, AgentRepo agentRepo) {
         ContractService.cntrctRepo = cntrctRepo;
         ContractService.clientRepo = clientRepo;
+        ContractService.agentRepo = agentRepo;
+
     }
 
     public List<Contract> getOf(String client_email) {
         Client client = clientRepo.findByEmail(client_email);
 
         List<Contract> rslt = cntrctRepo.findBySrc(client);
+
         List<Contract> rslt2 = cntrctRepo.findByDst(client);
 
         Contract current;
@@ -34,7 +39,7 @@ public class ContractService {
             current = rslt2.get(i);
 
             if (!rslt.contains(current))
-                rslt2.add(current);
+                rslt.add(current);
 
         }
 
@@ -59,6 +64,21 @@ public class ContractService {
         String dst = contract.getDst().getEmail();
 
         return (src.equals(email) || dst.equals(email));
+    }
+
+    public List<Contract> getBy(String agent_email) {
+        return cntrctRepo.findByAgent(agentRepo.findByEmail(agent_email));
+
+    }
+
+    public Contract getBy(String agent_email, int cntrct_id) {
+        Contract rslt = cntrctRepo.findById(cntrct_id);
+
+        if (!rslt.getAgent().getEmail().equals(agent_email))
+            return null;
+
+        return rslt;
+
     }
 
     public void createContract(
