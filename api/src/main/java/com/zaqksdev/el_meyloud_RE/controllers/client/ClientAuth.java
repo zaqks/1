@@ -51,6 +51,7 @@ public class ClientAuth {
         // set the cookies
         Cookie emailCookie = new Cookie("email", null);
         Cookie passwordCookie = new Cookie("password", null);
+        
         emailCookie.setMaxAge(0);
         passwordCookie.setMaxAge(0);
 
