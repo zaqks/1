@@ -36,9 +36,16 @@
         <div th:case="true">
 
             <div th:switch="${visit.offer.rent}">
+                <h1 th:case="true">Rent Offer</h1>
                 <h1 th:case="false">Buy Offer</h1>
-                <h1 th:case="true">Buy Offer</h1>
             </div>
+
+            <form action="" method="post">
+                <button th:text="${visit.offer.rent} ? 'Rent' : 'Sell'" type="submit"></button>
+            </form>
+
+
+
         </div>
 
     </div>

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zaqksdev.el_meyloud_RE.dtos.visit.VisitShowDTO;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
-import com.zaqksdev.el_meyloud_RE.services.VisitService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
+import com.zaqksdev.el_meyloud_RE.services.VisitService;
 
 @Controller
 @RequestMapping("client/visit")

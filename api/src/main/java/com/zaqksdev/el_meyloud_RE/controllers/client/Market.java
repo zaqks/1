@@ -14,7 +14,6 @@ import com.zaqksdev.el_meyloud_RE.services.VisitService;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
-
 @Controller
 @RequestMapping("client/market")
 public class Market {
@@ -22,7 +21,8 @@ public class Market {
     private AuthService authSrvc;
     @Autowired
     private OfferService offrSrvc;
-    
+    @Autowired
+    private VisitService vztSrvc;
 
     @GetMapping("")
     public String showMarket(Model model,
@@ -33,7 +33,6 @@ public class Market {
         model.addAttribute("offers", offrSrvc.getNoOfNoBooked(email));
 
         return authSrvc.new ClientAuth(email, password).kickNonLogged("market/showAll");
-
     }
 
     @GetMapping("/{id}")
@@ -51,10 +50,14 @@ public class Market {
         if (rslt == null)
             return "redirect:/client/market";
 
+        if (!rslt.isAvlbl()) // is it booked?
+            return "redirect:/client/market";
+
         model.addAttribute("offer", rslt);
         model.addAttribute("owns", false);
+        model.addAttribute("book", vztSrvc.canVisit(id, email));
 
-        return authSrvc.new ClientAuth(email, password).kickNonLogged("offer/client/show");
+        return authSrvc.new ClientAuth(email, password).kickNonLogged("offer/show");
     }
 
     @PostMapping("/{id}")
@@ -67,7 +70,10 @@ public class Market {
         String finger = authSrvc.new ClientAuth(email, password).kickNonLogged("");
         if (finger.equals("")) // check auth
         {
-            offrSrvc.createVisit(id, email);
+            // chouf la m3ndouch deja
+            if (vztSrvc.canVisit(id, email))
+                vztSrvc.createVisit(id, email);
+
         }
 
         return "redirect:/client/market";

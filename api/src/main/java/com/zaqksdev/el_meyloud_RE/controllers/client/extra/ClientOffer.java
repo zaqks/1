@@ -17,6 +17,7 @@ import com.zaqksdev.el_meyloud_RE.repos.OfferRepo;
 import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
 import com.zaqksdev.el_meyloud_RE.services.OfferService;
 import com.zaqksdev.el_meyloud_RE.services.PropertyService;
+import com.zaqksdev.el_meyloud_RE.services.VisitService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 import jakarta.validation.Valid;
@@ -35,6 +36,8 @@ public class ClientOffer {
     private OfferService offrSrvc;
     @Autowired
     private PropertyService prprtSrvc;
+    @Autowired
+    private VisitService vztSrvc;
 
     @GetMapping("")
     public String showAllOffer(Model model,
@@ -59,9 +62,12 @@ public class ClientOffer {
             return "redirect:/client/offer";
 
         model.addAttribute("offer", rslt);
+        model.addAttribute("owns", offrSrvc.owns(rslt, email));
         model.addAttribute("visits", new VisitShowDTO().VisitShowDTOs(offrSrvc.getCheckVisits(id, email)));
+        model.addAttribute("book", false);
+        
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/client/show");
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("offer/show");
     }
 
     @GetMapping("/add/{id}")
@@ -108,7 +114,7 @@ public class ClientOffer {
         offrSrvc.save(offr);
 
         // create check visit
-        offrSrvc.createVisit(offr, clientSrvc.get());
+        vztSrvc.createVisit(offr, clientSrvc.get());
 
         return "redirect:/client/offer";
 

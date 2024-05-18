@@ -23,11 +23,20 @@ public class ContractService {
         ContractService.clientRepo = clientRepo;
     }
 
-    public List<Contract> getOf(String email) {
-        Client client = clientRepo.findByEmail(email);
+    public List<Contract> getOf(String client_email) {
+        Client client = clientRepo.findByEmail(client_email);
 
         List<Contract> rslt = cntrctRepo.findBySrc(client);
-        rslt.addAll(cntrctRepo.findByDst(client));
+        List<Contract> rslt2 = cntrctRepo.findByDst(client);
+
+        Contract current;
+        for (int i = 0; i < rslt2.size(); i++) {
+            current = rslt2.get(i);
+
+            if (!rslt2.contains(current))
+                rslt2.add(current);
+
+        }
 
         return rslt;
 
@@ -65,8 +74,7 @@ public class ContractService {
 
         // now lets set the contract type
         contract.setType(
-                ContractType.values()[(offr.isChecked() ? 0 : 2) + (offr.isRent() ? 0 : 1)]
-        );
+                ContractType.values()[(offr.isChecked() ? 0 : 2) + (offr.isRent() ? 0 : 1)]);
 
         cntrctRepo.save(contract);
     }

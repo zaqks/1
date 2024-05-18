@@ -28,22 +28,36 @@
 
 
 
-    <div th:if="!${owns}">
-        <form action="" method="post">
-            <button type="submit">Book a visit</button>
-        </form>
-    </div>
+    <div th:if="${owns}">
+        <h2>visits</h2>
 
-    <div th:else>
-        <h2>visit</h2>
-        <p>your offer needs to be checked by an agent on:</p>
+        <div th:if="${not offer.checked}">
+            <p>your offer needs to be checked by an agent on:</p>
+        </div>
+        <div th:unless="${not offer.checked}">
+            <p>ham l3ibad li ha yjou:</p>
+        </div>
 
         <div th:each="visit:${visits}">
-            <p th:text="${visit.date}"></p>
-            <p th:text="${visit.time}"></p>
+            <div th:if="${not visit.passed}">
+                <p th:text="@{'missed: ' + ${visit.missed}}"></p>
+
+                <p th:text="${visit.date}"></p>
+                <p th:text="${visit.time}"></p>
+            </div>
         </div>
+
+
     </div>
-    
+
+    <div th:unless="${owns}">
+        <form th:if="${book}" action="" method="post">
+            <button type="submit">Visit</button>
+        </form>
+
+    </div>
+
+
 
 
 

@@ -1,4 +1,4 @@
-package com.zaqksdev.el_meyloud_RE.services.coords;
+package com.zaqksdev.el_meyloud_RE.services.Coords;
 
 import java.lang.Math;
 

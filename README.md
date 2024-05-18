@@ -26,7 +26,7 @@
 -add password confirm
 -dont show the non active agents
 -add the range invertor
-
+-the ctrt type isnt working
 
 
 

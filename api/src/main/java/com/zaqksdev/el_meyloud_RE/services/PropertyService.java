@@ -13,8 +13,8 @@ import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.models.Property;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.PropertyRepo;
-import com.zaqksdev.el_meyloud_RE.services.coords.Coords;
-import com.zaqksdev.el_meyloud_RE.services.coords.Point;
+import com.zaqksdev.el_meyloud_RE.services.Coords.Coords;
+import com.zaqksdev.el_meyloud_RE.services.Coords.Point;
 
 @Service
 public class PropertyService {

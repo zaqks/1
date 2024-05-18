@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zaqksdev.el_meyloud_RE.models.Agent;
+import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.models.Visit;
 import com.zaqksdev.el_meyloud_RE.repos.AgentRepo;
 import com.zaqksdev.el_meyloud_RE.repos.ClientRepo;
 import com.zaqksdev.el_meyloud_RE.repos.VisitRepo;
+import com.zaqksdev.el_meyloud_RE.vars.VisitVars;
 
 @Service
 public class VisitService {
@@ -22,15 +24,30 @@ public class VisitService {
     static AgentRepo agentRepo;
     static OfferService offrSrvc;
     static ContractService cntrctSrvc;
+    // vztSrvc clntSrvc agntSrvc
+    static VisitService vztSrvc;
+    static ClientService clntSrvc;
+    static AgentService agntSrvc;
+    static PropertyService prprtSrvc;
 
     @Autowired
     public void setVisitRepo(VisitRepo visitRepo, ClientRepo clientRepo, AgentRepo agentRepo, OfferService offrSrvc,
-            ContractService cntrtSrvc) {
+            ContractService cntrtSrvc, VisitService vztSrvc, ClientService clntSrvc, AgentService agntSrvc,
+            PropertyService prprtSrvc
+
+    ) {
         VisitService.visitRepo = visitRepo;
         VisitService.clientRepo = clientRepo;
         VisitService.agentRepo = agentRepo;
         VisitService.offrSrvc = offrSrvc;
         VisitService.cntrctSrvc = cntrtSrvc;
+
+        //
+        VisitService.vztSrvc = vztSrvc;
+        VisitService.clntSrvc = clntSrvc;
+        VisitService.agntSrvc = agntSrvc;
+        VisitService.prprtSrvc = prprtSrvc;
+
     }
 
     public Visit get(int visitID) {
@@ -173,16 +190,56 @@ public class VisitService {
         visitRepo.save(vst);
     }
 
+    public void createVisit(Offer offer, Client client) {
+        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
+        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
+        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, VisitVars.GAP, VisitVars.DURATION);
+
+        Visit visit = new Visit();
+
+        visit.setDatetime(nextVisitDate);
+        visit.setOffer(offer);
+        visit.setClient(client);
+        visit.setAgent(closestAgnt);
+        visit.setSelf(offrSrvc.owns(offer, client.getEmail())); //
+
+        vztSrvc.save(visit);
+    }
+
+    public void createVisit(int id_offer, String email_client) {
+        createVisit(offrSrvc.get(id_offer), clntSrvc.get(email_client));
+    }
+
     //
     public void successVst(int vstID) {
         Visit vst = visitRepo.findById(vstID);
         vst.setPassed(true);
 
-        // enable the offer
-        offrSrvc.activateOffer(vst.getOffer());
+        // enable the offer or nah
+        if (vst.getOffer().isChecked()) {
+            // set the offer to non availble
+            offrSrvc.deactivateOffer(vst.getOffer());
+
+        } else
+            offrSrvc.activateOffer(vst.getOffer());
+
         // create the contract
         cntrctSrvc.createContract(vst);
 
+    }
+
+    public boolean canVisit(int offer_id, String client_email) {
+        List<Visit> visits = getOf(client_email);
+
+        // checki la 3ndou une visite not passed
+        Visit current;
+        for (int i = 0; i < visits.size(); i++) {
+            current = visits.get(i);
+            if (!current.isPassed())
+                return false;
+        }
+
+        return true;
     }
 
 }

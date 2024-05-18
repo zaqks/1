@@ -27,7 +27,7 @@ public class ClientContract {
 
         model.addAttribute("contracts", cntrtSrvc.getOf(email));
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/client/showAll");
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/showAll");
 
     }
 
@@ -45,7 +45,7 @@ public class ClientContract {
 
         model.addAttribute("contract", rslt);
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/client/show");
+        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/show");
     }
 
 }

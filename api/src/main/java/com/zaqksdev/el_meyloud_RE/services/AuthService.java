@@ -59,7 +59,7 @@ public class AuthService {
 
         public String kickNonSeller(String src) {
             if (!canSell()) {
-                return "redirect:/client";
+                return "redirect:/client/signin";
             }
 
             return src;
