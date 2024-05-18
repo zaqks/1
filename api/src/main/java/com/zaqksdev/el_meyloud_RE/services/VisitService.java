@@ -144,11 +144,14 @@ public class VisitService {
         Offer currentOffr;
         for (int i = 0; i < inpt.size(); i++) {
             currentVzt = inpt.get(i);
-            currentOffr = inpt.get(i).getOffer();
 
-            if (currentOffr.isChecked() && currentOffr.isRent())
-                if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
-                    rslt.add(currentVzt);
+            if (!(currentVzt.isMissed() || currentVzt.isPassed())) {
+                currentOffr = inpt.get(i).getOffer();
+
+                if (currentOffr.isChecked() && currentOffr.isRent())
+                    if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
+                        rslt.add(currentVzt);
+            }
         }
 
         return rslt;
@@ -164,9 +167,11 @@ public class VisitService {
             currentVzt = inpt.get(i);
             currentOffr = inpt.get(i).getOffer();
 
-            if (currentOffr.isChecked() && !currentOffr.isRent())
-                if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
-                    rslt.add(currentVzt);
+            if (!(currentVzt.isMissed() || currentVzt.isPassed())) {
+                if (currentOffr.isChecked() && !currentOffr.isRent())
+                    if (currentOffr.getProperty().getOwner().getId() != currentVzt.getClient().getId())
+                        rslt.add(currentVzt);
+            }
         }
 
         return rslt;
@@ -179,8 +184,11 @@ public class VisitService {
         Visit current;
         for (int i = 0; i < inpt.size(); i++) {
             current = inpt.get(i);
-            if (!(current.getOffer().isChecked()))
-                rslt.add(current);
+            if (!(current.isMissed() || current.isPassed())) {
+
+                if (!(current.getOffer().isChecked()))
+                    rslt.add(current);
+            }
         }
 
         return rslt;
@@ -215,6 +223,9 @@ public class VisitService {
         Visit vst = visitRepo.findById(vstID);
         vst.setPassed(true);
 
+        // create the contract
+        cntrctSrvc.createContract(vst);
+
         // enable the offer or nah
         if (vst.getOffer().isChecked()) {
             // set the offer to non availble
@@ -222,9 +233,6 @@ public class VisitService {
 
         } else
             offrSrvc.activateOffer(vst.getOffer());
-
-        // create the contract
-        cntrctSrvc.createContract(vst);
 
     }
 

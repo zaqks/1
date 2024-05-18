@@ -1,4 +1,4 @@
-package com.zaqksdev.el_meyloud_RE.controllers.client;
+package com.zaqksdev.el_meyloud_RE.controllers.agent;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,8 @@ import com.zaqksdev.el_meyloud_RE.models.Contract.Contract;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
 @Controller
-@RequestMapping("client/contract")
-public class ClientContract {
+@RequestMapping("agent/contract")
+public class AgentContract {
     @Autowired
     private AuthService authSrvc;
     @Autowired
@@ -22,12 +22,12 @@ public class ClientContract {
 
     @GetMapping("")
     public String showAllContact(Model model,
-            @CookieValue(name = "email", defaultValue = "") String email,
-            @CookieValue(name = "password", defaultValue = "") String password) {
+            @CookieValue(name = "agent_email", defaultValue = "") String email,
+            @CookieValue(name = "agent_password", defaultValue = "") String password) {
 
-        model.addAttribute("contracts", cntrtSrvc.getOf(email));
+        model.addAttribute("contracts", cntrtSrvc.getBy(email));
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/client/showAll");
+        return authSrvc.new AgentAuth(email, password).kick("contract/agent/showAll");
 
     }
 
@@ -35,17 +35,17 @@ public class ClientContract {
     public String showContract(
             @PathVariable(name = "id") int id,
             Model model,
-            @CookieValue(name = "email", defaultValue = "") String email,
-            @CookieValue(name = "password", defaultValue = "") String password) {
+            @CookieValue(name = "agent_email", defaultValue = "") String email,
+            @CookieValue(name = "agent_password", defaultValue = "") String password) {
 
-        Contract rslt = cntrtSrvc.getOf(email, id);
+        Contract rslt = cntrtSrvc.getBy(email, id);
 
         if (rslt == null)
-            return "redirect:/client/contract";
+            return "redirect:/agent/contract";
 
         model.addAttribute("contract", rslt);
 
-        return authSrvc.new ClientAuth(email, password).kickNonSeller("contract/show");
+        return authSrvc.new AgentAuth(email, password).kick("contract/show");
     }
 
 }

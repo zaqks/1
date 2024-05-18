@@ -20,8 +20,8 @@
 
 <body>
     <div th:each="contract: ${contracts}">
-        <div class="contractCard" th:ctrct_id="${contract.id}" 
-        th:onclick="window.location.href=`/client/contract/${this.getAttribute('ctrct_id')}`">
+        <div class="contractCard" th:ctrct_id="${contract.id}"
+            th:onclick="window.location.href=`/agent/contract/${this.getAttribute('ctrct_id')}`">
             <p th:text="${contract.id}"></p>
         </div>
     </div>

@@ -7,6 +7,7 @@ import com.zaqksdev.el_meyloud_RE.models.Client;
 import com.zaqksdev.el_meyloud_RE.models.Contract.Contract;
 
 import java.util.List;
+import com.zaqksdev.el_meyloud_RE.models.Agent;
 
 @Repository
 public interface ContractRepo extends JpaRepository<Contract, Integer> {
@@ -15,4 +16,6 @@ public interface ContractRepo extends JpaRepository<Contract, Integer> {
     List<Contract> findBySrc(Client src);
 
     List<Contract> findByDst(Client dst);
+
+    List<Contract> findByAgent(Agent agent);
 }

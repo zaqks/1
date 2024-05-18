@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        showAllContract
+    </title>
+
+    <link th:href="@{/css/vars.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/templates/contract/add/add.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/contract/show/show.css}" rel="stylesheet" />
+    <link th:href="@{/css/templates/contract/showAll/showAll.css}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <div th:each="contract: ${contracts}">
+        <div class="contractCard" th:ctrct_id="${contract.id}"
+            th:onclick="window.location.href=`/client/contract/${this.getAttribute('ctrct_id')}`">
+            <p th:text="${contract.id}"></p>
+        </div>
+    </div>
+</body>
+
+</html>

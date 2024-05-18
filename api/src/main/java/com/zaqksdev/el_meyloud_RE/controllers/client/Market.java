@@ -40,7 +40,9 @@ public class Market {
             @PathVariable(name = "id") int id,
             Model model,
             @CookieValue(name = "email", defaultValue = "") String email,
-            @CookieValue(name = "password", defaultValue = "") String password) {
+            @CookieValue(name = "password", defaultValue = "") String password
+    //
+    ) {
 
         Offer rslt = offrSrvc.getOf(email, id);
         if (rslt != null)
