@@ -26,7 +26,8 @@ public class VisitShowDTO extends Visit {
         this.setAgent(visit.getAgent());
         this.setClient(visit.getClient());
         this.setOffer(visit.getOffer());
-        this.setMissed(isMissed());
+        this.setPassed(visit.isPassed());
+        this.setMissed(visit.isMissed());
         this.setAgent(visit.getAgent());
 
         Calendar clndr = visit.getDatetime();

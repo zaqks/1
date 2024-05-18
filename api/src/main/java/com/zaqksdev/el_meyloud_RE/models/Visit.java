@@ -5,12 +5,13 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "visits")
-public class Visit {
+public class  Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean passed = false;
     private boolean missed = false;
+    private boolean self; //is it an offer checking visit
     private String notes = "";
 
     private Calendar datetime;
@@ -94,6 +95,14 @@ public class Visit {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public boolean isSelf() {
+        return self;
+    }
+
+    public void setSelf(boolean self) {
+        this.self = self;
     }
 
 }

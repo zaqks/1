@@ -14,7 +14,6 @@ import com.zaqksdev.el_meyloud_RE.services.VisitService;
 import com.zaqksdev.el_meyloud_RE.models.Offer;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
 
-
 @Controller
 @RequestMapping("client/market")
 public class Market {
@@ -52,6 +51,9 @@ public class Market {
         if (rslt == null)
             return "redirect:/client/market";
 
+        if (!rslt.isAvlbl()) // is it booked?
+            return "redirect:/client/market";
+
         model.addAttribute("offer", rslt);
         model.addAttribute("owns", false);
 
@@ -68,8 +70,11 @@ public class Market {
         String finger = authSrvc.new ClientAuth(email, password).kickNonLogged("");
         if (finger.equals("")) // check auth
         {
+
+            // chouf la m3ndouch deja
+
             vztSrvc.createVisit(id, email);
-            
+
         }
 
         return "redirect:/client/market";

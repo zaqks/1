@@ -16,11 +16,13 @@ public class OfferService {
     static OfferRepo offerRepo;
 
     static VisitService vztSrvc;
+    static PropertyService prprtSrvc;
 
     @Autowired
-    public void setOfferRepo(OfferRepo offerRepo, VisitService vztSrvc) {
+    public void setOfferRepo(OfferRepo offerRepo, VisitService vztSrvc, PropertyService prprtSrvc) {
         OfferService.offerRepo = offerRepo;
         OfferService.vztSrvc = vztSrvc;
+        OfferService.prprtSrvc = prprtSrvc;
     }
 
     public Offer get(int id) {
@@ -58,7 +60,11 @@ public class OfferService {
         offerRepo.save(offr);
     }
 
-    public List<Offer> getNoOf(String email) {
+    public boolean owns(Offer offr, String client_email) {
+        return prprtSrvc.owns(client_email, offr.getProperty().getId());
+    }
+
+    public List<Offer> getNoOf(String client_email) {
         List<Offer> rslt = offerRepo.findAll();
         List<Offer> toDel = new ArrayList<Offer>();
         int i;
@@ -70,7 +76,7 @@ public class OfferService {
             currentOfr = rslt.get(i);
             currentPrp = currentOfr.getProperty();
             // li tkhliha lzm tkoun not owned by the client + avlb
-            if (!(!currentPrp.getOwner().getEmail().equals(email) && currentOfr.isAvlbl()))
+            if (!(!currentPrp.getOwner().getEmail().equals(client_email) && currentOfr.isAvlbl()))
                 toDel.add(currentOfr);
         }
 

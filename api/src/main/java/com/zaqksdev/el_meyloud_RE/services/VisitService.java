@@ -191,43 +191,23 @@ public class VisitService {
     }
 
     public void createVisit(Offer offer, Client client) {
-        final int GAP = VisitVars.GAP;// days
-        final int DURATION = VisitVars.DURATION;// hours
-
         // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
         Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
-
-        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
+        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, VisitVars.GAP, VisitVars.DURATION);
 
         Visit visit = new Visit();
+
         visit.setDatetime(nextVisitDate);
         visit.setOffer(offer);
         visit.setClient(client);
         visit.setAgent(closestAgnt);
+        visit.setSelf(offrSrvc.owns(offer, client.getEmail())); //
 
         vztSrvc.save(visit);
-
     }
 
     public void createVisit(int id_offer, String email_client) {
-        final int GAP = VisitVars.GAP;// days
-        final int DURATION = VisitVars.DURATION;// hours
-
-        Offer offer = offrSrvc.get(id_offer);
-        Client client = clntSrvc.get(email_client);
-
-        // sooo lzmlna dabord n3rfou l'agent le plus proche de la propriete
-        Agent closestAgnt = prprtSrvc.getClosestAgent(offer.getProperty());
-
-        Calendar nextVisitDate = agntSrvc.getNextVisitDate(closestAgnt, GAP, DURATION);
-
-        Visit visit = new Visit();
-        visit.setDatetime(nextVisitDate);
-        visit.setOffer(offer);
-        visit.setClient(client);
-        visit.setAgent(closestAgnt);
-
-        vztSrvc.save(visit);
+        createVisit(offrSrvc.get(id_offer), clntSrvc.get(email_client));
     }
 
     //
