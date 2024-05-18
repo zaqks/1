@@ -26,7 +26,7 @@
 -add password confirm
 -dont show the non active agents
 -add the range invertor
--the ctrt type isnt working
+
 
 
 
@@ -46,3 +46,4 @@ we choose the closest agent relative to the property
 -see the availble offers
 
 -add the range script
+-the ctrt type isnt working
