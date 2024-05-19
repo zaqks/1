@@ -167,23 +167,33 @@
 
                             </div>
 
-                            <div id="map">
-                                <div id="img"></div>
-                                <div class="row">
-                                    <div class="input">
-                                        <input type="number" th:field="*{x}" placeholder="x">
-                                        <ul>
-                                            <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
-                                        </ul>
+                            <div class="section border" id="map">
+                                <h4 id="title">
+                                    Where is your property ?
+                                </h4>
+
+                                <div id="content">
+
+                                    <div id="img"></div>
+                                    <div class="row">
+                                        <div class="input">
+                                            <input type="number" th:field="*{x}" id="x">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <input type="number" th:field="*{y}" id="y">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
                                     </div>
 
-                                    <div class="input">
-                                        <input type="number" th:field="*{y}" placeholder="y">
-                                        <ul>
-                                            <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
-                                        </ul>
-                                    </div>
                                 </div>
+
                             </div>
 
                             <script th:src="@{/js/property/add/images.js}"></script>
