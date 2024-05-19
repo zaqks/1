@@ -29,8 +29,6 @@ body {
 }
 
 #window #view #content {
-    background-color: green;
-
     width: 100%;
     height: 100%;
     padding: 2%;
@@ -42,4 +40,11 @@ body {
 
 .panel {
     border-radius: 0;
+}
+
+ 
+
+
+.panel.v {
+    border-top: none;
 }

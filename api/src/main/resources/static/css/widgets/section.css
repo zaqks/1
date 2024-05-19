@@ -21,8 +21,8 @@
 
 
 .section.border {
-    padding:calc(1.5*var(--brdr2));
+    padding: calc(2*var(--brdr2));
 
-    border: 2px solid var(--shdclr1);
+    border: var(--border1);
     border-radius: var(--brdr2);
 }
