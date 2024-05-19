@@ -5,6 +5,9 @@
     row-gap: var(--brdr2);
 
     padding: var(--brdr2);
+
+    background-color: red;
+
 }
 
 
@@ -17,7 +20,6 @@
     margin: var(--brdr2);
 
 }
-
 
 
 .section.border {

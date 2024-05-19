@@ -38,28 +38,28 @@
 
         <div id="view">
             <div class="panel v" id="side">
+                <div>
+                    <div class="icn" onclick="window.location.href='/client/market'">
+                        <img src="/media/icons/navigation/market.png" alt="">
+                    </div>
 
-                <div class="icn" onclick="window.location.href='/client/market'">
-                    <img src="/media/icons/navigation/market.png" alt="">
+                    <div class="icn" onclick="window.location.href='/client/contract'">
+                        <img src="/media/icons/navigation/contracts.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/visit'">
+                        <img src="/media/icons/navigation/visits.svg" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/offer'">
+                        <img src="/media/icons/navigation/offers.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/property'">
+                        <img src="/media/icons/navigation/properties.png" alt="">
+                    </div>
+
                 </div>
-
-                <div class="icn" onclick="window.location.href='/client/contract'">
-                    <img src="/media/icons/navigation/contracts.png" alt="">
-                </div>
-
-                <div class="icn" onclick="window.location.href='/client/visit'">
-                    <img src="/media/icons/navigation/visits.svg" alt="">
-                </div>
-
-                <div class="icn" onclick="window.location.href='/client/offer'">
-                    <img src="/media/icons/navigation/offers.png" alt="">
-                </div>
-
-                <div class="icn" onclick="window.location.href='/client/property'">
-                    <img src="/media/icons/navigation/properties.png" alt="">
-                </div>
-
-                <div class="icn spacer"></div>
 
                 <div class="icn" onclick="window.location.href='/client/profile'">
                     <img src="/media/icons/navigation/profile.png" alt="">
@@ -74,8 +74,8 @@
                     </h3>
 
                     <div id="body">
+                        
                         <div class="grid c3" id="offers">
-
                             <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}"
                                 th:offr_id="${offer.id}"
                                 th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`"
@@ -110,6 +110,7 @@
 
                             </div>
                         </div>
+                        
                     </div>
 
                 </div>

@@ -24,16 +24,21 @@ body {
 
     width: 100%;
     height: 100%;
+
+    overflow-x: hidden;
+    overflow-y:scroll;
+
 }
 
-#window #view #content{
+#window #view #content {
     background-color: green;
 
     width: 100%;
-    height: 100%;
+    height: 100% ;    
     padding: 2%;
 
-    overflow: hidden scroll;
+    overflow-x: hidden;
+    overflow-y:scroll;
 }
 
 
