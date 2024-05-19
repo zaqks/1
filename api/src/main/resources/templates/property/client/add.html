@@ -80,92 +80,83 @@
                     </h3>
                     <div id="content">
                         <form method="post" th:object="${property}" enctype="multipart/form-data">
-                            <div id="form">
 
-                                <div class="input">
-                                    <input type="text" th:field="*{addr}" placeholder="addr">
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('addr')}" th:text="${err}"></li>
-                                    </ul>
+                            <div class="section border">
+                                <div id="content">
+                                    <div id="form">
+
+                                        <div class="input">
+                                            <p>address</p>
+                                            <input type="text" th:field="*{addr}" placeholder="addr">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('addr')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <p>surf</p>
+                                            <input type="number" th:field="*{surf}" placeholder="surf">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('surf')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <p>floors</p>
+                                            <input type="number" th:field="*{floors}" placeholder="floors">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('floors')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <p>grgs</p>
+                                            <input type="number" th:field="*{grgs}" placeholder="grgs">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('grgs')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <p>pools</p>
+                                            <input type="number" th:field="*{pools}" placeholder="pools">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('pools')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <p>rooms</p>
+                                            <input type="number" th:field="*{rooms}" placeholder="rooms">
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('rooms')}" th:text="${err}"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input">
+                                            <p>description</p>
+                                            <textarea cols="30" rows="10" th:field="*{description}"></textarea>
+                                            <ul>
+                                                <li th:each="err:${#fields.errors('description')}" th:text="${err}">
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <button type="submit">Add</button>
+
+
+
+
+
+
+
+
+                                    </div>
                                 </div>
-
-                                <div class="input">
-                                    <input type="number" th:field="*{surf}" placeholder="surf">
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('surf')}" th:text="${err}"></li>
-                                    </ul>
-                                </div>
-
-                                <div class="input">
-                                    <input type="number" th:field="*{floors}" placeholder="floors">
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('floors')}" th:text="${err}"></li>
-                                    </ul>
-                                </div>
-
-                                <div class="input">
-                                    <input type="number" th:field="*{grgs}" placeholder="grgs">
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('grgs')}" th:text="${err}"></li>
-                                    </ul>
-                                </div>
-
-                                <div class="input">
-                                    <input type="number" th:field="*{pools}" placeholder="pools">
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('pools')}" th:text="${err}"></li>
-                                    </ul>
-                                </div>
-
-                                <div class="input">
-                                    <input type="number" th:field="*{rooms}" placeholder="rooms">
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('rooms')}" th:text="${err}"></li>
-                                    </ul>
-                                </div>
-
-                                <div class="input">
-                                    <textarea cols="30" rows="10" th:field="*{description}"></textarea>
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('description')}" th:text="${err}"></li>
-                                    </ul>
-                                </div>
-
-
-                                <label id="imgLabel" for="img#1">Add img</label>
-
-                                <ul>
-                                    <li th:each="err:${#fields.errors('img1')}" th:text="${err}"></li>
-                                </ul>
-
-                                <input type="file" accept="image/*" th:field="*{img1}" id="img#1"
-                                    oninput="insertImgs(this)">
-                                <input type="file" accept="image/*" th:field="*{img2}" id="img#2"
-                                    oninput="insertImgs(this)">
-                                <input type="file" accept="image/*" th:field="*{img3}" id="img#3"
-                                    oninput="insertImgs(this)">
-                                <input type="file" accept="image/*" th:field="*{img4}" id="img#4"
-                                    oninput="insertImgs(this)">
-                                <input type="file" accept="image/*" th:field="*{img5}" id="img#5"
-                                    oninput="insertImgs(this)">
-
-                                <div id="imgs">
-
-                                </div>
-
-
-
-
-                                <button type="submit">Add</button>
-
-
-
-
-
-
-
-
                             </div>
+
+
 
                             <div class="section border" id="map">
                                 <h4 id="title">
@@ -189,6 +180,28 @@
                                                 <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
                                             </ul>
                                         </div>
+
+                                    </div>
+
+
+                                    <label id="imgLabel" for="img#1">Add img</label>
+
+                                    <ul>
+                                        <li th:each="err:${#fields.errors('img1')}" th:text="${err}"></li>
+                                    </ul>
+
+                                    <input type="file" accept="image/*" th:field="*{img1}" id="img#1"
+                                        oninput="insertImgs(this)">
+                                    <input type="file" accept="image/*" th:field="*{img2}" id="img#2"
+                                        oninput="insertImgs(this)">
+                                    <input type="file" accept="image/*" th:field="*{img3}" id="img#3"
+                                        oninput="insertImgs(this)">
+                                    <input type="file" accept="image/*" th:field="*{img4}" id="img#4"
+                                        oninput="insertImgs(this)">
+                                    <input type="file" accept="image/*" th:field="*{img5}" id="img#5"
+                                        oninput="insertImgs(this)">
+
+                                    <div id="imgs">
 
                                     </div>
 
