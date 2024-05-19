@@ -1,13 +1,18 @@
 .propertyCard {
+
     display: flex;
-    align-items: start;
+    flex-direction: column;
 
-    column-gap: 10px;
+    margin: var(--brdr1);
+    padding: var(--brdr3);
 
-    margin: 5px;
-    padding: 10px;
+    column-gap: var(--brdr2);
+    row-gap: var(--brdr2);
 
-    background-color: grey;
+    border-radius: var(--brdr2);
+
+    background-color: var(--bgclr2);
+    border: var(--border1);
 
     cursor: pointer;
 
@@ -15,22 +20,46 @@
 
 
 .propertyCard img {
-    width: 10%;
-    aspect-ratio: 1;
-
-
+    width: 100%;
+    aspect-ratio: calc(4/3);
 
     object-fit: cover;
     object-position: 50% 50%;
+
+    border-radius: var(--brdr2);
 
 }
 
 .propertyCard #info {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
 }
 
 
-.propertyCard #coords {
-    column-gap: 10px;
+
+.propertyCard #info .row {
+    display: flex;
+    justify-content: space-between;
 }
+
+
+.propertyCard #info #id {
+    font-size: var(--txtsz3);
+    font-size: var(--txtsz7);
+}
+
+.propertyCard #info #surf {
+    font-size: var(--txtsz5);
+
+}
+
+.propertyCard #info #addr {
+    margin-top: 20px;
+    font-size: var(--txtsz5);
+    color: var(--txtclr2);
+}
+
+ 
+ 

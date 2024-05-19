@@ -14,6 +14,30 @@
     margin: var(--brdr2);
 }
 
+
+.section .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .row a{
+    color: var(--bgclr1);
+    text-decoration: none;
+
+    font-size: var(--txtsz5);
+    font-weight: var(--txtwh4);
+
+    background-color: var(--secclr1);
+    padding: 10px 25px;
+    border-radius: var(--brdr3);
+
+
+
+    
+}
+
+
 .section #body {
     margin: var(--brdr2);
 
