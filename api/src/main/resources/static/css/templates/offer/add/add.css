@@ -1,12 +1,29 @@
-form {
+/*form {
     width: 60%;
     display: flex;
 
     margin: 0 20%;
     flex-direction: column;
 }
+*/
 
 
-button{
-    margin: 10px;
+
+button {
+    color: var(--bgclr1);
+    text-decoration: none;
+
+    font-size: var(--txtsz5);
+    font-weight: var(--txtwh4);
+
+    background-color: var(--secclr2);
+    padding: 10px 25px;
+    border-radius: var(--brdr1);
+
+    border: none;
+}
+
+
+.input .row {
+    flex-shrink: 1;
 }

@@ -1,4 +1,3 @@
-
 input[type="file"] {
     display: none;
 }
@@ -14,6 +13,8 @@ input {
 }
 
 textarea {
+    padding: 15px;
+
     border: none;
     outline: none;
     border-radius: var(--brdr2);
@@ -39,6 +40,16 @@ textarea {
 }
 
 
-.input ul li{
+.input ul li {
     color: var(--errclr);
+}
+
+
+
+
+input[type="checkbox"]{
+    accent-color: var(--secclr2);
+    
+    width: 25px;
+    height: 25px;
 }

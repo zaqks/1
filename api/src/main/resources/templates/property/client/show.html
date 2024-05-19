@@ -9,24 +9,109 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
+
+
+    <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/panel.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/section.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/bars/appbar.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/bars/navbar.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/carousel.css}" rel="stylesheet" />
     <link th:href="@{/css/templates/property/show/show.css}" rel="stylesheet" />
+
 
 
 </head>
 
 <body>
-    <h1>Property</h1>
 
-    <div class="carousel" id="imgs">
-        <div class="carouselItm" th:each="img: ${property.imgs}">
-            <img th:src="${img}" alt="">
+    <div id="window">
+        <div class="panel h" id="top">
+            <img id="logo" th:src="@{/media/images/logo/text.svg}" alt="">
         </div>
+
+        <div id="view">
+            <div class="panel v" id="side">
+                <div>
+                    <div class="icn" onclick="window.location.href='/client/market'">
+                        <img src="/media/icons/navigation/market.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/contract'">
+                        <img src="/media/icons/navigation/contracts.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/visit'">
+                        <img src="/media/icons/navigation/visits.svg" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/offer'">
+                        <img src="/media/icons/navigation/offers.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/property'">
+                        <img src="/media/icons/navigation/properties.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/profile'">
+                    <img src="/media/icons/navigation/profile.png" alt="">
+                </div>
+
+            </div>
+
+            <div id="content">
+
+
+                <div class="section border">
+                    <div class="row">
+                        <h3 id="title" th:text="@{'Property' + ${property.id}}"></h3>
+                        <a th:href="@{'/client/offer/add/' + ${property.id} }">+ Create offer for this
+                            property</a>
+                    </div>
+
+                    <div id="content">
+
+                        <div class="section border">
+                            <div id="content">
+                                <div class="carousel" id="imgs">
+                                    <div class="carouselItm" th:each="img: ${property.imgs}">
+                                        <img th:src="${img}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section border">
+                            <h4 id="title">Info</h4>
+                            <div id="content">
+                                <div id="info">
+                                    <div id="cards"></div>
+                                    <div id="location"></div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
-    <p th:text="${property.description}"></p>
 
-    <a th:href="@{'/client/offer/add/' + ${property.id}}">create offer for this property</a>
 
 </body>
 
