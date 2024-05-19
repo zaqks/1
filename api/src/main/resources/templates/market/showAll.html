@@ -9,14 +9,21 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-    
+
 
     <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/panel.css}" rel="stylesheet" />
-    
+    <link th:href="@{/css/widgets/section.css}" rel="stylesheet" />
+
     <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/bars/appbar.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/bars/navbar.css}" rel="stylesheet" />
+
     <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
-    
+
+
+
     <link th:href="@{/css/templates/market/showAll.css}" rel="stylesheet" />
 
 
@@ -25,50 +32,94 @@
 <body>
 
     <div id="window">
-        <div class="panel h" id="top"></div>
-        <div class="panel v" id="side"></div>
-        <div id="content"></div>
-   
+        <div class="panel h" id="top">
+            <img id="logo" th:src="@{/media/images/logo/text.svg}" alt="">
+        </div>
+
+        <div id="view">
+            <div class="panel v" id="side">
+
+                <div class="icn" onclick="window.location.href='/client/market'">
+                    <img src="/media/icons/navigation/market.png" alt="">
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/contract'">
+                    <img src="/media/icons/navigation/contracts.png" alt="">
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/visit'">
+                    <img src="/media/icons/navigation/visits.svg" alt="">
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/offer'">
+                    <img src="/media/icons/navigation/offers.png" alt="">
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/property'">
+                    <img src="/media/icons/navigation/properties.png" alt="">
+                </div>
+
+                <div class="icn spacer"></div>
+
+                <div class="icn" onclick="window.location.href='/client/profile'">
+                    <img src="/media/icons/navigation/profile.png" alt="">
+                </div>
+
+            </div>
+
+            <div id="content">
+                <div class="section border">
+                    <h3 id="title">
+                        Offers
+                    </h3>
+
+                    <div id="body">
+                        <div class="grid c3" id="offers">
+
+                            <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}"
+                                th:offr_id="${offer.id}"
+                                th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`"
+                                th:each="offer: ${offers}">
+                                <img th:src="${offer.property.imgs[0]}" alt="">
+
+                                <div id="info">
+                                    <h3 th:text="@{'offer' + ${offer.id}}"></h3>
+                                    <h4 th:text="@{${offer.price} + 'DA'}"></h4>
+
+                                    <h3 th:if="${offer.rent}">Rent</h3>
+                                    <h3 th:if="${!offer.rent}">Sell</h3>
+
+
+
+
+                                    <p id="addr" th:text="@{'addr: ' +  ${offer.property.addr}}"></p>
+
+                                    <div class="row" id="coords">
+                                        <p id="addr" th:text="${offer.property.x}"></p>
+                                        <p id="addr" th:text="${offer.property.y}"></p>
+                                    </div>
+
+                                    <p id="addr" th:text="@{${offer.property.surf} + 'm²' }"></p>
+                                    <p id="addr" th:text="@{'rooms: ' + ${offer.property.rooms}}"></p>
+
+                                    <p id="addr" th:text="@{'floors: ' + ${offer.property.floors}}"></p>
+                                    <p id="addr" th:text="@{'cars: ' + ${offer.property.grgs}}"></p>
+                                    <p id="addr" th:text="@{'pools: ' +  ${offer.property.pools}}"></p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
 
-         <!--
-        <div id="content">
-            <div id="offers" th:each="offer: ${offers}">
-                <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}"
-                    th:offr_id="${offer.id}"
-                    th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`">
-                    <img th:src="${offer.property.imgs[0]}" alt="">
-                    <div id="info">
-                        <h3 th:text="@{'offer' + ${offer.id}}"></h3>
-                        <h4 th:text="@{${offer.price} + 'DA'}"></h4>
-
-                        <h3 th:if="${offer.rent}">Rent</h3>
-                        <h3 th:if="${!offer.rent}">Sell</h3>
-
-
-
-
-                        <p id="addr" th:text="@{'addr: ' +  ${offer.property.addr}}"></p>
-
-                        <div class="row" id="coords">
-                            <p id="addr" th:text="${offer.property.x}"></p>
-                            <p id="addr" th:text="${offer.property.y}"></p>
-                        </div>
-
-                        <p id="addr" th:text="@{${offer.property.surf} + 'm²' }"></p>
-                        <p id="addr" th:text="@{'rooms: ' + ${offer.property.rooms}}"></p>
-
-                        <p id="addr" th:text="@{'floors: ' + ${offer.property.floors}}"></p>
-                        <p id="addr" th:text="@{'cars: ' + ${offer.property.grgs}}"></p>
-                        <p id="addr" th:text="@{'pools: ' +  ${offer.property.pools}}"></p>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        -->
 
 </body>
 
