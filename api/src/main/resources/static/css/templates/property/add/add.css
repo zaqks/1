@@ -1,24 +1,88 @@
-form {
-    display: flex;
-    flex-direction: column;
-
-    width: 60%;
-    padding: 0 20%;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-label {
-    text-decoration: underline;
-    font-weight: var(--txtwh5);
-    cursor: pointer;
-
-    margin-bottom: 25px;
-}
+ .section form {
+     display: flex;
 
 
-button {
-    margin-top: 25px;
-}
+ }
+
+
+ .section form #form {
+
+     display: flex;
+     flex-direction: column;
+ }
+
+
+
+ .section #content #form button {
+     color: var(--bgclr1);
+     text-decoration: none;
+
+     font-size: var(--txtsz5);
+     font-weight: var(--txtwh4);
+
+     background-color: var(--secclr2);
+     padding: 10px 25px;
+     border-radius: var(--brdr1);
+
+     border: none;
+ }
+
+
+ .section #content #map {
+     width: 100%;
+     aspect-ratio: 2;
+
+
+     display: flex;
+     flex-direction: column;
+
+
+
+ }
+
+ .section #content #map #img {
+     width: 100%;
+     height: 100%;
+
+
+ }
+
+
+ .section #content #map .row {
+     display: none;
+
+ }
+
+
+ .section#superInpts {
+     width: 100%;
+ }
+
+ #imgs {
+     width: 100%;
+     aspect-ratio: 2;
+
+     border: var(--border1);
+     border-radius: var(--brdr2);
+ }
+
+
+
+
+ #imgs label {
+     background-color: red;
+
+     font-size: var(--txtsz10);
+     font-weight: var(--txtwh5);
+
+     position: relative;
+     z-index: -1;
+ }
+
+
+ #imgs img {
+     width: 100%;
+     height: 100%;
+
+     object-fit: cover;
+ }

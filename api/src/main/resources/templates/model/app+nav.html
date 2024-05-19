@@ -68,48 +68,7 @@
             </div>
 
             <div id="content">
-                <div class="section border">
-                    <h3 id="title">
-                        Market
-                    </h3>
-
-                    <div id="body">
-
-                        <div class="grid c3" id="offers">
-                            <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}"
-                                th:offr_id="${offer.id}"
-                                th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`"
-                                th:each="offer: ${offers}">
-                                <img th:src="${offer.property.imgs[0]}" alt="">
-
-                                <div id="info">
-
-
-                                    <div class="row">
-                                        <h3 id="id" th:text="@{'offer' + ${offer.id}}"></h3>
-
-                                        <h3 id="type" th:if="${offer.rent}">Rent</h3>
-                                        <h3 id="type" th:unless="${offer.rent}">Sell</h3>
-                                    </div>
-
-                                    <h4 id="surf" th:text="@{${offer.property.surf} + 'm²' }"></h4>
-
-                                    <div id="price">
-                                        <h4 id="val"  th:text="@{${offer.price} }"></h4>
-                                        
-                                        <h4 id="unit" th:if="${offer.rent}">DZD</h4>
-                                        <h4 id="unit" th:unless="${offer.rent}">DZD/mo</h4>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
+                
 
             </div>
         </div>

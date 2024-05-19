@@ -4,37 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create offer</title>
+    <title>Create offer</title>
 
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
+
+
+    <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/panel.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/section.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/bars/appbar.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/bars/navbar.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/input.css}" rel="stylesheet" />
+
+
+    <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
+
+
+
     <link th:href="@{/css/templates/offer/add/add.css}" rel="stylesheet" />
+
 
 </head>
 
 <body>
-    <h1 th:text="@{'create offer for property' + ${id}}"></h1>
 
-    <form method="post" th:object="${offer}">
-        <input th:field="*{price}" type="number" placeholder="price">
-        <ul>
-            <li th:each="err:${#fields.errors('price')}" th:text="${err}"></li>
-        </ul>
-
-        <div class="row">
-            <p>rent</p>
-            <input th:field="*{rent}" type="checkbox" placeholder="rent">
+    <div id="window">
+        <div class="panel h" id="top">
+            <img id="logo" th:src="@{/media/images/logo/text.svg}" alt="">
         </div>
 
-        <textarea th:field="*{description}" cols="30" rows="10"></textarea>
-        <ul>
-            <li th:each="err:${#fields.errors('description')}" th:text="${err}"></li>
-        </ul>
+        <div id="view">
+            <div class="panel v" id="side">
+                <div>
+                    <div class="icn" onclick="window.location.href='/client/market'">
+                        <img src="/media/icons/navigation/market.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/contract'">
+                        <img src="/media/icons/navigation/contracts.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/visit'">
+                        <img src="/media/icons/navigation/visits.svg" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/offer'">
+                        <img src="/media/icons/navigation/offers.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/property'">
+                        <img src="/media/icons/navigation/properties.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/profile'">
+                    <img src="/media/icons/navigation/profile.png" alt="">
+                </div>
+
+            </div>
+
+            <div id="content">
+
+                <div class="section border">
+                    <h3 id="title" th:text="@{'create offer for property' + ${id}}"></h3>
+
+                    <div id="content">
+
+                        <form method="post" th:object="${offer}">
+                            <div class="input">
+                                <p>Charge (DZD)</p>
+                                <input th:field="*{price}" type="number" placeholder="price">
+                                <ul>
+                                    <li th:each="err:${#fields.errors('price')}" th:text="${err}"></li>
+                                </ul>
+                            </div>
+
+                            <div class="input">
+                                <div class="row">
+                                    <p>Rent</p>
+                                    <input th:field="*{rent}" type="checkbox" placeholder="rent">
+                                </div>
+
+                            </div>
+
+                            <div class="input">
+                                <p>Description</p>
+                                <textarea th:field="*{description}" cols="30" rows="10"></textarea>
+                                <ul>
+                                    <li th:each="err:${#fields.errors('description')}" th:text="${err}"></li>
+                                </ul>
+                            </div>
 
 
-        <button type="submit">Create</button>
-    </form>
+
+                            <button type="submit">Create</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
 
 </body>
 

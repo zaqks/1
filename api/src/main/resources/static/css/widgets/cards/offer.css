@@ -35,13 +35,41 @@
     flex-direction: column;
 
     width: 100%;
-
-    background-color: red;
 }
 
 
-.offerCard #coords {
-    column-gap: 10px;
+
+.offerCard #info .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.offerCard #info #id {
+    font-size: var(--txtsz3);
+    font-size: var(--txtsz7);
+}
+
+.offerCard #info #type {
+    color: var(--secclr1);
+    font-weight: var(--txtwh4);
+}
+
+.offerCard #info #surf {
+    font-size: var(--txtsz5);
+
+}
+
+
+.offerCard #info #price {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+ 
+    margin-top: 30px;
+    font-size: var(--txtsz5);
+
+    color: var(--secclr2);
 }
 
 

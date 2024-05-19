@@ -5,14 +5,44 @@
     row-gap: var(--brdr2);
 
     padding: var(--brdr2);
+    margin: 5px;
 
 }
 
 
-.section #title {
+.section h3#title {
     font-size: 40px;
     margin: var(--brdr2);
 }
+
+.section h4#title {
+    font-size: 30px;
+    margin: var(--brdr2);
+}
+
+
+.section .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .row a{
+    color: var(--bgclr1);
+    text-decoration: none;
+
+    font-size: var(--txtsz5);
+    font-weight: var(--txtwh4);
+
+    background-color: var(--secclr1);
+    padding: 10px 25px;
+    border-radius: var(--brdr3);
+
+
+
+    
+}
+
 
 .section #body {
     margin: var(--brdr2);
