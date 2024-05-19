@@ -17,11 +17,17 @@
 
 
     /********************************/
-    --shclr1: #05060a15;
-    --shclr2: #05060a30;
+    /*
+    --shdclr1: #05060a15;
+    --shdclr2: #05060a30;
 
-    --shd1: 0 0 5px 1px var(--shclr1);
-    --shd2: 0 0 5px 1px var(--shclr2);
+    --shd1: 0 0 5px 1px var(--shdclr1);
+    --shd2: 0 0 5px 1px var(--shdclr2);
+    */
+
+    --border1: 1.5px solid #05060a15;
+    /*--border2: 1.5px soild #05060a30;*/
+
     /********************************/
 
 
@@ -44,8 +50,8 @@
     --txtsz10: 50px;
 
     --brdr1: 5px;
-    --brdr2: 10px;
-    --brdr3: 15px;
+    --brdr2: 7.5px;
+    --brdr3: 10px;
 
 
 }

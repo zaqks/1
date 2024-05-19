@@ -1,13 +1,18 @@
 .offerCard {
+
     display: flex;
-    align-items: start;
+    flex-direction: column;
 
-    column-gap: 10px;
+    margin: var(--brdr1);
+    padding: var(--brdr3);
 
-    margin: 5px;
-    padding: 10px;
+    column-gap: var(--brdr2);
+    row-gap: var(--brdr2);
 
-    background-color: grey;
+    border-radius: var(--brdr2);
+
+    background-color: var(--bgclr2);
+    border: var(--border1);
 
     cursor: pointer;
 
@@ -15,29 +20,28 @@
 
 
 .offerCard img {
-    width: 10%;
-    aspect-ratio: 1;
-
-
+    width: 100%;
+    aspect-ratio: calc(4/3);
 
     object-fit: cover;
     object-position: 50% 50%;
+
+    border-radius: var(--brdr2);
 
 }
 
 .offerCard #info {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
+
+    background-color: red;
 }
 
 
 .offerCard #coords {
     column-gap: 10px;
-}
-
-
-.offerCard.checked {
-    background-color: lightgreen;
 }
 
 

@@ -1,18 +1,22 @@
-
-
 .panel {
-    position: fixed;
+    display: flex;
+    align-items: center;
+
+    padding: 20px;
 
     border-radius: var(--brdr2);
     background-color: var(--bgclr1);
 
-    box-shadow: var(--shd2);
+    /*box-shadow: var(--shd1);*/
+    border: var(--border1);
 }
 
 .panel.h {
-    height: 90px;
+    width: 100%;
+    /*height: 90px;*/
 }
 
 .panel.v {
-    width: 90px;
+    /*width: 90px;*/
+    height: 100%;
 }

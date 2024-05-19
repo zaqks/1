@@ -1,46 +1,50 @@
-:root {
-    --window-panels-spacing: 15px;
-    --window-panels-wh: 90px;
-}
-
 body {
-    display: flex;
-
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 
     background-color: var(--bgclr2);
 }
 
 
 
-#content {
-    position: fixed;
-    right: 0;
-    bottom: 0;
+#window {
+    display: flex;
+    flex-direction: column;
 
-    width: calc(100% - var(--window-panels-wh) - var(--window-panels-spacing)*3);
-    height: calc(100% - var(--window-panels-wh) - var(--window-panels-spacing)*3);
-    margin: var(--window-panels-spacing);
-
-    background-color: green;
-
+    width: 100%;
+    height: 100%;
 }
 
-.panel.h {
-    left: 0;
-    top: 0;
+#window #view {
+    display: flex;
 
-    width: calc(100% - var(--window-panels-spacing)*2);
-    margin: var(--window-panels-spacing);
+    width: 100%;
+    height: 100%;
 
+    overflow: hidden;
 }
+
+#window #view #content {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+.panel {
+    border-radius: 0;
+}
+
+ 
+
 
 .panel.v {
-    left: 0;
-    bottom: 0;
-
-    height: calc(100% - var(--window-panels-wh) - var(--window-panels-spacing)*3);
-    margin: var(--window-panels-spacing);
-
+    border-top: none;
 }
