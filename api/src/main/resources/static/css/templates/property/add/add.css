@@ -6,7 +6,7 @@
 
 
  .section form #form {
-     
+
      display: flex;
      flex-direction: column;
  }
@@ -30,13 +30,13 @@
 
  .section #content #map {
      width: 100%;
-     aspect-ratio: 1;
+     aspect-ratio: 2;
 
-     
+
      display: flex;
      flex-direction: column;
 
-     
+
 
  }
 
@@ -44,11 +44,46 @@
      width: 100%;
      height: 100%;
 
-     
+
  }
 
+ 
  .section #content #map .row {
      display: none;
 
-     
+
+ }
+
+
+ .section#superInpts {
+     width: 100%;
+ }
+
+ #imgs {
+     width: 100%;
+     aspect-ratio: 2;
+
+     border: var(--border1);
+     border-radius: var(--brdr2);
+ }
+
+
+
+
+ #imgs label{
+    background-color: red;
+
+    font-size: var(--txtsz10);
+    font-weight: var(--txtwh5);
+
+    position: relative;
+    z-index: -1;
+ }
+
+
+ #imgs img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover   ;
  }

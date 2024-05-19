@@ -20,6 +20,7 @@
     <link th:href="@{/css/widgets/bars/appbar.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/bars/navbar.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/input.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
 
     <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
 
@@ -147,73 +148,83 @@
 
 
 
-
-
-
-
-
                                     </div>
                                 </div>
                             </div>
 
 
 
-                            <div class="section border" id="map">
-                                <h4 id="title">
-                                    Where is your property ?
-                                </h4>
+                            <div class="section border" id="superInpts">
 
-                                <div id="content">
+                                <div class="section border" id="map">
+                                    <h4 id="title">
+                                        Where is your property ?
+                                    </h4>
 
-                                    <div id="img"></div>
+                                    <div id="content">
+
+                                        <div id="img"></div>
+                                        <div class="row">
+                                            <div class="input">
+                                                <input type="number" th:field="*{x}" id="x">
+                                                <ul>
+                                                    <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="input">
+                                                <input type="number" th:field="*{y}" id="y">
+                                                <ul>
+                                                    <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                        <ul>
+                                            <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
+                                            <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="section border">
                                     <div class="row">
-                                        <div class="input">
-                                            <input type="number" th:field="*{x}" id="x">
-                                            <ul>
-                                                <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
-                                            </ul>
-                                        </div>
+                                        <h4 id="title">Add some images</h4>
+                                        <label for="img#1" id="imgLabel">
+                                            <a>+ Upload</a>
+                                        </label>
+                                    </div>
+                                    <div id="content">
 
-                                        <div class="input">
-                                            <input type="number" th:field="*{y}" id="y">
-                                            <ul>
-                                                <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
-                                            </ul>
+                                        <ul>
+                                            <li th:each="err:${#fields.errors('img1')}" th:text="${err}"></li>
+                                        </ul>
+
+                                        <input type="file" accept="image/*" th:field="*{img1}" id="img#1"
+                                            oninput="insertImgs(this)">
+                                        <input type="file" accept="image/*" th:field="*{img2}" id="img#2"
+                                            oninput="insertImgs(this)">
+                                        <input type="file" accept="image/*" th:field="*{img3}" id="img#3"
+                                            oninput="insertImgs(this)">
+                                        <input type="file" accept="image/*" th:field="*{img4}" id="img#4"
+                                            oninput="insertImgs(this)">
+                                        <input type="file" accept="image/*" th:field="*{img5}" id="img#5"
+                                            oninput="insertImgs(this)">
+
+                                        <div class="grid c3" id="imgs">
                                         </div>
 
                                     </div>
-
-
-                                    <label id="imgLabel" for="img#1">Add img</label>
-
-                                    <ul>
-                                        <li th:each="err:${#fields.errors('img1')}" th:text="${err}"></li>
-                                    </ul>
-
-                                    <input type="file" accept="image/*" th:field="*{img1}" id="img#1"
-                                        oninput="insertImgs(this)">
-                                    <input type="file" accept="image/*" th:field="*{img2}" id="img#2"
-                                        oninput="insertImgs(this)">
-                                    <input type="file" accept="image/*" th:field="*{img3}" id="img#3"
-                                        oninput="insertImgs(this)">
-                                    <input type="file" accept="image/*" th:field="*{img4}" id="img#4"
-                                        oninput="insertImgs(this)">
-                                    <input type="file" accept="image/*" th:field="*{img5}" id="img#5"
-                                        oninput="insertImgs(this)">
-
-                                    <div id="imgs">
-
-                                    </div>
-
                                 </div>
 
+
+                                <script th:src="@{/js/property/add/images.js}"></script>
+                                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                                    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                                    crossorigin=""></script>
+                                <script th:src="@{/js/map/click.js}"></script>
                             </div>
-
-                            <script th:src="@{/js/property/add/images.js}"></script>
-                            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-                                integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-                            <script th:src="@{/js/map/click.js}"></script>
-
                         </form>
 
                     </div>

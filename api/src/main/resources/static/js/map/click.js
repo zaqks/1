@@ -17,6 +17,9 @@ map.on("click", function posRef(e) {
     lat = e.latlng.lat;
     lng = e.latlng.lng;
 
+    lat = parseFloat(lat)
+    lng = parseFloat(lng)
+
 
     xIntp.value = `${lat}`
     yIntp.value = `${lng}`
