@@ -9,49 +9,61 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
+    <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+
     <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/panel.css}" rel="stylesheet" />
+
+
     <link th:href="@{/css/templates/market/showAll.css}" rel="stylesheet" />
 
 
 </head>
 
 <body>
-    <h1>list the market</h1>
 
-    <div id="offers" th:each="offer: ${offers}">
-        <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}" th:offr_id="${offer.id}"
-            th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`">
-            <img th:src="${offer.property.imgs[0]}" alt="">
-            <div id="info">
-                <h3 th:text="@{'offer' + ${offer.id}}"></h3>
-                <h4 th:text="@{${offer.price} + 'DA'}"></h4>
+    <div id="window">
+        <div class="panel" id="top"></div>
+        <div class="panel" id="side"></div>
 
-                <h3 th:if="${offer.rent}">Rent</h3>
-                <h3 th:if="${!offer.rent}">Sell</h3>
+        <div id="content">
+            <div id="offers" th:each="offer: ${offers}">
+                <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}"
+                    th:offr_id="${offer.id}"
+                    th:onclick="window.location.href=`/client/market/${this.getAttribute('offr_id')}`">
+                    <img th:src="${offer.property.imgs[0]}" alt="">
+                    <div id="info">
+                        <h3 th:text="@{'offer' + ${offer.id}}"></h3>
+                        <h4 th:text="@{${offer.price} + 'DA'}"></h4>
 
-                
+                        <h3 th:if="${offer.rent}">Rent</h3>
+                        <h3 th:if="${!offer.rent}">Sell</h3>
 
 
-                <p id="addr" th:text="@{'addr: ' +  ${offer.property.addr}}"></p>
 
-                <div class="row" id="coords">
-                    <p id="addr" th:text="${offer.property.x}"></p>
-                    <p id="addr" th:text="${offer.property.y}"></p>
+
+                        <p id="addr" th:text="@{'addr: ' +  ${offer.property.addr}}"></p>
+
+                        <div class="row" id="coords">
+                            <p id="addr" th:text="${offer.property.x}"></p>
+                            <p id="addr" th:text="${offer.property.y}"></p>
+                        </div>
+
+                        <p id="addr" th:text="@{${offer.property.surf} + 'm²' }"></p>
+                        <p id="addr" th:text="@{'rooms: ' + ${offer.property.rooms}}"></p>
+
+                        <p id="addr" th:text="@{'floors: ' + ${offer.property.floors}}"></p>
+                        <p id="addr" th:text="@{'cars: ' + ${offer.property.grgs}}"></p>
+                        <p id="addr" th:text="@{'pools: ' +  ${offer.property.pools}}"></p>
+                    </div>
+
+
                 </div>
-
-                <p id="addr" th:text="@{${offer.property.surf} + 'm²' }"></p>
-                <p id="addr" th:text="@{'rooms: ' + ${offer.property.rooms}}"></p>
-
-                <p id="addr" th:text="@{'floors: ' + ${offer.property.floors}}"></p>
-                <p id="addr" th:text="@{'cars: ' + ${offer.property.grgs}}"></p>
-                <p id="addr" th:text="@{'pools: ' +  ${offer.property.pools}}"></p>
             </div>
-
-
         </div>
     </div>
-
-
 
 </body>
 
