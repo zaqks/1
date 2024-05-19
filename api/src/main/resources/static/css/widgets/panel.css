@@ -1,0 +1,18 @@
+
+
+.panel {
+    position: fixed;
+
+    border-radius: var(--brdr2);
+    background-color: var(--bgclr1);
+
+    box-shadow: var(--shd2);
+}
+
+.panel.h {
+    height: 90px;
+}
+
+.panel.v {
+    width: 90px;
+}

@@ -1,0 +1,46 @@
+:root {
+    --window-panels-spacing: 15px;
+    --window-panels-wh: 90px;
+}
+
+body {
+    display: flex;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: var(--bgclr2);
+}
+
+
+
+#content {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    width: calc(100% - var(--window-panels-wh) - var(--window-panels-spacing)*3);
+    height: calc(100% - var(--window-panels-wh) - var(--window-panels-spacing)*3);
+    margin: var(--window-panels-spacing);
+
+    background-color: green;
+
+}
+
+.panel.h {
+    left: 0;
+    top: 0;
+
+    width: calc(100% - var(--window-panels-spacing)*2);
+    margin: var(--window-panels-spacing);
+
+}
+
+.panel.v {
+    left: 0;
+    bottom: 0;
+
+    height: calc(100% - var(--window-panels-wh) - var(--window-panels-spacing)*3);
+    margin: var(--window-panels-spacing);
+
+}
