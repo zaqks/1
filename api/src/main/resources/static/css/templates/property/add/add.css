@@ -1,24 +1,54 @@
-form {
-    display: flex;
-    flex-direction: column;
+ .section form {
+     display: flex;
 
-    width: 60%;
-    padding: 0 20%;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-label {
-    text-decoration: underline;
-    font-weight: var(--txtwh5);
-    cursor: pointer;
-
-    margin-bottom: 25px;
-}
+     background-color: blue;
+ }
 
 
-button {
-    margin-top: 25px;
-}
+ .section form #form {
+     background-color: green;
+     display: flex;
+     flex-direction: column;
+ }
+
+
+
+ .section #content #form button {
+     color: var(--bgclr1);
+     text-decoration: none;
+
+     font-size: var(--txtsz5);
+     font-weight: var(--txtwh4);
+
+     background-color: var(--secclr2);
+     padding: 10px 25px;
+     border-radius: var(--brdr1);
+
+     border: none;
+ }
+
+
+ .section #content #map {
+     width: 100%;
+     aspect-ratio: 1;
+
+     background-color: green;
+     display: flex;
+     flex-direction: column;
+
+     margin: 5px;
+
+ }
+
+ .section #content #map .img {
+     width: 100%;
+     height: 100%;
+
+     background-color: tomato;
+ }
+
+ .section #content #map .row {
+     display: flex;
+
+     background-color: peru;
+ }

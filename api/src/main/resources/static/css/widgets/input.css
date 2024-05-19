@@ -1,0 +1,11 @@
+input[type="file"] {
+    display: none;
+}
+
+input{
+    background-color: red;
+}
+
+textarea{
+    background-color: red;
+}
