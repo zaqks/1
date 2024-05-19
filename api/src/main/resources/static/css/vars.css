@@ -6,14 +6,14 @@
 }
 
 :root {
-    --bgclr1:#ffffff;
-    --bgclr2:#fcfcfd;
-    --bgclr3:#f6f7f9;
-    --txtclr1:#6d7785;
-    --txtclr2:#465366;
-    --txtclr3:#05060a;
-    --secclr1:#f79321;
-    --secclr2:#ff5600;
+    --bgclr1: #ffffff;
+    --bgclr2: #fcfcfd;
+    --bgclr3: #f6f7f9;
+    --txtclr1: #6d7785;
+    --txtclr2: #465366;
+    --txtclr3: #05060a;
+    --secclr1: #f79321;
+    --secclr2: #ff5600;
 
 
     /********************************/
@@ -42,6 +42,10 @@
     --txtsz8: 35px;
     --txtsz9: 45px;
     --txtsz10: 50px;
+
+    --brdr1: 5px;
+    --brdr2: 10px;
+    --brdr3: 15px;
 
 
 }

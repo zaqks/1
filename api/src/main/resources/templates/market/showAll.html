@@ -9,14 +9,14 @@
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-    <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
-
-    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+    
 
     <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/panel.css}" rel="stylesheet" />
-
-
+    
+    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
+    
     <link th:href="@{/css/templates/market/showAll.css}" rel="stylesheet" />
 
 
@@ -25,9 +25,14 @@
 <body>
 
     <div id="window">
-        <div class="panel" id="top"></div>
-        <div class="panel" id="side"></div>
+        <div class="panel h" id="top"></div>
+        <div class="panel v" id="side"></div>
+        <div id="content"></div>
+   
+    </div>
 
+
+         <!--
         <div id="content">
             <div id="offers" th:each="offer: ${offers}">
                 <div th:attr="class= 'offerCard' + ${offer.checked? ' checked' : ' nonChecked'}"
@@ -63,7 +68,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        -->
 
 </body>
 
