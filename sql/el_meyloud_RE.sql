@@ -51,10 +51,7 @@ CREATE TABLE `agents` (
 
 LOCK TABLES `agents` WRITE;
 /*!40000 ALTER TABLE `agents` DISABLE KEYS */;
-INSERT INTO `agents` VALUES
-(1,'11111111','11','agent1@gmail.com','moh','1234567890','0567849302','1234567890123','e nigrou',30,20,0,0,0,0,'','1234567890',''),
-(2,'77665544','34','agent2@gmail.com','lagent','0000000000','0987654857','123456789012345','li hasb roh directeur',36.7642,3.1468,17,4,8,0,'\0','1234567890',''),
-(4,'77665544','34','agent4@gmail.com','lagent2','0000000123','0987654097','123456765212345','li hasb roh directeurrr',36.7642,3.1468,17,4,8,0,'\0','1234567890','');
+
 /*!40000 ALTER TABLE `agents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,8 +87,7 @@ CREATE TABLE `clients` (
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
 INSERT INTO `clients` VALUES
-(1,'12345678','12','client1@gmail.com','Cristinao','1234567890','1234567890','0777777777','123456789012345','','Ronaldo',36.7295,3.0905),
-(2,'12345678','90','client2@gmail.com','el bachir','1234567892','1234567890','0677886655','123456789012345','','ben dada',36.7295,3.0905);
+(1,'12345678','12','client1@gmail.com','Cristinao','1234567890','1234567890','0777777777','123456789012345','','Ronaldo',36.7295,3.0905);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,8 +160,7 @@ CREATE TABLE `offers` (
 LOCK TABLES `offers` WRITE;
 /*!40000 ALTER TABLE `offers` DISABLE KEYS */;
 INSERT INTO `offers` VALUES
-(1,'\0','','un tres belle maision pour les vaccances',999999,'',1),
-(2,'\0','','no dogs, safe, no drug dealers',777777777,'\0',1);
+(1,'\0','','une tres belle maision pour les vaccances',999999,'',1);
 /*!40000 ALTER TABLE `offers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,8 +195,7 @@ CREATE TABLE `properties` (
 
 LOCK TABLES `properties` WRITE;
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
-INSERT INTO `properties` VALUES
-(1,'t7t l point ta3 constantine ta3 l3ami9in','belle vuee',0,0,0,1,100,0,0,1);
+
 /*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 UNLOCK TABLES;
 
