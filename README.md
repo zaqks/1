@@ -51,10 +51,18 @@ we choose the closest agent relative to the property
 
 if someone misses the visits 2 times, he gets banned from the platform
 
+# how are we able to calculate the distance between 2 points on the earth
+basically we're calculatiing an arch length of a circle
+so obviously, we'll use the haversine formula
 
-
-
-
-
+```
+public float getDistance() {
+        return (float) (Math.acos(
+                Math.sin(p1.x) * Math.sin(p2.x) +
+                        Math.cos(p1.x) * Math.cos(p2.x) *
+                                Math.cos(p2.y - p1.y))
+        * 6371);
+    }
+```
 
 
