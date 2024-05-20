@@ -27,11 +27,13 @@
 
 
 
-# how does the scheduling system work
+# how does the auto scheduling system work
 for each agent we define the hours he starts his service and the hour he ends 0-23
 we also define the active day 0-6
 the visit is 1hour long
 
 we choose the less working agent
 we choose the closest agent relative to the property
+
+if someone misses the visits 2 times, he gets banned from the platform
 
