@@ -1,4 +1,18 @@
 <img src="https://github.com/zaqks/el_meyloud_RE/blob/f3a5c8c45025986354d71c5431c476e529365bd6/api/src/main/resources/static/media/images/logo/text.svg">
+<div align=center>
+<img width="48" height="48" src="https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png" alt="java-coffee-cup-logo--v1"/>
+<img width="48" height="48" src="https://img.icons8.com/office/48/spring-logo.png" alt="spring-logo"/>
+<img width="48" height="48" src="https://img.icons8.com/color/48/thymeleaf.png" alt="thymeleaf"/>
+<img width="48" height="48"
+        src="https://img.icons8.com/external-soft-fill-juicy-fish/48/external-sql-coding-and-development-soft-fill-soft-fill-juicy-fish.png" />
+<img width="48" height="48" src="https://img.icons8.com/color/48/html-5--v1.png" />
+<img width="48" height="48" src="https://img.icons8.com/color/48/css3.png" />
+<img width="48" height="48" src="https://img.icons8.com/color/48/javascript--v1.png" />
+<img width="48" height="48" src="https://img.icons8.com/color/48/python--v1.png" />
+<img width="48" height="48" src="https://img.icons8.com/color/48/git.png" />
+
+<img width="120" height="60" src="https://1000logos.net/wp-content/uploads/2020/08/Apache-Logo-500x313.png" />
+</div>
 
 # El Meyloud RealEstate
 
@@ -36,4 +50,11 @@ we choose the less working agent
 we choose the closest agent relative to the property
 
 if someone misses the visits 2 times, he gets banned from the platform
+
+
+
+
+
+
+
 
