@@ -52,7 +52,7 @@ we choose the closest agent relative to the property
 if someone misses the visits 2 times, he gets banned from the platform
 
 # how are we able to calculate the distance between 2 points on the earth
-basically we're calculatiing an arch length of a circle
+basically we're calculatiing an arch length of an arc
 so obviously, we'll use the haversine formula
 
 ```
