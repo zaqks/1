@@ -55,12 +55,14 @@ public class VisitService {
     }
 
     public List<Visit> getOf(String client_email) {
+        missingTask();
 
         return visitRepo.findByClient(clientRepo.findByEmail(client_email));
 
     }
 
     public Visit getOf(String client_email, int visitID) {
+        missingTask();
         Visit rslt = visitRepo.findById(visitID);
 
         if (rslt != null && rslt.getClient().getEmail().equals(client_email))
@@ -71,16 +73,19 @@ public class VisitService {
     }
 
     public List<Visit> getPresentedBy(Agent agent) {
+        missingTask();
         return visitRepo.findByAgent(agent);
     }
 
     public List<Visit> getVisits(int offer_id) {
+        missingTask();
 
         return visitRepo.findByOffer(offrSrvc.get(offer_id));
 
     }
 
     public Visit getPresentedBy(String agent_email, int visitID) {
+        missingTask();
         Visit rslt = visitRepo.findById(visitID);
 
         return (rslt != null && rslt.getAgent().equals(agentRepo.findByEmail(agent_email))) ? rslt : null;
@@ -248,6 +253,30 @@ public class VisitService {
         }
 
         return true;
+    }
+
+    public boolean missedVzt(Visit vzt) {
+        Calendar today = Calendar.getInstance();
+
+        return vzt.getDatetime().compareTo(today) < 0;
+    }
+
+    public void missingTask() {
+        List<Visit> vzts = visitRepo.findAll();
+
+        Visit current;
+        for (int i = 0; i < vzts.size(); i++) {
+            current = vzts.get(i);
+
+            if (missedVzt(current)) {
+                // update
+                current.setMissed(true);
+                save(current);
+                // l ban
+            }
+
+        }
+
     }
 
 }

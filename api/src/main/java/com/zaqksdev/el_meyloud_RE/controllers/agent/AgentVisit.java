@@ -29,7 +29,9 @@ public class AgentVisit {
             @CookieValue(name = "agent_password", defaultValue = "") String password) {
 
         model.addAttribute("buy", new VisitShowDTO().VisitShowDTOs(vztSrvc.getAllBuy(email)));
+
         model.addAttribute("rent", new VisitShowDTO().VisitShowDTOs(vztSrvc.getAllRent(email)));
+
         model.addAttribute("check", new VisitShowDTO().VisitShowDTOs(vztSrvc.getAllCheck(email)));
 
         return authSrvc.new AgentAuth(email, password).kick("visit/agent/showAll");
@@ -40,8 +42,7 @@ public class AgentVisit {
             @PathVariable(name = "id") int id,
             Model model,
             @CookieValue(name = "agent_email", defaultValue = "") String email,
-            @CookieValue(name = "agent_password", defaultValue = "") String password)
-             {
+            @CookieValue(name = "agent_password", defaultValue = "") String password) {
 
         Visit rslt = vztSrvc.getPresentedBy(email, id);
 

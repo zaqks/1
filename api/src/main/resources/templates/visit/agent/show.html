@@ -4,51 +4,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        showVisit
-    </title>
+    <title>Visit</title>
 
     <link th:href="@{/css/vars.css}" rel="stylesheet" />
     <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-    <link th:href="@{/css/templates/visit/show/show.css}" rel="stylesheet" />
+
+
+    <link th:href="@{/css/widgets/cards/offer.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/panel.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/section.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/grid.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/bars/appbar.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/bars/navbar.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/carousel.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/table.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/input.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/button.css}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
+    <link th:href="@{/css/templates/property/show/show.css}" rel="stylesheet" />
+
+
 
 </head>
 
 <body>
 
-    <div th:switch="${visit.offer.checked}">
-
-        <div th:case="false">
-            <h1>Check Offer</h1>
-
-            <form action="" method="post">
-                <p>notes</p>
-                <textarea th:field="${checkDTO.notes}" name="" id="" cols="30" rows="10" placeholder="Notes">
-
-                </textarea>
-
-                <button type="submit" onclick="confirm('u sure?')">Validate this offer</button>
-            </form>
-
+    <div id="window">
+        <div class="panel h" id="top">
+            <img id="logo" th:src="@{/media/images/logo/text.svg}" alt="">
         </div>
 
-        <div th:case="true">
+        <div id="view">
+            <div class="panel v" id="side">
+                <div>
+                    <div class="icn" onclick="window.location.href='/client/market'">
+                        <img src="/media/icons/navigation/market.png" alt="">
+                    </div>
 
-            <div th:switch="${visit.offer.rent}">
-                <h1 th:case="true">Rent Offer</h1>
-                <h1 th:case="false">Buy Offer</h1>
+                    <div class="icn" onclick="window.location.href='/client/contract'">
+                        <img src="/media/icons/navigation/contracts.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/visit'">
+                        <img src="/media/icons/navigation/visits.svg" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/offer'">
+                        <img src="/media/icons/navigation/offers.png" alt="">
+                    </div>
+
+                    <div class="icn" onclick="window.location.href='/client/property'">
+                        <img src="/media/icons/navigation/properties.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="icn" onclick="window.location.href='/client/profile'">
+                    <img src="/media/icons/navigation/profile.png" alt="">
+                </div>
+
             </div>
 
-            <form action="" method="post">
-                <button th:text="${visit.offer.rent} ? 'Rent' : 'Sell'" type="submit"></button>
-            </form>
+            <div id="content">
+
+
+                <div class="section border">
+                    <h3 id="title" th:text="@{'Offer' + ${visit.offer.id}}"></h3>
+
+
+                    <div id="content">
+
+                        <div class="section border">
+                            <div id="content">
+                                <div class="carousel" id="imgs">
+                                    <div class="carouselItm" th:each="img: ${visit.offer.property.imgs}">
+                                        <img th:src="${img}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="section border">
+
+                            <div class="row" id="title">
+                                <h1 th:text="*{visit.offer.property.addr}"></h1>
 
 
 
+
+
+                                <div th:unless="${owns}">
+                                    <form th:if="${book}" action="" method="post" id="visitForm">
+                                        <a onclick="document.getElementById('visitForm').submit();">Visit</a>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+
+
+                            <div id="content">
+                                <h3 th:text="*{visit.offer.property.owner.phonenum}"></h3>
+                                <p th:text="*{visit.offer.description}"></p>
+                                <br>
+                                <p th:text="*{visit.offer.property.description}"></p>
+
+
+
+                                <p th:text="${visit.offer.description}"></p>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="section border">
+                            <h4 id="title">Location</h4>
+                            <div id="content">
+
+                                <div id="map" th:x="*{visit.offer.property.x}" th:y="*{visit.offer.property.y}"></div>
+
+                                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                                    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                                    crossorigin=""></script>
+                                <script th:src="@{/js/map/show.js}"></script>
+                                <script>
+                                    showCoords()
+                                </script>
+
+                            </div>
+                        </div>
+
+                        <div class="section border">
+                            <h4 id="title">Stats</h4>
+                            <div id="content">
+
+
+
+                                <table>
+
+                                    <tr>
+                                        <th>Surface</th>
+                                        <th>Rooms</th>
+                                        <th>Floors</th>
+                                        <th>Garrages</th>
+                                        <th>Pools</th>
+                                    </tr>
+                                    <tr>
+                                        <td th:text="*{visit.offer.property.surf} + 'm²' "></td>
+                                        <td th:text="*{visit.offer.property.rooms}"></td>
+                                        <td th:text="*{visit.offer.property.floors}"></td>
+                                        <td th:text="*{visit.offer.property.grgs}"></td>
+                                        <td th:text="*{visit.offer.property.pools}"></td>
+                                    </tr>
+
+                                </table>
+
+
+
+                            </div>
+                        </div>
+
+                        <div th:if="${owns}">
+                            <div class="section border">
+
+
+
+                                <div th:if="${not offer.checked}">
+                                    <h3 id="title">Your offer needs to be checked by an agent on:</h3>
+                                </div>
+                                <div th:unless="${not offer.checked}">
+                                    <h3 id="title">Icomming Visits</h3>
+                                </div>
+
+                                <div id="content">
+
+
+                                    <div th:if="${owns}">
+
+                                        <table>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>offer</th>
+                                                <th>date</th>
+                                                <th>time</th>
+                                                <th>client phone number</th>
+
+                                                <th>passed</th>
+                                                <th>missed</th>
+                                            </tr>
+
+
+                                            <tr th:each="visit: ${visits}" th:vst_id="${visit.id}">
+                                                <div th:if="${not visit.passed}">
+                                                    <td th:text="${visit.id}"></td>
+                                                    <td th:text="${visit.offer.id}">
+                                                    </td>
+                                                    <td th:text="${visit.date}"></td>
+                                                    <td th:text="${visit.time}"></td>
+                                                    <td th:text="${visit.client.phonenum}"></td>
+                                                    <td th:text="${visit.missed}"></td>
+                                                    <td th:text="${visit.passed}"></td>
+                                                </div>
+                                            </tr>
+
+                                        </table>
+
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div th:unless="${visit.offer.checked}">
+
+                            <div class="section">
+                                <h3 id="title">Check Offer</h3>
+                                <div id="content">
+                                    <form action="" method="post">
+
+
+                                        <div class="input">
+                                            <p>notes</p>
+                                            <textarea th:field="${checkDTO.notes}" name="" id="" cols="30" rows="10"
+                                                placeholder="Notes"></textarea>
+                                        </div>
+
+                                        <button type="submit" onclick="confirm('u sure?')">Validate this offer</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div th:if="${visit.offer.checked}">
+
+                            <div class="section">
+                                <h3 id="title">
+                                    <div th:switch="${visit.offer.rent}">
+                                        <h3 th:case="true">Rent Offer</h3>
+                                        <h3 th:case="false">Buy Offer</h3>
+                                    </div>
+                                </h3>
+                                <div id="content">
+
+                                    <form action="" method="post">
+                                        <button th:text="${visit.offer.rent} ? 'Rent' : 'Sell'" type="submit"></button>
+                                    </form>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
     </div>
+
 
 
 </body>

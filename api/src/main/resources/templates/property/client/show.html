@@ -22,6 +22,12 @@
 
     <link th:href="@{/css/widgets/window.css}" rel="stylesheet" />
     <link th:href="@{/css/widgets/carousel.css}" rel="stylesheet" />
+    <link th:href="@{/css/widgets/table.css}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
     <link th:href="@{/css/templates/property/show/show.css}" rel="stylesheet" />
 
 
@@ -88,13 +94,62 @@
                             </div>
                         </div>
 
+
                         <div class="section border">
-                            <h4 id="title">Info</h4>
+
+                            <div class="row" id="title">
+                                <h1 th:text="*{property.addr}"></h1>
+                                <a th:text="*{property.owner.phonenum}"></a>
+                            </div>
+
+
+
                             <div id="content">
-                                <div id="info">
-                                    <div id="cards"></div>
-                                    <div id="location"></div>
-                                </div>
+                                <p th:text="*{property.description}"></p>
+                            </div>
+                        </div>
+
+                        <div class="section border">
+                            <h4 id="title">Location</h4>
+                            <div id="content">
+
+                                <div id="map" th:x="*{property.x}" th:y="*{property.y}"></div>
+
+                                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                                    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                                    crossorigin=""></script>
+                                <script th:src="@{/js/map/show.js}"></script>
+                                <script>
+                                    showCoords()
+                                </script>
+
+                            </div>
+                        </div>
+
+                        <div class="section border">
+                            <h4 id="title">Stats</h4>
+                            <div id="content">
+
+
+
+                                <table>
+
+                                    <tr>
+                                        <th>Surface</th>
+                                        <th>Rooms</th>
+                                        <th>Floors</th>
+                                        <th>Garrages</th>
+                                        <th>Pools</th>
+                                    </tr>
+                                    <tr>
+                                        <td th:text="*{property.surf} + 'm²' "></td>
+                                        <td th:text="*{property.rooms}"></td>
+                                        <td th:text="*{property.floors}"></td>
+                                        <td th:text="*{property.grgs}"></td>
+                                        <td th:text="*{property.pools}"></td>
+                                    </tr>
+
+                                </table>
 
 
 

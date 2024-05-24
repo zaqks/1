@@ -11,3 +11,15 @@
 #imgs img{
     border-radius: var(--brdr2);
 }
+
+
+
+td{
+    font-weight: var(--txtwh4);
+}
+
+
+#map{
+    width: 100%;
+    aspect-ratio: 2;
+}

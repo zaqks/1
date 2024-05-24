@@ -17,15 +17,13 @@ map.on("click", function posRef(e) {
     lat = e.latlng.lat;
     lng = e.latlng.lng;
 
-    lat = parseFloat(lat)
-    lng = parseFloat(lng)
 
 
-    xIntp.value = `${lat}`
-    yIntp.value = `${lng}`
 
 
-    if(marker!=undefined){
+
+
+    if (marker != undefined) {
         map.removeLayer(marker)
     }
 
@@ -33,6 +31,15 @@ map.on("click", function posRef(e) {
     marker.addTo(map)
         .bindPopup('Your Property')
         .openPopup();
+
+
+    //need more precision
+    
+    lat = parseInt(lat)
+    lng = parseInt(lng)
+    
+    xIntp.value = `${lat}`
+    yIntp.value = `${lng}`
 
 
     return

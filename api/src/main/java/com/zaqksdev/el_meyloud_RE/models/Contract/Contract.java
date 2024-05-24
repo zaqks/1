@@ -17,7 +17,8 @@ public class Contract {
 
     private Calendar datetime = Calendar.getInstance();
 
-    @ManyToOne(cascade = CascadeType.ALL) // hya nrmlmnt one to one but dont forget when a cleint unsubscribes ou yji wahed f plastou
+    @ManyToOne(cascade = CascadeType.ALL) // hya nrmlmnt one to one but dont forget when a cleint unsubscribes ou yji
+                                          // wahed f plastou
     @JoinColumn(name = "offer_id", referencedColumnName = "id")
     private Offer offer;
 
@@ -76,7 +77,26 @@ public class Contract {
     }
 
     public Calendar getDatetime() {
+
         return datetime;
+    }
+
+    public String getDatetime2() {
+
+        Calendar clndr = datetime;
+
+        int hour = clndr.get(Calendar.HOUR_OF_DAY);
+        int minute = clndr.get(Calendar.MINUTE);
+
+        int day = clndr.get(Calendar.DAY_OF_MONTH);
+        int month = clndr.get(Calendar.MONTH) + 1; // months start from 0 !!!!
+        int year = clndr.get(Calendar.YEAR);
+
+        String time = String.format("%dh" + (minute < 10 ? "0" : "") + "%d", hour, minute);
+        String date = String.format("%d/%d/%d", month, day, year);
+
+        return String.format("%s %s", date, time);
+
     }
 
     public void setDatetime(Calendar datetime) {

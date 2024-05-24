@@ -28,7 +28,7 @@ public class AgencyAuth {
     @GetMapping("signin")
     public String showAgencySignIn(Model model) {
         model.addAttribute("agent", new ClientKeyDTO());
-        return "auth/agency/signin";
+        return "auth/agent/signin";
     }
 
     @PostMapping("signin")
@@ -38,7 +38,7 @@ public class AgencyAuth {
         model.addAttribute("agent", agent);
 
         if (result.hasErrors()) {
-            return "auth/agency/signin";
+            return "auth/agent/signin";
         }
 
         String email = agent.getEmail();
@@ -46,7 +46,7 @@ public class AgencyAuth {
 
         // check existance
         if (!authSrvc.new AgentAuth(email, password).new Form(result).checkSGINAdmin())
-            return "auth/agency/signin";
+            return "auth/agent/signin";
 
         // set the cookies
         Cookie emailCookie = new Cookie("admin_email", null);

@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.zaqksdev.el_meyloud_RE.models.Agent;
 import com.zaqksdev.el_meyloud_RE.services.AgentService;
 import com.zaqksdev.el_meyloud_RE.services.AuthService;
+import com.zaqksdev.el_meyloud_RE.services.ClientService;
+import com.zaqksdev.el_meyloud_RE.services.ContractService;
+import com.zaqksdev.el_meyloud_RE.services.OfferService;
+import com.zaqksdev.el_meyloud_RE.services.PropertyService;
 
 import jakarta.validation.Valid;
 
@@ -25,6 +29,14 @@ public class AgencyAgents {
     private AuthService authSrvc;
     @Autowired
     private AgentService agntSrvc;
+    @Autowired
+    private ClientService clntSrvc;
+    @Autowired
+    private OfferService offrSrvc;
+    @Autowired
+    private PropertyService prprtSrvc;
+    @Autowired
+    private ContractService cntrctSrvc;
 
     @GetMapping("")
     public String showAllAgent(Model model,
@@ -32,6 +44,13 @@ public class AgencyAgents {
             @CookieValue(name = "admin_password", defaultValue = "") String password) {
 
         model.addAttribute("agents", agntSrvc.getAllNonAdminActive());
+        model.addAttribute("clients", clntSrvc.getAll());
+        model.addAttribute("offers", offrSrvc.getAll());
+        model.addAttribute("properties", prprtSrvc.getAll());
+        model.addAttribute("contracts", cntrctSrvc.getAll());
+
+        
+
 
         return authSrvc.new AgentAuth(email, password).kickNonAdmin("agent/showAll");
 

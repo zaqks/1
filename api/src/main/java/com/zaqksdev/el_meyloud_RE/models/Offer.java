@@ -15,7 +15,7 @@ public class Offer {
     private int price;
     private boolean rent, checked, avlbl;
 
-    @Size(min = 16, max = 256, message = "invalid length")
+    @Size(min = 16, max = 1024, message = "invalid length")
     private String description;
 
     @ManyToOne(cascade = CascadeType.ALL)

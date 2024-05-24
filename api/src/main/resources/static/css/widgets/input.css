@@ -1,12 +1,16 @@
 input[type="file"] {
-    display: none;
+    /*display: none;*/
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
 }
 
 
 input {
     appearance: textfield;
     padding: 5px 15px;
-    border-radius: var(--brdr2);
+    border-radius: var(--brdr1);
     border: var(--border1);
 
     font-size: var(--txtsz5);
@@ -17,7 +21,7 @@ textarea {
 
     border: none;
     outline: none;
-    border-radius: var(--brdr2);
+    border-radius: var(--brdr1);
     border: var(--border1);
 
     resize: none;
@@ -26,30 +30,32 @@ textarea {
 
 
 .input {
-    margin: 10px 0;
+    /*margin: 10px 0;*/
+    margin: 5px 0;
 
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 2.5px;
 }
 
 
 .input p {
-    font-size: var(--txtsz5);
+    font-size: var(--txtsz4);
     font-weight: var(--txtwh4);
 }
 
 
 .input ul li {
     color: var(--errclr);
+    list-style: none;
 }
 
 
 
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     accent-color: var(--secclr2);
-    
+
     width: 25px;
     height: 25px;
 }

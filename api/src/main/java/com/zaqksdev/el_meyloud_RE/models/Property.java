@@ -23,7 +23,7 @@ public class Property {
     private int surf, rooms;
     private int floors, grgs, pools;
     
-    @Size(min=0, max = 256, message = "too long")
+    @Size(min=0, max = 1024, message = "too long")
     private String description;
 
 

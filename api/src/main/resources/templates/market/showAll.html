@@ -97,8 +97,8 @@
                                     <div id="price">
                                         <h4 id="val"  th:text="@{${offer.price} }"></h4>
                                         
-                                        <h4 id="unit" th:if="${offer.rent}">DZD</h4>
-                                        <h4 id="unit" th:unless="${offer.rent}">DZD/mo</h4>
+                                        <h4 id="unit" th:if="${!offer.rent}">DZD</h4>
+                                        <h4 id="unit" th:unless="${!offer.rent}">DZD/mo</h4>
                                     </div>
 
                                 </div>

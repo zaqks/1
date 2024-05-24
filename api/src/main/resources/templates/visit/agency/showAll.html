@@ -131,7 +131,7 @@
                                         <th>missed</th>
                                     </tr>
 
-                                    <tr th:each="visit: ${rent}" th:vst_id="${visit.id}"
+                                    <tr th:each="visit: ${sell}" th:vst_id="${visit.id}"
                                     
                                         th:onclick="window.location.href='/agent/visit/' + this.getAttribute('vst_id')"
                                     >
@@ -153,7 +153,7 @@
 
                         <div class="section border">
                             <h4 id="title">
-                                Buy Visits
+                                Sell Visits
                             </h4>
 
                             <div id="content">
@@ -169,7 +169,7 @@
                                         <th>missed</th>
                                     </tr>
 
-                                    <tr th:each="visit: ${buy}" th:vst_id="${visit.id}"
+                                    <tr th:each="visit: ${sell}" th:vst_id="${visit.id}"
                                     
                                         th:onclick="window.location.href='/agent/visit/' + this.getAttribute('vst_id')"
                                     >

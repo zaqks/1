@@ -9,8 +9,9 @@
 
     <link th:href="@{/css/vars.css}" rel="stylesheet" />    
     <link th:href="@{/css/main.css}" rel="stylesheet" />    
+    
     <link th:href="@{/css/templates/auth/auth.css}" rel="stylesheet" />
-
+    <link th:href="@{/css/templates/auth/signup.css}" rel="stylesheet" />
 
     
 </head>
@@ -66,11 +67,11 @@
             <li th:each="err:${#fields.errors('rip')}" th:text="${err}"></li>
         </ul>
 
-        <input id="x_coord" type="text" th:field="*{x}" placeholder="x">
+        <input id="x_coord" step="0.00000000000001" type="text" th:field="*{x}" placeholder="x">
         <ul>
             <li th:each="err:${#fields.errors('x')}" th:text="${err}"></li>
         </ul>
-        <input id="y_coord" type="text" th:field="*{y}" placeholder="y">
+        <input id="y_coord" step="0.00000000000001" type="text" th:field="*{y}" placeholder="y">
         <ul>
             <li th:each="err:${#fields.errors('y')}" th:text="${err}"></li>
         </ul>
